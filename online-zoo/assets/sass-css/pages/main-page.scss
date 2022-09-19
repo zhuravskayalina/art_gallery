@@ -1,0 +1,28 @@
+@import "../base/colors";
+@import "../base/typography";
+
+
+//-------------------------------------------------------------------------------------------
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  font-family: $base-font-family;
+}
+
+.header {
+  height: 180px;
+  background-color: $black;
+
+    .logo {
+      width: 82px;
+      color: $white;
+
+        h1 {
+          font-size: 19px;
+          font-weight: 400;
+          line-height: 120%;
+          border: 1px solid #FFFFFF;
+        }
+    }
+}
