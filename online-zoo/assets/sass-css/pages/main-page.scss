@@ -6,11 +6,12 @@
   width: 100vw;
   height: 100vh;
   font-family: $base-font-family;
+  box-sizing: border-box;
 }
 
 .container {
   width: 1160px;
-  border: 1px solid black
+  border: 1px solid black;
 }
 
 
@@ -27,6 +28,13 @@
     .logo {
       font-family: "Roboto";
       width: 82px;
+      height: 52px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border: 1px solid white;
+
 
       h1 {
         width: 72.49px;
@@ -35,13 +43,9 @@
         line-height: 120%;
         color: $white;
         padding: 3.55px 5px;
-        border: 1px solid #FFFFFF;
         border-radius: 2px;
         text-align: center;
 
-        span {
-          position: relative;
-        }
       }
     }
   }
@@ -50,7 +54,7 @@
 .bamboo {
   position: absolute;
   left: 11.23px;
-  top: 24.64px;
+  top: 23.64px;
 
   img {
     height: 20.98px;
@@ -61,24 +65,33 @@
 .navigation {
   margin: 0;
   margin-left: 63px;
-
 }
 
 .nav-list {
   padding: 0;
   display: flex;
-  gap: 59px;
+  gap: 58px;
   list-style: none;
 
   .nav-item {
+
+    .active {
+      color: $orange;
+    }
 
     a {
       color: $white;
       text-decoration: none;
 
+      &:hover {
+        color: $orange;
+      }
+
     }
   }
 }
+
+// ------------WATCH ONLINE
 
 .watch-online {
   width: 100%;
@@ -122,12 +135,91 @@
 
 .wrapper {
   margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .button-watch {
-  a {
+  margin-top: 69px;
+  margin-right: 98px;
+
+  .watch-link {
     @extend %button-default;
     @extend %font-button;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+
+    &:hover {
+      @extend %button-hover;
+    }
+
+    &:active {
+      @extend %button-active;
+    }
   }
 }
+
+.active {
+  color: $orange;
+}
+
+//----------------------------------------CHOOSE ANIMAL SECTION-----
+
+.backstage {
+  height: 605px;
+  background: no-repeat right url("../../images/flower-photo-1.png");
+  display: flex;
+  justify-content: center;
+
+  .instructions {
+    margin-top: 140px;
+    display: flex;
+    gap: 87px;
+  }
+}
+
+.backstage-text {
+  color: $black-blue;
+
+  h2 {
+    @extend %font-h2;
+  }
+
+  .about-site {
+    @extend %font-regular;
+    margin-top: 20px;
+    line-height: 130%;
+  }
+
+  h4 {
+    @extend %font-subtitle;
+    margin-top: 54px;
+  }
+
+  .goals {
+    @extend %font-regular;
+    margin-top: 34px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
