@@ -174,6 +174,7 @@
   background: no-repeat right url("../../images/flower-photo-1.png");
   display: flex;
   justify-content: center;
+  margin-bottom: 106px;
 
   .instructions {
     margin-top: 140px;
@@ -205,6 +206,28 @@
     margin-top: 34px;
   }
 }
+
+.pets {
+
+  display: flex;
+  justify-content: center;
+
+  .button {
+    width: 52px;
+    height: 52px;
+    background-color: $orange;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 10px;
+  }
+
+
+}
+
+
 
 
 
