@@ -1,8 +1,6 @@
 @import "../base/colors";
 @import "../base/typography";
-
-
-//-------------------------------------------------------------------------------------------
+@import "../base/buttons";
 
 .page {
   width: 100vw;
@@ -10,19 +8,126 @@
   font-family: $base-font-family;
 }
 
+.container {
+  width: 1160px;
+  border: 1px solid black
+}
+
+
 .header {
-  height: 180px;
+  height: 80px;
   background-color: $black;
+  display: flex;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    align-items: center;
 
     .logo {
+      font-family: "Roboto";
       width: 82px;
-      color: $white;
 
-        h1 {
-          font-size: 19px;
-          font-weight: 400;
-          line-height: 120%;
-          border: 1px solid #FFFFFF;
+      h1 {
+        width: 72.49px;
+        font-size: 19.0145px;
+        font-weight: 400;
+        line-height: 120%;
+        color: $white;
+        padding: 3.55px 5px;
+        border: 1px solid #FFFFFF;
+        border-radius: 2px;
+        text-align: center;
+
+        span {
+          position: relative;
         }
+      }
     }
+  }
+}
+
+.bamboo {
+  position: absolute;
+  left: 11.23px;
+  top: 24.64px;
+
+  img {
+    height: 20.98px;
+    display: block;
+  }
+}
+
+.navigation {
+  margin: 0;
+  margin-left: 63px;
+
+}
+
+.nav-list {
+  padding: 0;
+  display: flex;
+  gap: 59px;
+  list-style: none;
+
+  .nav-item {
+
+    a {
+      color: $white;
+      text-decoration: none;
+
+    }
+  }
+}
+
+.watch-online {
+  width: 100%;
+  height: 700px;
+  background: center no-repeat url("../../images/giant-panda.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    justify-content: flex-end;
+
+    .round {
+      width: 465px;
+      height: 465px;
+      border-radius: 50%;
+      background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+      position: relative;
+      margin-right: 108px;
+
+      .tagline {
+        font-size: 106.496px;
+        color: $white;
+        position: absolute;
+        top: 74px;
+        left: 83px;
+        text-align: center;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 75%;
+        text-transform: uppercase;
+
+        span {
+          color: $yellow;
+        }
+      }
+    }
+  }
+}
+
+.wrapper {
+  margin-top: 12px;
+}
+
+.button-watch {
+  a {
+    @extend %button-default;
+    @extend %font-button;
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  }
 }

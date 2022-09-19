@@ -3,8 +3,8 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
-  src: url("../../assets/fonts/Roboto/roboto-v30-latin-300.eot"); /* IE9 Compat Modes */
-  src: local(""), url("../../assets/fonts/Roboto/roboto-v30-latin-300.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Roboto/roboto-v30-latin-300.woff2") format("woff2"), url("../../assets/fonts/Roboto/roboto-v30-latin-300.woff") format("woff"), url("../../assets/fonts/Roboto/roboto-v30-latin-300.ttf") format("truetype"), url("../../assets/fonts/Roboto/roboto-v30-latin-300.svg#Roboto") format("svg"); /* Legacy iOS */
+  src: url("../../fonts/Roboto/roboto-v30-latin-300.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../../fonts/Roboto/roboto-v30-latin-300.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto/roboto-v30-latin-300.woff2") format("woff2"), url("../../fonts/Roboto/roboto-v30-latin-300.woff") format("woff"), url("../../fonts/Roboto/roboto-v30-latin-300.ttf") format("truetype"), url("../../fonts/Roboto/roboto-v30-latin-300.svg#Roboto") format("svg"); /* Legacy iOS */
 }
 /* roboto-regular - latin */
 @font-face {
@@ -12,7 +12,7 @@
   font-style: normal;
   font-weight: 400;
   src: url("../../fonts/Roboto/roboto-v30-latin-regular.eot"); /* IE9 Compat Modes */
-  src: local(""), url("../../assets/fonts/Roboto/roboto-v30-latin-regular.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Roboto/roboto-v30-latin-regular.woff2") format("woff2"), url("../../assets/fonts/Roboto/roboto-v30-latin-regular.woff") format("woff"), url("../../assets/fonts/Roboto/roboto-v30-latin-regular.ttf") format("truetype"), url("../../assets/fonts/Roboto/roboto-v30-latin-regular.svg#Roboto") format("svg"); /* Legacy iOS */
+  src: local(""), url("../../fonts/Roboto/roboto-v30-latin-regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto/roboto-v30-latin-regular.woff2") format("woff2"), url("../../fonts/Roboto/roboto-v30-latin-regular.woff") format("woff"), url("../../fonts/Roboto/roboto-v30-latin-regular.ttf") format("truetype"), url("../../fonts/Roboto/roboto-v30-latin-regular.svg#Roboto") format("svg"); /* Legacy iOS */
 }
 /* roboto-500 - latin */
 @font-face {
@@ -20,7 +20,7 @@
   font-style: normal;
   font-weight: 500;
   src: url("../../fonts/Roboto/roboto-v30-latin-500.eot"); /* IE9 Compat Modes */
-  src: local(""), url("../../assets/fonts/Roboto/roboto-v30-latin-500.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Roboto/roboto-v30-latin-500.woff2") format("woff2"), url("../../assets/fonts/Roboto/roboto-v30-latin-500.woff") format("woff"), url("../../assets/fonts/Roboto/roboto-v30-latin-500.ttf") format("truetype"), url("../../assets/fonts/Roboto/roboto-v30-latin-500.svg#Roboto") format("svg"); /* Legacy iOS */
+  src: local(""), url("../../fonts/Roboto/roboto-v30-latin-500.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto/roboto-v30-latin-500.woff2") format("woff2"), url("../../fonts/Roboto/roboto-v30-latin-500.woff") format("woff"), url("../../fonts/Roboto/roboto-v30-latin-500.ttf") format("truetype"), url("../../fonts/Roboto/roboto-v30-latin-500.svg#Roboto") format("svg"); /* Legacy iOS */
 }
 /* roboto-700 - latin */
 @font-face {
@@ -28,27 +28,170 @@
   font-style: normal;
   font-weight: 700;
   src: url("../../fonts/Roboto/roboto-v30-latin-700.eot"); /* IE9 Compat Modes */
-  src: local(""), url("../../assets/fonts/Roboto/roboto-v30-latin-700.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Roboto/roboto-v30-latin-700.woff2") format("woff2"), url("../../assets/fonts/Roboto/roboto-v30-latin-700.woff") format("woff"), url("../../assets/fonts/Roboto/roboto-v30-latin-700.ttf") format("truetype"), url("../../assets/fonts/Roboto/roboto-v30-latin-700.svg#Roboto") format("svg"); /* Legacy iOS */
+  src: local(""), url("../../fonts/Roboto/roboto-v30-latin-700.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto/roboto-v30-latin-700.woff2") format("woff2"), url("../../fonts/Roboto/roboto-v30-latin-700.woff") format("woff"), url("../../fonts/Roboto/roboto-v30-latin-700.ttf") format("truetype"), url("../../fonts/Roboto/roboto-v30-latin-700.svg#Roboto") format("svg"); /* Legacy iOS */
 }
+.button-watch a {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 140%;
+  text-transform: uppercase;
+}
+
+/* roboto-300 - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../../fonts/Roboto/roboto-v30-latin-300.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../../fonts/Roboto/roboto-v30-latin-300.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto/roboto-v30-latin-300.woff2") format("woff2"), url("../../fonts/Roboto/roboto-v30-latin-300.woff") format("woff"), url("../../fonts/Roboto/roboto-v30-latin-300.ttf") format("truetype"), url("../../fonts/Roboto/roboto-v30-latin-300.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+/* roboto-regular - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../fonts/Roboto/roboto-v30-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../../fonts/Roboto/roboto-v30-latin-regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto/roboto-v30-latin-regular.woff2") format("woff2"), url("../../fonts/Roboto/roboto-v30-latin-regular.woff") format("woff"), url("../../fonts/Roboto/roboto-v30-latin-regular.ttf") format("truetype"), url("../../fonts/Roboto/roboto-v30-latin-regular.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+/* roboto-500 - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../fonts/Roboto/roboto-v30-latin-500.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../../fonts/Roboto/roboto-v30-latin-500.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto/roboto-v30-latin-500.woff2") format("woff2"), url("../../fonts/Roboto/roboto-v30-latin-500.woff") format("woff"), url("../../fonts/Roboto/roboto-v30-latin-500.ttf") format("truetype"), url("../../fonts/Roboto/roboto-v30-latin-500.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+/* roboto-700 - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../fonts/Roboto/roboto-v30-latin-700.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../../fonts/Roboto/roboto-v30-latin-700.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto/roboto-v30-latin-700.woff2") format("woff2"), url("../../fonts/Roboto/roboto-v30-latin-700.woff") format("woff"), url("../../fonts/Roboto/roboto-v30-latin-700.ttf") format("truetype"), url("../../fonts/Roboto/roboto-v30-latin-700.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+.button-watch a {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 140%;
+  text-transform: uppercase;
+}
+
+.button-watch a {
+  width: 298px;
+  height: 54px;
+  border-radius: 25px;
+  display: block;
+  text-transform: none;
+}
+
 .page {
   width: 100vw;
   height: 100vh;
   font-family: "Roboto", sans-serif;
 }
 
+.container {
+  width: 1160px;
+  border: 1px solid black;
+}
+
 .header {
-  height: 180px;
+  height: 80px;
   background-color: #000000;
+  display: flex;
+  justify-content: center;
 }
-.header .logo {
+.header .container {
+  display: flex;
+  align-items: center;
+}
+.header .container .logo {
+  font-family: "Roboto";
   width: 82px;
-  color: #FFFFFF;
 }
-.header .logo h1 {
-  font-size: 19px;
+.header .container .logo h1 {
+  width: 72.49px;
+  font-size: 19.0145px;
   font-weight: 400;
   line-height: 120%;
+  color: #FFFFFF;
+  padding: 3.55px 5px;
   border: 1px solid #FFFFFF;
+  border-radius: 2px;
+  text-align: center;
+}
+.header .container .logo h1 span {
+  position: relative;
+}
+
+.bamboo {
+  position: absolute;
+  left: 11.23px;
+  top: 24.64px;
+}
+.bamboo img {
+  height: 20.98px;
+  display: block;
+}
+
+.navigation {
+  margin: 0;
+  margin-left: 63px;
+}
+
+.nav-list {
+  padding: 0;
+  display: flex;
+  gap: 59px;
+  list-style: none;
+}
+.nav-list .nav-item a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.watch-online {
+  width: 100%;
+  height: 700px;
+  background: center no-repeat url("../../images/giant-panda.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+.watch-online .container {
+  display: flex;
+  justify-content: flex-end;
+}
+.watch-online .container .round {
+  width: 465px;
+  height: 465px;
+  border-radius: 50%;
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  position: relative;
+  margin-right: 108px;
+}
+.watch-online .container .round .tagline {
+  font-size: 106.496px;
+  color: #FFFFFF;
+  position: absolute;
+  top: 74px;
+  left: 83px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 75%;
+  text-transform: uppercase;
+}
+.watch-online .container .round .tagline span {
+  color: #FFEE2E;
+}
+
+.wrapper {
+  margin-top: 12px;
+}
+
+.button-watch a {
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
 }
 
 /*# sourceMappingURL=main-page.css.map */
