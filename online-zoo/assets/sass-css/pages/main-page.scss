@@ -11,7 +11,6 @@
 
 .container {
   width: 1160px;
-  border: 1px solid black;
 }
 
 
@@ -37,7 +36,6 @@
 
 
       h1 {
-        width: 72.49px;
         font-size: 19.0145px;
         font-weight: 400;
         line-height: 120%;
@@ -111,7 +109,7 @@
       border-radius: 50%;
       background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
       position: relative;
-      margin-right: 108px;
+      margin-right: 109px;
 
       .tagline {
         font-size: 106.496px;
@@ -147,10 +145,6 @@
   .watch-link {
     @extend %button-default;
     @extend %font-button;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
 
     &:hover {
@@ -171,7 +165,7 @@
 
 .backstage {
   height: 605px;
-  background: no-repeat calc(100% + 27px) url("../../images/flower-photo-1.png");
+  background: no-repeat calc(100% + 97px) url("../../images/flower-photo-1.png");
   background-position-y: 15px;
   display: flex;
   justify-content: center;
@@ -189,13 +183,13 @@
   overflow: hidden;
   width: 609px;
 
-    .bamboo-hat {
-      transition: 0.5s;
+  .bamboo-hat {
+    transition: 0.5s;
 
-      &:hover {
-        transform: scale(1.1);
-      }
+    &:hover {
+      transform: scale(1.1);
     }
+  }
 }
 
 .backstage-text {
@@ -260,14 +254,16 @@
   row-gap: 20px;
   column-gap: 30px;
 
-    .card-item {
-      display: flex;
-      flex-direction: column;
-      border: 1px solid $orange;
-      border-radius: 3px;
-      overflow: hidden;
-    }
+  .card-item {
+    height: 426px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $orange;
+    border-radius: 3px;
+    overflow: hidden;
+  }
 }
+
 .card-img {
   height: 366px;
   width: 366px;
@@ -283,18 +279,23 @@
 .card-1 {
   background: no-repeat center url("../../images/pets-block/pandas.png");
 }
+
 .card-2 {
   background: no-repeat center url("../../images/pets-block/eagle.png");
 }
+
 .card-3 {
   background: no-repeat center url("../../images/pets-block/gorilla.png");
 }
+
 .card-4 {
   background: no-repeat center url("../../images/pets-block/sloth.png");
 }
+
 .card-5 {
   background: no-repeat center url("../../images/pets-block/cheetahs.png");
 }
+
 .card-6 {
   background: no-repeat center url("../../images/pets-block/penguin.png");
 }
@@ -313,6 +314,8 @@
 
 .card-icon {
   display: flex;
+  justify-content: flex-end;
+  width: 43px;
 }
 
 
@@ -320,22 +323,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 8px 12px 14px 16px;
+  margin: 9px 9px 9px 16px;
 }
 
 .choose-button {
   @extend %button-default;
+  @extend %font-button;
   background-color: $orange-darker;
-  margin-top: 80px;
+  margin-top: 82px;
   margin-bottom: 100px;
 
-    &:hover {
-      @extend %button-hover;
-    }
+  &:hover {
+    @extend %button-hover;
+  }
 
-    &:active {
-      @extend %button-active;
-    }
+  &:active {
+    @extend %button-active;
+  }
 }
 
 .pets-container {
@@ -356,6 +360,275 @@
 }
 
 .pick-feed {
-  height: 500px;
+  background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  color: $black-blue;
+  padding: 69px 0 100px;
+
+  .container {
+    max-width: 1160px;
+    background: rgba(253, 253, 255, 0.52);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+  }
+}
+
+.pick-instruction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h3 {
+    @extend %font-h3;
+  }
+}
+
+.pick-info {
+  margin-top: 42px;
+
+  .description {
+    padding-right: 55px;
+    padding-left: 99px;
+  }
+
+  h2 {
+    @extend %font-h2;
+    color: $orange-darker;
+    text-align: center;
+  }
+
+  h4 {
+    @extend %font-subtitle;
+    margin-top: 30px;
+  }
+
+  .subtitle-1 {
+    @extend %font-regular;
+    font-weight: 500;
+    line-height: 130%;
+    margin-top: 40px;
+  }
+
+  .subtitle-2 {
+    @extend %font-regular;
+    line-height: 130%;
+    margin-top: 11px;
+  }
+
+  .subtitle-3 {
+    @extend %font-regular;
+    line-height: 130%;
+
+    a {
+      padding-bottom: 2px;
+      color: $black-blue;
+      text-decoration: none;
+      border-bottom: 1px solid $orange-darker;
+    }
+  }
+}
+
+.pick-instruction {
+  margin-top: 61px;
+
+  .process {
+    display: flex;
+    margin-top: 40px;
+    gap: 30px;
+    align-items: center;
+  }
+}
+
+.process-card {
+  max-width: 168px;
+  height: 244px;
+
+  .icon {
+    width: 168px;
+    height: 168px;
+    background-color: $white;
+    border-radius: 5px;
+    border: 1px solid $orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .subtitle {
+    @extend %font-regular;
+    margin-top: 30px;
+  }
+}
+
+.arrow {
+  margin-bottom: 83px;
+
+  img {
+    width: 69px;
+  }
+}
+
+.pick-button {
+  margin-top: 60px;
+  margin-bottom: 59px;
+
+  a {
+    @extend %font-button;
+    @extend %button-default;
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+
+    &:hover {
+      @extend %button-hover;
+    }
+
+    &:active {
+      @extend %button-active;
+    }
+
+    &[disabled] {
+      @extend %button-disabled;
+
+      &:hover {
+        cursor: default;
+      }
+    }
+  }
+}
+
+.testimonials {
+  display: flex;
+  justify-content: center;
+  padding: 140px 220px 180px;
+  background: no-repeat right calc(100% + 134px) url("../../images/leav.png");
+
+  .testimonials-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h3 {
+    @extend %font-h3;
+    color: $black-blue;
+  }
+
+  .cards {
+    margin-top: 47px;
+    display: grid;
+    grid-template-columns: repeat(4, 268px);
+    gap: 30px;
+  }
+
+  .scroll-bar {
+    width: 599px;
+    height: 8px;
+    background-color: #F5F7F6;
+    border-radius: 5px;
+    margin-top: 20px;
+
+    .scroll {
+      width: 115px;
+      height: 6px;
+      background-color: $orange-darker;
+      border-radius: 5px;
+    }
+  }
+}
+
+.feedback-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 268px;
+  height: 391px;
+  border-radius: 20px;
+  background: linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+
+  .feed-card {
+    width: 264px;
+    height: 387px;
+    background-color: $gray-light;
+    border-radius: 19px;
+    padding: 13px 15px 19px;
+
+    .card-text {
+      @extend %font-small-paragraph;
+      color: $gray;
+      margin-top: 9px;
+      height: 309px;
+      overflow: hidden;
+    }
+  }
+}
+
+.feed-card-info {
+  display: flex;
+  gap: 10px;
+
+  .user-pic {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    background-size: cover;
+  }
+
+  .pic-1 {
+    background: no-repeat center url("../../images/icons/user.svg");
+  }
+
+  .pic-2 {
+    background: no-repeat center url("../../images/oskar.png");
+  }
+
+  .pic-3 {
+    background: no-repeat center url("../../images/fredericka.png");
+  }
+
+  .pic-4 {
+    background: no-repeat center url("../../images/mila.png");
+  }
+
+}
+
+.text-information {
+  display: flex;
+  flex-direction: column;
+
+  .name {
+    @extend %font-regular;
+  }
+
+  .country-date {
+    @extend %font-small-paragraph;
+    display: flex;
+    align-items: center;
+    color: #BDBDBD;
+    gap: 6px;
+
+    .dot {
+      width: 2px;
+      height: 2px;
+      background-color: #BDBDBD;
+      border-radius: 50%;
+    }
+  }
+}
+
+.testimonials-button {
+  margin-top: 31px;
+  align-self: flex-start;
+}
+
+.feedback-button {
+  @extend %font-button;
+  @extend %button-square;
+
 }
 
