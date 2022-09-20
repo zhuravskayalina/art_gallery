@@ -42,7 +42,7 @@
   line-height: 120%;
 }
 
-.button-watch .watch-link {
+.text .type, .button-watch .watch-link {
   font-size: 16px;
   font-weight: 500;
   line-height: 140%;
@@ -53,6 +53,12 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
+}
+
+.text .area {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 120%;
 }
 
 /* roboto-300 - latin */
@@ -99,7 +105,7 @@
   line-height: 120%;
 }
 
-.button-watch .watch-link {
+.text .type, .button-watch .watch-link {
   font-size: 16px;
   font-weight: 500;
   line-height: 140%;
@@ -112,20 +118,29 @@
   line-height: 140%;
 }
 
-.button-watch .watch-link {
+.text .area {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 120%;
+}
+
+.choose-button, .button-watch .watch-link {
   width: 298px;
   height: 54px;
   border-radius: 25px;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   color: white;
+  text-transform: uppercase;
 }
 
-.button-watch .watch-link:hover {
+.choose-button:hover, .button-watch .watch-link:hover {
   background: #E47209;
 }
 
-.button-watch .watch-link:active {
+.choose-button:active, .button-watch .watch-link:active {
   background: #4B9200;
 }
 
@@ -296,13 +311,56 @@
 .pets .button {
   width: 52px;
   height: 52px;
-  background-color: #F9804B;
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   color: #FFFFFF;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   font-size: 10px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 366px);
+  row-gap: 20px;
+  column-gap: 30px;
+}
+.cards .card-item {
+  height: 426px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #F9804B;
+  border-radius: 3px;
+}
+.cards .card-item .card-img {
+  height: 366px;
+  width: 366px;
+}
+
+.text .area {
+  margin-top: -2px;
+}
+
+.card-icon {
+  display: flex;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 12px 14px 16px;
+}
+
+.choose-button {
+  background-color: #FE9013;
+  margin-top: 80px;
+}
+.pets-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /*# sourceMappingURL=main-page.css.map */

@@ -207,6 +207,8 @@
   }
 }
 
+// -----------------------------PETS-----------
+
 .pets {
 
   display: flex;
@@ -215,7 +217,7 @@
   .button {
     width: 52px;
     height: 52px;
-    background-color: $orange;
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
     color: $white;
     display: flex;
     justify-content: center;
@@ -223,15 +225,70 @@
     border-radius: 50%;
     font-size: 10px;
   }
+}
 
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 366px);
+  row-gap: 20px;
+  column-gap: 30px;
 
+    .card-item {
+      height: 426px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid $orange;
+      border-radius: 3px;
+
+        .card-img {
+          height: 366px;
+          width: 366px;
+        }
+    }
+}
+
+.text {
+  .type {
+    @extend %font-button;
+  }
+
+  .area {
+    @extend %font-small-paragraph;
+    margin-top: -2px;
+  }
+}
+
+.card-icon {
+  display: flex;
 }
 
 
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 12px 14px 16px;
+}
 
+.choose-button {
+  @extend %button-default;
+  background-color: $orange-darker;
+  margin-top: 80px;
 
+    &:hover {
+      @extend %button-hover;
+    }
 
+    &:active {
+      @extend %button-active;
+    }
+}
 
+.pets-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
 
