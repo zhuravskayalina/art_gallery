@@ -136,11 +136,11 @@
   text-transform: uppercase;
 }
 
-.choose-button:hover, .button-watch .watch-link:hover {
+.choose-button:hover, .pets .button:hover, .button-watch .watch-link:hover {
   background: #E47209;
 }
 
-.choose-button:active, .button-watch .watch-link:active {
+.choose-button:active, .pets .button:active, .button-watch .watch-link:active {
   background: #4B9200;
 }
 
@@ -279,15 +279,27 @@
 
 .backstage {
   height: 605px;
-  background: no-repeat right url("../../images/flower-photo-1.png");
+  background: no-repeat calc(100% + 27px) url("../../images/flower-photo-1.png");
+  background-position-y: 15px;
   display: flex;
   justify-content: center;
-  margin-bottom: 106px;
 }
 .backstage .instructions {
   margin-top: 140px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 609px 1fr;
   gap: 87px;
+}
+
+.backstage-img {
+  overflow: hidden;
+  width: 609px;
+}
+.backstage-img .bamboo-hat {
+  transition: 0.5s;
+}
+.backstage-img .bamboo-hat:hover {
+  transform: scale(1.1);
 }
 
 .backstage-text {
@@ -307,10 +319,12 @@
 .pets {
   display: flex;
   justify-content: center;
+  margin-top: 115px;
+  background: no-repeat calc(100% + 27px) bottom url("../../images/strelitzia.png"), no-repeat -22px bottom url("../../images/palm-photo.png");
 }
 .pets .button {
-  width: 52px;
-  height: 52px;
+  width: 62px;
+  height: 62px;
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   color: #FFFFFF;
   display: flex;
@@ -319,7 +333,9 @@
   border-radius: 50%;
   font-size: 10px;
 }
-
+.pets .button:hover {
+  cursor: pointer;
+}
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 366px);
@@ -327,15 +343,45 @@
   column-gap: 30px;
 }
 .cards .card-item {
-  height: 426px;
   display: flex;
   flex-direction: column;
   border: 1px solid #F9804B;
   border-radius: 3px;
+  overflow: hidden;
 }
-.cards .card-item .card-img {
+
+.card-img {
   height: 366px;
   width: 366px;
+  background-size: contain;
+  transition: 0.5s;
+}
+.card-img:hover {
+  transform: scale(1.1);
+}
+
+.card-1 {
+  background: no-repeat center url("../../images/pets-block/pandas.png");
+}
+
+.card-2 {
+  background: no-repeat center url("../../images/pets-block/eagle.png");
+}
+
+.card-3 {
+  background: no-repeat center url("../../images/pets-block/gorilla.png");
+}
+
+.card-4 {
+  background: no-repeat center url("../../images/pets-block/sloth.png");
+}
+
+.card-5 {
+  background: no-repeat center url("../../images/pets-block/cheetahs.png");
+}
+
+.card-6 {
+  background: no-repeat center url("../../images/pets-block/penguin.png");
 }
 
 .text .area {
@@ -356,11 +402,27 @@
 .choose-button {
   background-color: #FE9013;
   margin-top: 80px;
+  margin-bottom: 100px;
 }
 .pets-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.button-choose-pet {
+  display: flex;
+  justify-content: center;
+}
+
+.cards-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.pick-feed {
+  height: 500px;
 }
 
 /*# sourceMappingURL=main-page.css.map */
