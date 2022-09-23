@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 .pick-info h2, .backstage-text h2 {
   font-size: 48px;
   font-weight: 400;
@@ -20,20 +22,20 @@
   line-height: 120%;
 }
 
-.feedback-button, .pick-button a, .choose-button, .text .type, .button-watch .watch-link, footer .donate-footer-button .donate-footer {
+.feedback-button, .pick-button a, .choose-button, .text .type, .text .animation h3, .button-watch .watch-link, .footer .donate-footer-button .donate-footer {
   font-size: 16px;
   font-weight: 500;
   line-height: 140%;
   text-transform: uppercase;
 }
 
-.text-information .name, .process-card .subtitle, .pick-info .subtitle-3, .pick-info .subtitle-2, .pick-info .subtitle-1, .backstage-text .goals, .backstage-text .about-site, .soc-media-item {
+.text-information .name, .process-card .subtitle, .pick-info .subtitle-3, .pick-info .subtitle-2, .pick-info .subtitle-1, .backstage-text .goals, .backstage-text .about-site, .soc-media-item, .email .input {
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
 }
 
-.text-information .country-date, .feedback-card-container .feed-card .card-text, .text .area {
+.text-information .country-date, .feedback-card-container .feed-card .card-text, .text .area, .text animation p {
   font-size: 15px;
   font-weight: 300;
   line-height: 120%;
@@ -63,20 +65,20 @@
   line-height: 120%;
 }
 
-.feedback-button, .pick-button a, .choose-button, .text .type, .button-watch .watch-link, footer .donate-footer-button .donate-footer {
+.feedback-button, .pick-button a, .choose-button, .text .type, .text .animation h3, .button-watch .watch-link, .footer .donate-footer-button .donate-footer {
   font-size: 16px;
   font-weight: 500;
   line-height: 140%;
   text-transform: uppercase;
 }
 
-.text-information .name, .process-card .subtitle, .pick-info .subtitle-3, .pick-info .subtitle-2, .pick-info .subtitle-1, .backstage-text .goals, .backstage-text .about-site, .soc-media-item {
+.text-information .name, .process-card .subtitle, .pick-info .subtitle-3, .pick-info .subtitle-2, .pick-info .subtitle-1, .backstage-text .goals, .backstage-text .about-site, .soc-media-item, .email .input {
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
 }
 
-.text-information .country-date, .feedback-card-container .feed-card .card-text, .text .area {
+.text-information .country-date, .feedback-card-container .feed-card .card-text, .text .area, .text animation p {
   font-size: 15px;
   font-weight: 300;
   line-height: 120%;
@@ -88,7 +90,7 @@
   line-height: 130%;
 }
 
-.pick-button a, .choose-button, .button-watch .watch-link, .feedback-button, footer .donate-footer-button .donate-footer {
+.pick-button a, .choose-button, .button-watch .watch-link, .feedback-button, .footer .donate-footer-button .donate-footer {
   width: 298px;
   height: 54px;
   border-radius: 25px;
@@ -100,19 +102,19 @@
   text-transform: uppercase;
 }
 
-.feedback-button:hover, .pick-button a:hover, .choose-button:hover, .pets .button:hover, .button-watch .watch-link:hover, footer .donate-footer-button .donate-footer:hover {
+.feedback-button:hover, .pick-button a:hover, .choose-button:hover, .pets .button:hover, .button-watch .watch-link:hover, .footer .donate-footer-button .donate-footer:hover {
   background: #E47209;
 }
 
-.feedback-button:active, .pick-button a:active, .choose-button:active, .pets .button:active, .button-watch .watch-link:active, footer .donate-footer-button .donate-footer:active {
+.feedback-button:active, .pick-button a:active, .choose-button:active, .pets .button:active, .button-watch .watch-link:active, .footer .donate-footer-button .donate-footer:active {
   background: #4B9200;
 }
 
-.feedback-button[disabled], .pick-button a[disabled], footer .donate-footer-button .donate-footer[disabled] {
+.feedback-button[disabled], .pick-button a[disabled], .footer .donate-footer-button .donate-footer[disabled] {
   background: #767474;
 }
 
-.feedback-button, footer .donate-footer-button .donate-footer {
+.feedback-button, .footer .donate-footer-button .donate-footer {
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   border-radius: 5px;
 }
@@ -135,20 +137,20 @@
   line-height: 120%;
 }
 
-.feedback-button, .pick-button a, .choose-button, .text .type, .button-watch .watch-link, footer .donate-footer-button .donate-footer {
+.feedback-button, .pick-button a, .choose-button, .text .type, .text .animation h3, .button-watch .watch-link, .footer .donate-footer-button .donate-footer {
   font-size: 16px;
   font-weight: 500;
   line-height: 140%;
   text-transform: uppercase;
 }
 
-.text-information .name, .process-card .subtitle, .pick-info .subtitle-3, .pick-info .subtitle-2, .pick-info .subtitle-1, .backstage-text .goals, .backstage-text .about-site, .soc-media-item {
+.text-information .name, .process-card .subtitle, .pick-info .subtitle-3, .pick-info .subtitle-2, .pick-info .subtitle-1, .backstage-text .goals, .backstage-text .about-site, .soc-media-item, .email .input {
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
 }
 
-.text-information .country-date, .feedback-card-container .feed-card .card-text, .text .area {
+.text-information .country-date, .feedback-card-container .feed-card .card-text, .text .area, .text animation p {
   font-size: 15px;
   font-weight: 300;
   line-height: 120%;
@@ -178,20 +180,20 @@
   line-height: 120%;
 }
 
-.feedback-button, .pick-button a, .choose-button, .text .type, .button-watch .watch-link, footer .donate-footer-button .donate-footer {
+.feedback-button, .pick-button a, .choose-button, .text .type, .text .animation h3, .button-watch .watch-link, .footer .donate-footer-button .donate-footer {
   font-size: 16px;
   font-weight: 500;
   line-height: 140%;
   text-transform: uppercase;
 }
 
-.text-information .name, .process-card .subtitle, .pick-info .subtitle-3, .pick-info .subtitle-2, .pick-info .subtitle-1, .backstage-text .goals, .backstage-text .about-site, .soc-media-item {
+.text-information .name, .process-card .subtitle, .pick-info .subtitle-3, .pick-info .subtitle-2, .pick-info .subtitle-1, .backstage-text .goals, .backstage-text .about-site, .soc-media-item, .email .input {
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
 }
 
-.text-information .country-date, .feedback-card-container .feed-card .card-text, .text .area {
+.text-information .country-date, .feedback-card-container .feed-card .card-text, .text .area, .text animation p {
   font-size: 15px;
   font-weight: 300;
   line-height: 120%;
@@ -203,7 +205,7 @@
   line-height: 130%;
 }
 
-.pick-button a, .choose-button, .button-watch .watch-link, .feedback-button, footer .donate-footer-button .donate-footer {
+.pick-button a, .choose-button, .button-watch .watch-link, .feedback-button, .footer .donate-footer-button .donate-footer {
   width: 298px;
   height: 54px;
   border-radius: 25px;
@@ -215,35 +217,70 @@
   text-transform: uppercase;
 }
 
-.feedback-button:hover, .pick-button a:hover, .choose-button:hover, .pets .button:hover, .button-watch .watch-link:hover, footer .donate-footer-button .donate-footer:hover {
+.feedback-button:hover, .pick-button a:hover, .choose-button:hover, .pets .button:hover, .button-watch .watch-link:hover, .footer .donate-footer-button .donate-footer:hover {
   background: #E47209;
 }
 
-.feedback-button:active, .pick-button a:active, .choose-button:active, .pets .button:active, .button-watch .watch-link:active, footer .donate-footer-button .donate-footer:active {
+.feedback-button:active, .pick-button a:active, .choose-button:active, .pets .button:active, .button-watch .watch-link:active, .footer .donate-footer-button .donate-footer:active {
   background: #4B9200;
 }
 
-.feedback-button[disabled], .pick-button a[disabled], footer .donate-footer-button .donate-footer[disabled] {
+.feedback-button[disabled], .pick-button a[disabled], .footer .donate-footer-button .donate-footer[disabled] {
   background: #767474;
 }
 
-.feedback-button, footer .donate-footer-button .donate-footer {
+.feedback-button, .footer .donate-footer-button .donate-footer {
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   border-radius: 5px;
 }
 
-footer {
-  height: 1000px;
+.footer {
   background-color: #111115;
   display: flex;
   justify-content: center;
   padding-top: 41px;
   color: #FFFFFF;
 }
-footer .donate-footer-button .donate-footer[disabled]:hover {
+.footer .donate-footer-button .donate-footer[disabled]:hover {
   cursor: default;
 }
 
+.footer .container {
+  display: grid;
+  grid-template-columns: 298px 1fr 390px;
+  grid-template-rows: 121px 101px 72px 112px;
+  grid-template-areas: "logo . subscribe" "donate . ." "socials . ." "socials navigation copyright";
+}
+
+.footer-logo {
+  grid-area: logo;
+}
+
+.donate-footer-button {
+  grid-area: donate;
+}
+
+.social-media-list {
+  grid-area: socials;
+}
+
+.navigation-footer {
+  grid-area: navigation;
+  justify-self: end;
+}
+
+.subscribe {
+  grid-area: subscribe;
+}
+
+.copyright {
+  grid-area: copyright;
+}
+
+.subscribe {
+  margin-left: 21px;
+  margin-top: 1px;
+}
 .email {
   margin-top: 14px;
 }
@@ -256,7 +293,17 @@ footer .donate-footer-button .donate-footer[disabled]:hover {
   background-color: #111115;
   width: 228px;
   border: 1px solid #F9804B;
-  margin-right: 10px;
+  margin-right: 6px;
+  color: #FFFFFF;
+}
+.email .input-email:focus {
+  outline: none;
+}
+.email .input-email .valid {
+  border-color: #4B9200;
+}
+.email .mistake-email {
+  border-color: #D31414;
 }
 .email .input-submit {
   width: 129px;
@@ -265,7 +312,27 @@ footer .donate-footer-button .donate-footer[disabled]:hover {
   border: 1px solid #4B9200;
   border-radius: 5px;
 }
+.email .input-submit:hover {
+  cursor: pointer;
+}
+.email .mistake-submit {
+  cursor: default;
+  border-color: #D31414;
+  color: #D31414;
+}
+.email .mistake-submit:hover {
+  cursor: default;
+}
 
+.navigation-footer {
+  margin-top: 40px;
+  margin-right: 10px;
+}
+
+.copyright {
+  justify-self: end;
+  margin-top: 8px;
+}
 .copyright p:nth-child(2) {
   margin-top: 10px;
 }
@@ -281,36 +348,168 @@ footer .donate-footer-button .donate-footer[disabled]:hover {
   align-items: center;
   gap: 12px;
 }
+.soc-media-item:hover .soc-link {
+  color: #4B9200;
+}
+.soc-media-item:hover .soc-media-title {
+  color: #4B9200;
+}
+.soc-media-item .soc-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+  gap: 12px;
+}
+.soc-media-item .soc-link:hover .soc-media-item-icon {
+  background-color: #4B9200;
+}
+.soc-media-item .soc-link:hover .soc-media-title {
+  color: #4B9200;
+}
 .soc-media-item-icon {
   width: 26px;
   height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  color: #FFFFFF;
+  background-color: rgba(196, 196, 196, 0.5);
+  border-radius: 50%;
 }
 .soc-media-item .icon-facebook {
-  background: no-repeat center url("../../images/icons/facebook.svg");
+  font-size: 15px;
 }
 .soc-media-item .icon-twitter {
-  background: no-repeat center url("../../images/icons/twitter.svg");
+  font-size: 14px;
 }
 .soc-media-item .icon-instagram {
-  background: no-repeat center url("../../images/icons/instagram.svg");
+  font-size: 16px;
 }
 .soc-media-item .icon-youtube {
-  background: no-repeat center url("../../images/icons/youtube.svg");
+  font-size: 12px;
 }
 
-.page {
-  width: 100vw;
-  height: 100vh;
-  font-family: "Roboto", sans-serif;
-  box-sizing: border-box;
+.pick-info h2, .backstage-text h2 {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 120%;
 }
 
-.container {
-  width: 1160px;
+.testimonials h3, .pick-instruction h3 {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.pick-info h4, .backstage-text h4, .subscribe p {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.feedback-button, .pick-button a, .choose-button, .text .type, .text .animation h3, .button-watch .watch-link, .footer .donate-footer-button .donate-footer {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 140%;
+  text-transform: uppercase;
+}
+
+.text-information .name, .process-card .subtitle, .pick-info .subtitle-3, .pick-info .subtitle-2, .pick-info .subtitle-1, .backstage-text .goals, .backstage-text .about-site, .email .input, .soc-media-item {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.text-information .country-date, .feedback-card-container .feed-card .card-text, .text .area, .text animation p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 120%;
+}
+
+.copyright p {
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 130%;
+}
+
+.pick-info h2, .backstage-text h2 {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.testimonials h3, .pick-instruction h3 {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.pick-info h4, .backstage-text h4, .subscribe p {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.feedback-button, .pick-button a, .choose-button, .text .type, .text .animation h3, .button-watch .watch-link, .footer .donate-footer-button .donate-footer {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 140%;
+  text-transform: uppercase;
+}
+
+.text-information .name, .process-card .subtitle, .pick-info .subtitle-3, .pick-info .subtitle-2, .pick-info .subtitle-1, .backstage-text .goals, .backstage-text .about-site, .email .input, .soc-media-item {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.text-information .country-date, .feedback-card-container .feed-card .card-text, .text .area, .text animation p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 120%;
+}
+
+.copyright p {
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 130%;
+}
+
+.pick-button a, .choose-button, .button-watch .watch-link, .feedback-button, .footer .donate-footer-button .donate-footer {
+  width: 298px;
+  height: 54px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+.feedback-button:hover, .pick-button a:hover, .choose-button:hover, .pets .button:hover, .button-watch .watch-link:hover, .footer .donate-footer-button .donate-footer:hover {
+  background: #E47209;
+}
+
+.feedback-button:active, .pick-button a:active, .choose-button:active, .pets .button:active, .button-watch .watch-link:active, .footer .donate-footer-button .donate-footer:active {
+  background: #4B9200;
+}
+
+.feedback-button[disabled], .pick-button a[disabled], .footer .donate-footer-button .donate-footer[disabled] {
+  background: #767474;
+}
+
+.feedback-button, .footer .donate-footer-button .donate-footer {
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  border-radius: 5px;
 }
 
 .logo {
-  font-family: "Roboto";
+  text-decoration: none;
+  color: #FFFFFF;
+  font-family: "Roboto", sans-serif;
   width: 82px;
   height: 52px;
   display: flex;
@@ -318,7 +517,7 @@ footer .donate-footer-button .donate-footer[disabled]:hover {
   align-items: center;
   position: relative;
   border: 1px solid white;
-  color: #FFFFFF;
+  cursor: pointer;
 }
 .logo .logo-header {
   font-size: 19.0145px;
@@ -352,18 +551,16 @@ footer .donate-footer-button .donate-footer[disabled]:hover {
 }
 
 .navigation {
-  margin: 0;
-  margin-left: 63px;
+  margin: 0 0 0 63px;
+  width: 100%;
 }
 
 .nav-list {
   padding: 0;
+  width: 100%;
   display: flex;
   gap: 58px;
   list-style: none;
-}
-.nav-list .nav-item .active {
-  color: #F9804B;
 }
 .nav-list .nav-item a {
   color: #FFFFFF;
@@ -371,6 +568,29 @@ footer .donate-footer-button .donate-footer[disabled]:hover {
 }
 .nav-list .nav-item a:hover {
   color: #F9804B;
+}
+.nav-list .nav-item a:active {
+  color: #4B9200;
+}
+.nav-list .nav-item:last-child {
+  margin-left: auto;
+}
+.nav-list .nav-item .active {
+  color: #F9804B;
+}
+.nav-list .nav-item .active:active {
+  color: #F9804B;
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1160px;
 }
 
 .watch-online {
@@ -429,7 +649,7 @@ footer .donate-footer-button .donate-footer[disabled]:hover {
 
 .backstage {
   height: 605px;
-  background: no-repeat calc(100% + 97px) url("../../images/flower-photo-1.png");
+  background: no-repeat right url("../../images/flower-photo-1.png");
   background-position-y: 15px;
   display: flex;
   justify-content: center;
@@ -466,11 +686,12 @@ footer .donate-footer-button .donate-footer[disabled]:hover {
   margin-top: 34px;
 }
 
+/*-----------------------------PETS-----------*/
 .pets {
   display: flex;
   justify-content: center;
   margin-top: 115px;
-  background: no-repeat calc(100% + 27px) bottom url("../../images/strelitzia.png"), no-repeat -22px bottom url("../../images/palm-photo.png");
+  background: no-repeat right bottom url("../../images/strelitzia.png"), no-repeat left bottom url("../../images/palm-photo.png");
 }
 .pets .button {
   width: 62px;
@@ -486,6 +707,7 @@ footer .donate-footer-button .donate-footer[disabled]:hover {
 .pets .button:hover {
   cursor: pointer;
 }
+/*-------cards-----------*/
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 366px);
@@ -500,15 +722,41 @@ footer .donate-footer-button .donate-footer[disabled]:hover {
   border-radius: 3px;
   overflow: hidden;
 }
+.cards .card-item:hover .card-img {
+  transform: scale(1.1);
+  opacity: 0.5;
+}
+.cards .card-item:hover .card-info {
+  height: 100px;
+  align-items: flex-start;
+}
+
+.card-info {
+  display: flex;
+  height: 38.4px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 9px 9px 16px;
+  transition: 0.5s;
+}
+
+.cards-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 2px;
+}
+
+.card-img-container {
+  overflow: hidden;
+  background-color: #000000;
+}
 
 .card-img {
   height: 366px;
   width: 366px;
   background-size: contain;
   transition: 0.5s;
-}
-.card-img:hover {
-  transform: scale(1.1);
 }
 
 .card-1 {
@@ -535,7 +783,7 @@ footer .donate-footer-button .donate-footer[disabled]:hover {
   background: no-repeat center url("../../images/pets-block/penguin.png");
 }
 
-.text .area {
+.text .area, .text animation p {
   margin-top: -2px;
 }
 
@@ -545,11 +793,15 @@ footer .donate-footer-button .donate-footer[disabled]:hover {
   width: 43px;
 }
 
-.card-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 9px 9px 9px 16px;
+/*--------card animation------*/
+.card-item {
+  position: relative;
+}
+
+.animation {
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .choose-button {
@@ -566,12 +818,6 @@ footer .donate-footer-button .donate-footer[disabled]:hover {
 .button-choose-pet {
   display: flex;
   justify-content: center;
-}
-
-.cards-container {
-  display: flex;
-  align-items: center;
-  gap: 20px;
 }
 
 .icon-arrow-right img {
@@ -607,7 +853,7 @@ footer .donate-footer-button .donate-footer[disabled]:hover {
 }
 .pick-info .description {
   padding-right: 55px;
-  padding-left: 99px;
+  padding-left: 96px;
 }
 .pick-info h2 {
   color: #FE9013;
@@ -623,7 +869,7 @@ footer .donate-footer-button .donate-footer[disabled]:hover {
 }
 .pick-info .subtitle-2 {
   line-height: 130%;
-  margin-top: 11px;
+  margin-top: 9px;
 }
 .pick-info .subtitle-3 {
   line-height: 130%;
@@ -707,12 +953,16 @@ footer .donate-footer-button .donate-footer[disabled]:hover {
   background-color: #F5F7F6;
   border-radius: 5px;
   margin-top: 20px;
+  cursor: pointer;
 }
 .testimonials .scroll-bar .scroll {
   width: 115px;
   height: 6px;
   background-color: #FE9013;
   border-radius: 5px;
+}
+.testimonials .scroll-bar .scroll:hover {
+  background-color: #4B9200;
 }
 
 .feedback-card-container {
@@ -729,7 +979,7 @@ footer .donate-footer-button .donate-footer[disabled]:hover {
   height: 387px;
   background-color: #F1F3F2;
   border-radius: 19px;
-  padding: 13px 15px 19px;
+  padding: 11px 15px 19px;
 }
 .feedback-card-container .feed-card .card-text {
   color: #767474;
@@ -769,7 +1019,7 @@ footer .donate-footer-button .donate-footer[disabled]:hover {
   display: flex;
   align-items: center;
   color: #BDBDBD;
-  gap: 6px;
+  gap: 8px;
 }
 .text-information .country-date .dot {
   width: 2px;
