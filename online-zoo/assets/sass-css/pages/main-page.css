@@ -308,12 +308,18 @@
 .email .input-submit {
   width: 129px;
   background-color: #F1F3F2;
-  color: #4B9200;
-  border: 1px solid #4B9200;
   border-radius: 5px;
 }
 .email .input-submit:hover {
   cursor: pointer;
+}
+.email .input-submit:active {
+  color: #4B9200;
+  border: 1px solid #4B9200;
+}
+.email .default-submit {
+  color: #000000;
+  border: 1px solid #333B41;
 }
 .email .mistake-submit {
   cursor: default;
@@ -322,6 +328,10 @@
 }
 .email .mistake-submit:hover {
   cursor: default;
+}
+.email .mistake-submit:active {
+  border-color: #D31414;
+  color: #D31414;
 }
 
 .navigation-footer {
@@ -389,6 +399,11 @@
 }
 .soc-media-item .icon-youtube {
   font-size: 12px;
+}
+
+.copyright:hover {
+  color: #4B9200;
+  text-decoration: underline;
 }
 
 .pick-info h2, .backstage-text h2 {

@@ -120,13 +120,21 @@
   .input-submit {
     width: 129px;
     background-color: $gray-light;
-    color: $green;
-    border: 1px solid $green;
     border-radius: 5px;
 
     &:hover {
       cursor: pointer;
     }
+
+    &:active {
+      color: $green;
+      border: 1px solid $green;
+    }
+  }
+
+  .default-submit {
+    color: $black;
+    border: 1px solid $black-blue;
   }
 
   .mistake-submit {
@@ -136,6 +144,11 @@
 
     &:hover {
       cursor: default;
+    }
+
+    &:active {
+      border-color: $red;
+      color: $red;
     }
   }
 }
@@ -233,10 +246,12 @@
   }
 }
 
-
-
-
-
+.copyright {
+  &:hover {
+    color: $green;
+    text-decoration: underline;
+  }
+}
 
 
 
