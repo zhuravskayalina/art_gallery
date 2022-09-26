@@ -247,6 +247,10 @@
 }
 
 .copyright {
+  display: block;
+  text-decoration: none;
+  color: $white;
+
   &:hover {
     color: $green;
     text-decoration: underline;

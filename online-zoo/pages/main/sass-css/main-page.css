@@ -1,3 +1,4 @@
+@import "../../../assets/sass-css/base/colors.css";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
@@ -401,6 +402,11 @@
   font-size: 12px;
 }
 
+.copyright {
+  display: block;
+  text-decoration: none;
+  color: #FFFFFF;
+}
 .copyright:hover {
   color: #4B9200;
   text-decoration: underline;
@@ -611,7 +617,7 @@
 .watch-online {
   width: 100%;
   height: 700px;
-  background: center no-repeat url("../../images/giant-panda.png");
+  background: center no-repeat url("../../../assets/images/giant-panda.png");
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -664,7 +670,7 @@
 
 .backstage {
   height: 605px;
-  background: no-repeat right url("../../images/flower-photo-1.png");
+  background: no-repeat right url("../../../assets/images/flower-photo-1.png");
   background-position-y: 15px;
   display: flex;
   justify-content: center;
@@ -706,7 +712,7 @@
   display: flex;
   justify-content: center;
   margin-top: 115px;
-  background: no-repeat right bottom url("../../images/strelitzia.png"), no-repeat left bottom url("../../images/palm-photo.png");
+  background: no-repeat right bottom url("../../../assets/images/strelitzia.png"), no-repeat left bottom url("../../../assets/images/palm-photo.png");
 }
 .pets .button {
   width: 62px;
@@ -775,27 +781,27 @@
 }
 
 .card-1 {
-  background: no-repeat center url("../../images/pets-block/pandas.png");
+  background: no-repeat center url("../../../assets/images/pets-block/pandas.png");
 }
 
 .card-2 {
-  background: no-repeat center url("../../images/pets-block/eagle.png");
+  background: no-repeat center url("../../../assets/images/pets-block/eagle.png");
 }
 
 .card-3 {
-  background: no-repeat center url("../../images/pets-block/gorilla.png");
+  background: no-repeat center url("../../../assets/images/pets-block/gorilla.png");
 }
 
 .card-4 {
-  background: no-repeat center url("../../images/pets-block/sloth.png");
+  background: no-repeat center url("../../../assets/images/pets-block/sloth.png");
 }
 
 .card-5 {
-  background: no-repeat center url("../../images/pets-block/cheetahs.png");
+  background: no-repeat center url("../../../assets/images/pets-block/cheetahs.png");
 }
 
 .card-6 {
-  background: no-repeat center url("../../images/pets-block/penguin.png");
+  background: no-repeat center url("../../../assets/images/pets-block/penguin.png");
 }
 
 .text .area, .text animation p {
@@ -946,7 +952,7 @@
   display: flex;
   justify-content: center;
   padding: 140px 220px 180px;
-  background: no-repeat right calc(100% + 134px) url("../../images/leav.png");
+  background: no-repeat right calc(100% + 134px) url("../../../assets/images/leav.png");
 }
 .testimonials .testimonials-container {
   display: flex;
@@ -1018,16 +1024,16 @@
   background-size: cover;
 }
 .feed-card-info .pic-1 {
-  background: no-repeat center url("../../images/icons/user.svg");
+  background: no-repeat center url("../../../assets/images/icons/user.svg");
 }
 .feed-card-info .pic-2 {
-  background: no-repeat center url("../../images/oskar.png");
+  background: no-repeat center url("../../../assets/images/oskar.png");
 }
 .feed-card-info .pic-3 {
-  background: no-repeat center url("../../images/fredericka.png");
+  background: no-repeat center url("../../../assets/images/fredericka.png");
 }
 .feed-card-info .pic-4 {
-  background: no-repeat center url("../../images/mila.png");
+  background: no-repeat center url("../../../assets/images/mila.png");
 }
 
 .text-information {

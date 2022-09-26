@@ -2,9 +2,216 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Donate - PetStory Online</title>
+    <link rel="stylesheet" href="../../assets/styles/reset.css">
+    <link rel="stylesheet" href="../../assets/sass-css/components/header.css">
+    <link rel="stylesheet" href="sass-css/donate.css">
+    <link rel="stylesheet" href="../../assets/fonts/icon-font.css">
 </head>
 <body>
+<div class="page">
+    <header class="header">
+        <div class="container">
+            <a href="../../index.html" class="logo" id="start-page">
+                <h1 class="logo-header">PetStory <span>o</span>nline</h1>
+                <div class="bamboo">
+                    <img src="../../assets/images/bamboo.svg" alt="bamboo logo">
+                </div>
+            </a>
+            <div class="navigation">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#">About</a></li>
+                    <li class="nav-item"><a href="#">Map</a></li>
+                    <li class="nav-item"><a href="#">Zoos</a></li>
+                    <li class="nav-item"><a class="active" href="#">Donate</a></li>
+                    <li class="nav-item"><a href="#">Contact us</a></li>
+                    <li class="nav-item"><a href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online"
+                                            title="designed by">Designed by &copy;</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="cover image-cover"></section>
+    <section class="donation">
+        <div class="container">
+            <div class="description">
+                <h3 class="description-header">
+                    THE ZOO HAS OFFICIALLY REOPENED BUT WE STILL NEED YOUR HELP!
+                </h3>
+                <p class="description-subheader">
+                    <span class="bold">Even though the Zoo has been able to reopen, we are at a greatly reduced capacity with educational
+                    programs and public and private events cancelled or
+                    <br>
+                        postponed for additional months.</span> We need you now
+                    more than ever to help ensure that we overcome these challenges. We have been actively raising funds
+                    in the community, and we are grateful for the generosity. <span class="bold"> But much more support is still needed, and
+                    we need your help! Please consider a gift today – no matter what
+                    <br>
+                    size – to help us sustain our
+                    mission.</span>
+                </p>
+            </div>
+            <div class="donation-information">
+                <h3 class="donation-information-header">
+                    Donation Information
+                </h3>
+                <div class="feed">
+                    <h2 class="feed-header">Pick and feed a friend</h2>
+                    <p class="feed-title">We know the animals bring you joy, and in these extraordinary times, we’re
+                        glad.</p>
 
+                    <!--   picture of big panda-->
+
+                    <div class="pic-block">
+                        <div class="food-times">
+                            <p class="food-times-number">4</p>
+                            <p class="food-times-title">Panda diet for the day.</p>
+                        </div>
+                        <div class="cross"></div>
+                        <div class="panda"></div>
+
+                    </div>
+
+<!--   pick amount line-->
+
+                    <div class="amount">
+                        <div class="container-amount">
+                            <div class="container-amount-line">
+                                <div class="points">
+                                    <div class="point point-default" data-amount="5000"></div>
+                                    <div class="point point-default" data-amount="2000"></div>
+                                    <div class="point point-default" data-amount="1000"></div>
+                                    <div class="point point-default" data-amount="500"></div>
+                                    <div class="point point-default" data-amount="250"></div>
+                                    <div class="point point-default" data-amount="100"></div>
+                                    <div class="point point-default" data-amount="50"></div>
+                                    <div class="point point-default" data-amount="25"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sums">
+                            <div class="sum" data-sum="5000"><span class="icon-dollar"></span>5000</div>
+                            <div class="sum" data-sum="2000"><span class="icon-dollar"></span>2000</div>
+                            <div class="sum" data-sum="1000"><span class="icon-dollar"></span>1000</div>
+                            <div class="sum" data-sum="500"><span class="icon-dollar"></span>500</div>
+                            <div class="sum" data-sum="250"><span class="icon-dollar"></span>250</div>
+                            <div class="sum" data-sum="100"><span class="icon-dollar"></span>100</div>
+                            <div class="sum" data-sum="50"><span class="icon-dollar"></span>50</div>
+                            <div class="sum" data-sum="25"><span class="icon-dollar"></span>25</div>
+                        </div>
+                    </div>
+
+
+
+                    <!---------amount input-->
+
+                    <div class="amount-input">
+                        <span><input class="input-amount" type="number" maxlength="4" name="amount" id="amount"
+                                     placeholder="Another amount"></span>
+                        <span class="icon-dollar"></span>
+                    </div>
+
+                    <!-------radio buttons -->
+
+                    <div class="radio">
+                        <div class="monthly">
+                            <input type="radio" id="amount1"
+                                   name="amount" value="monthly">
+                            <label for="amount1">Monthly</label>
+                        </div>
+                        <div class="once">
+                            <input type="radio" id="amount2"
+                                   name="amount" value="once" checked>
+                            <label for="amount2">Once</label>
+                        </div>
+                    </div>
+
+                    <!--pick and feed button-->
+
+                    <div class="feed-button-container">
+                        <a class="feed-button" href="#">Feed a friend now</a>
+                    </div>
+
+                    <p class="share">
+                        Share with your friends on social networks
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--    FOOTER-->
+
+    <footer class="footer">
+        <div class="container">
+            <a class="footer-logo logo" href="#start-page">
+                <h2 class="logo-header">PetStory <span>o</span>nline</h2>
+                <div class="bamboo">
+                    <img src="../../assets/images/bamboo.svg" alt="bamboo logo">
+                </div>
+            </a>
+
+            <div class="donate-footer-button">
+                <a href="#" class="donate-footer">donate for volunteers</a>
+            </div>
+
+            <div class="social-media-list">
+                <ul>
+                    <li class="soc-media-item">
+                        <a class="soc-link" href="https://www.facebook.com/">
+                            <div class="soc-media-item-icon icon-facebook"></div>
+                            <p class="soc-media-title">Facebook</p>
+                        </a>
+                    </li>
+                    <li class="soc-media-item">
+                        <a class="soc-link" href="https://twitter.com/">
+                            <div class="soc-media-item-icon icon-twitter"></div>
+                            <p class="soc-media-title">Twitter</p>
+                        </a>
+                    </li>
+                    <li class="soc-media-item">
+                        <a class="soc-link" href="https://www.instagram.com/">
+                            <div class="soc-media-item-icon icon-instagram"></div>
+                            <p class="soc-media-title">Instagram</p>
+                        </a>
+                    </li>
+                    <li class="soc-media-item">
+                        <a class="soc-link" href="https://www.youtube.com/">
+                            <div class="soc-media-item-icon icon-youtube"></div>
+                            <p class="soc-media-title">YouTube</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="navigation-footer">
+                <ul class="nav-list">
+                    <li class="nav-item"><a class="active" href="">About</a></li>
+                    <li class="nav-item"><a href="">Map</a></li>
+                    <li class="nav-item"><a href="">Zoos</a></li>
+                    <li class="nav-item"><a href="">Contact us</a></li>
+                </ul>
+            </div>
+
+            <div class="subscribe">
+                <p>Subscribe to our news</p>
+                <div class="email">
+                    <input class="input-email input" type="email" name="email" id="email"
+                           placeholder="Enter your email">
+                    <input class="input-submit input default-submit" type="submit" value="Submit">
+                </div>
+            </div>
+
+            <a href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks" class="copyright"
+               title="designed by alisa samborskaya">
+                <p>Designed by Alisa Samborskaya</p>
+                <p>&copy;RSSchool & &copy;Yem Digital 2021</p>
+            </a>
+        </div>
+
+    </footer>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
