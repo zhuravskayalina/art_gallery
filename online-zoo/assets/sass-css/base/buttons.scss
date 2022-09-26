@@ -1,0 +1,33 @@
+@import "typography";
+@import "colors";
+
+
+%button-default {
+  width: 298px;
+  height: 54px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+%button-hover {
+  background: $orange-hover;
+}
+
+%button-active {
+  background: $green;
+}
+
+%button-disabled {
+  background: $gray;
+}
+
+%button-square {
+  @extend %button-default;
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  border-radius: 5px;
+}
