@@ -1,0 +1,342 @@
+@import "../../../assets/sass-css/base/colors.css";
+@import "../../../assets/sass-css/base/typography";
+@import "../../../assets/sass-css/base/buttons";
+@import "../../../assets/sass-css/components/footer";
+@import "../../../assets/sass-css/components/header";
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  font-family: $base-font-family;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1160px;
+}
+
+.image-cover {
+  height: 386px;
+  width: 100%;
+  background: no-repeat url("../../../assets/images/giant-panda.png");
+  background-position-y: -199px;
+
+}
+
+.donation {
+  background: $pink-orange-gradient;
+  display: flex;
+  justify-content: center;
+
+}
+
+.description {
+  margin-top: 40px;
+
+  .description-header {
+    @extend %font-h3;
+    color: $white;
+  }
+
+  .description-subheader {
+    @extend %font-regular;
+    color: $white;
+    margin-top: 10px;
+
+    .bold {
+      font-weight: 500;
+    }
+  }
+}
+
+.donation-information-header {
+  @extend %font-h3;
+  text-transform: capitalize;
+  color: $orange-darker;
+  margin-top: 45px;
+}
+
+.feed {
+  background: $peach;
+  backdrop-filter: blur(2px);
+  padding: 40px 92px 62px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 180px;
+}
+
+.feed-header {
+  @extend %font-h2;
+  color: $orange-darker;
+  margin-right: 12px;
+}
+
+.feed-title {
+  @extend %font-subtitle;
+  color: $black-blue;
+  margin-top: 20px;
+  align-self: start;
+}
+
+/*-------------------------------picture block----*/
+
+.pic-block {
+  display: flex;
+  align-items: center;
+  margin-top: 105px;
+  margin-left: 214px;
+  align-self: flex-start;
+  margin-top: 105px;
+}
+
+.food-times {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4px;
+
+  &-number {
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 80%;
+    margin-top: 12px;
+  }
+
+  &-title {
+    @extend %font-regular;
+    margin-top: 11px;
+  }
+}
+
+.cross {
+  width: 14px;
+  height: 14px;
+  margin-left: 11px;
+  margin-bottom: 13px;
+  background: no-repeat url("../../../assets/images/icons/cross.svg");
+}
+
+.panda {
+  width: 268.49px;
+  height: 199px;
+  background: no-repeat url("../../../assets/images/icons/panda.svg");
+  margin-left: 64px;
+}
+
+
+/*------------------------------amount block----*/
+
+
+.amount {
+  margin-bottom: 50px;
+  margin-top: 89px;
+}
+
+.container-amount {
+  width: 976px;
+  height: 27px;
+  background: #404950;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-line {
+    width: 920px;
+    height: 2px;
+    background: #72828E;
+    position: relative;
+  }
+}
+
+.points {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: absolute;
+  top: -4px;
+}
+
+.point-default {
+  width: 10px;
+  height: 10px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: relative;
+
+
+  &::before {
+    display: none;
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -15.5px;
+    left: -15.5px;
+    background: no-repeat center url("../../../assets/images/icons/point-hover.svg");
+  }
+
+  &:hover {
+    &::before {
+      display: block;
+    }
+    cursor: pointer;
+  }
+}
+
+/*point checked*/
+
+.point-checked {
+  width: 10px;
+  height: 10px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: relative;
+
+  &::before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -15.5px;
+    left: -15.5px;
+    background: no-repeat center url("../../../assets/images/icons/point-hover.svg");
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.sum-checked, .sum-hover {
+  color: $orange-darker;
+}
+
+.sums {
+  display: flex;
+  gap: 58px;
+  width: 976px;
+  margin-top: 12px;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 140%;
+  color: $black-blue;
+
+  .sum {
+    width: 70px;
+    text-align: center;
+  }
+}
+
+
+/*---------amount input--------*/
+
+.amount-input {
+
+  position: relative;
+
+  input {
+    width: 268px;
+    height: 54px;
+    border: 1px solid #929699;
+    border-radius: 2px;
+    background: transparent;
+    padding: 16px 9px;
+    @extend %font-regular;
+
+    &:focus {
+      outline: none;
+    }
+
+    &[type=number] {
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+        margin: 0;
+      }
+    }
+  }
+
+  .icon-dollar {
+    position: absolute;
+    top: 18px;
+    left: 248px;
+    color: #929699;
+    font-size: 20px;
+  }
+}
+
+.radio {
+  display: flex;
+  margin-top: 25px;
+  gap: 50px;
+
+  label {
+    color: $black-blue;
+    @extend %font-regular;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 0;
+    line-height: 18px;
+    user-select: none;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      left: 0;
+      bottom: 1px;
+      border: 1px solid $orange;
+      border-radius: 50%;
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  input:checked + label:before {
+    background: $green;
+    border-color: $green;
+  }
+
+  label:hover:before {
+    background: $green;
+    border-color: $green;
+  }
+
+  /* Disabled */
+  .form_radio input[type=radio]:disabled + label:before {
+    filter: grayscale(100%);
+  }
+}
+
+.feed-button {
+  @extend %button-default;
+  @extend %font-button;
+  background: $orange-gradient;
+  margin-top: 31px;
+
+  &:hover {
+    @extend %button-hover;
+  }
+
+  &:active {
+    @extend %button-active;
+  }
+}
+
+.share {
+  color: $black-blue;
+  @extend %font-regular;
+  margin-top: 30px;
+}

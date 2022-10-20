@@ -1,0 +1,261 @@
+@import "../base/colors";
+@import "../base/typography";
+@import "../base/buttons";
+
+.footer {
+  background-color: $footer;
+  display: flex;
+  justify-content: center;
+  padding-top: 41px;
+  color: $white;
+
+  .donate-footer-button {
+    .donate-footer {
+      @extend %font-button;
+      @extend %button-square;
+
+      &:hover {
+        @extend %button-hover;
+      }
+
+      &:active {
+        @extend %button-active;
+      }
+
+      &[disabled] {
+        @extend %button-disabled;
+
+        &:hover {
+          cursor: default;
+        }
+      }
+    }
+  }
+}
+
+// ---------------------GRID--------------
+
+.footer {
+  .container {
+    display: grid;
+    grid-template-columns: 298px 1fr 390px;
+    grid-template-rows: 121px 101px 72px 112px;
+    grid-template-areas: "logo . subscribe"
+                          "donate . ."
+                          "socials . ."
+                          "socials navigation copyright";
+  }
+}
+
+.footer-logo {
+  grid-area: logo;
+}
+
+.donate-footer-button {
+  grid-area: donate;
+
+}
+
+.social-media-list {
+  grid-area: socials;
+}
+
+.navigation-footer {
+  grid-area: navigation;
+  justify-self: end;
+
+}
+
+.subscribe {
+  grid-area: subscribe;
+
+}
+
+.copyright {
+  grid-area: copyright;
+}
+
+//--------------------------------------------------
+
+.subscribe {
+  margin-left: 21px;
+  margin-top: 1px;
+
+  p {
+    @extend %font-subtitle;
+  }
+}
+
+.email {
+  margin-top: 14px;
+
+  .input {
+    @extend %font-regular;
+    height: 42px;
+    border-radius: 2px;
+    padding: 10px;
+  }
+
+  .input-email {
+
+    background-color: $footer;
+    width: 228px;
+    border: 1px solid $orange;
+    margin-right: 6px;
+    color: $white;
+
+    &:focus {
+      outline: none;
+    }
+
+    & .valid {
+      border-color: $green;
+    }
+  }
+
+  .mistake-email {
+    border-color: $red;
+  }
+
+  .input-submit {
+    width: 129px;
+    background-color: $gray-light;
+    border-radius: 5px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      color: $green;
+      border: 1px solid $green;
+    }
+  }
+
+  .default-submit {
+    color: $black;
+    border: 1px solid $black-blue;
+  }
+
+  .mistake-submit {
+    cursor: default;
+    border-color: $red;
+    color: $red;
+
+    &:hover {
+      cursor: default;
+    }
+
+    &:active {
+      border-color: $red;
+      color: $red;
+    }
+  }
+}
+
+.navigation-footer {
+  margin-top: 40px;
+  margin-right: 10px;
+}
+
+.copyright {
+  justify-self: end;
+  margin-top: 8px;
+
+  p {
+    @extend %font-thin;
+
+    &:nth-child(2) {
+      margin-top: 10px;
+    }
+  }
+
+}
+
+.social-media-list {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.soc-media-item {
+  @extend %font-regular;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  &:hover {
+    .soc-link {
+      color: $green;
+    }
+
+    .soc-media-title {
+      color: $green;
+    }
+  }
+
+  .soc-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: $white;
+    gap: 12px;
+
+    &:hover {
+      .soc-media-item-icon {
+        background-color: $green;
+      }
+
+      .soc-media-title {
+        color: $green;
+      }
+    }
+  }
+
+
+  &-icon {
+    width: 26px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: $white;
+    background-color: rgba(196, 196, 196, 0.5);
+    border-radius: 50%;
+  }
+
+  .icon-facebook {
+    font-size: 15px;
+  }
+
+  .icon-twitter {
+    font-size: 14px;
+
+  }
+
+  .icon-instagram {
+    font-size: 16px;
+
+  }
+
+  .icon-youtube {
+    font-size: 12px;
+  }
+}
+
+.copyright {
+  display: block;
+  text-decoration: none;
+  color: $white;
+
+  &:hover {
+    color: $green;
+    text-decoration: underline;
+  }
+}
+
+
+
