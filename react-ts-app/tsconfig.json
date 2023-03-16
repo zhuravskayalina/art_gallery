@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es6",
     "lib": [
       "dom",
       "esnext",
       "dom.iterable"
     ],
-    "jsx": "react",
+    "jsx": "react-jsx",
     "module": "esnext",
     "moduleResolution": "node",
     "noImplicitAny": true,
@@ -21,10 +21,9 @@
   },
   "include": [
     "./src/**/*",
+    "styled.d.ts",
     "vite.config.ts",
-    ".eslintrc.cjs",
-    "src",
-    "styled.d.ts"
+    ".eslintrc.cjs"
   ],
   "references": [
     {

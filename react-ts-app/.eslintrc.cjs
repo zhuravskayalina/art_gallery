@@ -1,7 +1,9 @@
 module.exports = {
   env: {
-    browser: true,
-    es2021: true,
+    'browser': true,
+    'es6': true,
+    'jest': true,
+    'node': true,
   },
   extends: [
     'airbnb',
@@ -9,6 +11,7 @@ module.exports = {
     'airbnb/hooks',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
+    'prettier',
     'plugin:prettier/recommended',
   ],
   overrides: [],
@@ -17,9 +20,13 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: './tsconfig.json',
+    'ecmaFeatures': {
+      'jsx': true,
+    },
   },
-  plugins: ['react', '@typescript-eslint', 'prettier'],
+  plugins: ['@typescript-eslint', 'react', 'prettier', 'react-hooks', 'import'],
   rules: {
+    'import/no-unresolved': 'error',
     'react/react-in-jsx-scope': 'off',
     'import/no-extraneous-dependencies': 'off',
     'react-hooks/rules-of-hooks': 'error',
@@ -37,12 +44,22 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/no-var-reqiures': 'off',
     'react/jsx-uses-react': 'off',
-    'class-methods-use-this': 'off'
+    'class-methods-use-this': 'off',
+    'react/prefer-stateless-function': 'off',
   },
   'settings': {
     'react': {
       'pragma': 'React',
       'version': 'detect',
+    },
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
+    'import/resolver': {
+      'typescript': {
+        'alwaysTryTypes': true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+        'project': './tsconfig.json',
+      },
     },
   },
 };
