@@ -16,7 +16,7 @@ class LocalStorageClient {
   };
 
   public setSearchValue = (value: string) => {
-    localStorage.setItem('search-value', value);
+    localStorage.setItem('search-value', value.trim());
   };
 
   public getSearchValue = () => {

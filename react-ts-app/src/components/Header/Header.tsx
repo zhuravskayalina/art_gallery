@@ -3,7 +3,6 @@ import Navigation from '../Navigation/Navigation';
 import styles from './header.module.scss';
 
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
-import SearchBar from '../SearchBar/SearchBar';
 
 class Header extends React.Component {
   render() {
@@ -15,7 +14,6 @@ class Header extends React.Component {
             <span>cultured kid.</span>
           </div>
           <Navigation />
-          <SearchBar />
         </div>
       </header>
     );

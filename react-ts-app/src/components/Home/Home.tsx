@@ -1,11 +1,12 @@
 import React from 'react';
+import SearchBar from '../SearchBar/SearchBar';
 
 class Home extends React.Component {
   render() {
     return (
       <main>
         <section>
-          <input type="text" placeholder="Search" />
+          <SearchBar />
         </section>
       </main>
     );

@@ -20,9 +20,16 @@ class SearchBar extends Component<SearchBarProps, State> {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  public componentWillUnmount() {
+    const { inputValue } = this.state;
+
+    if (inputValue) {
+      localStorageClient.setSearchValue(inputValue);
+    }
+  }
+
   handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     this.setState({ inputValue: event.target.value });
-    localStorageClient.setSearchValue(event.target.value);
   }
 
   render() {
@@ -34,6 +41,7 @@ class SearchBar extends Component<SearchBarProps, State> {
           className={styles.searchInput}
           value={inputValue}
           onChange={this.handleChange}
+          placeholder="Search"
         />
         <SearchIcon className={styles.searchIcon} />
       </div>
