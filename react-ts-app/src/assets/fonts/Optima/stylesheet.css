@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Optima LT Std';
+    src: url('OptimaLTStd.woff2') format('woff2'),
+        url('OptimaLTStd.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Optima LT Std';
+    src: url('OptimaLTStd.woff2') format('woff2'),
+        url('OptimaLTStd.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Optima LT Std';
+    src: url('OptimaLTStd-Italic.woff2') format('woff2'),
+        url('OptimaLTStd-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+

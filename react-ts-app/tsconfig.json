@@ -23,7 +23,7 @@
     "./src/**/*",
     "styled.d.ts",
     "vite.config.ts",
-    ".eslintrc.cjs"
+    ".eslintrc.cjs",
   ],
   "references": [
     {

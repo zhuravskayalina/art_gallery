@@ -1,0 +1,35 @@
+@use './src/stylesheets/variables/colors';
+
+.search {
+  position: relative;
+
+  &-input {
+    height: 25px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 8px 22px 8px 8px;
+    width: 130px;
+    color: colors.$gray;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    height: 15px;
+
+    path {
+      stroke-width: 1px;
+    }
+  }
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+

@@ -1,0 +1,22 @@
+@use "./src/stylesheets/mixins/mixins";
+
+.header {
+  @include mixins.center-content;
+  font-family: 'karla', sans-serif;
+  padding: 40px 0;
+}
+
+.container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  gap: 5px;
+  font-size: 20px;
+  line-height: 140%;
+  @include mixins.center-content;
+}

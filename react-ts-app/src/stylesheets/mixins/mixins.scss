@@ -1,0 +1,11 @@
+@mixin center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin link-style-reset {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
