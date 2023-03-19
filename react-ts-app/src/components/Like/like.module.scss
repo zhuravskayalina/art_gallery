@@ -18,6 +18,10 @@
 
     &_liked {
     }
+
+    &:focus-visible {
+      outline: none;
+    }
   }
 
   &__icon {
