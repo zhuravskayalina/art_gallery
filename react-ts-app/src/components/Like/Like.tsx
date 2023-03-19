@@ -29,7 +29,7 @@ class Like extends Component<LikeProps, LikeState> {
       <div className={styles.like}>
         <button
           type="button"
-          className={isLiked ? 'btn-liked' : styles.like__btn}
+          className={isLiked ? `btn-liked ${styles.like__btn}` : styles.like__btn}
           onClick={this.handleLike}
           aria-describedby="like-button"
         >
