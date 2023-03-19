@@ -14,7 +14,7 @@ class NavItem extends React.Component<NavItemProps> {
     return (
       <li className={styles.navItem}>
         <NavLink
-          to={`/${url}`}
+          to={`${url}`}
           className={({ isActive }) =>
             isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink
           }
