@@ -21,4 +21,9 @@
   font-size: 20px;
   line-height: 140%;
   @include mixins.center-content;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
+
