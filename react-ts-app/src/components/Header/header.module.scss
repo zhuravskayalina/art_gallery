@@ -21,6 +21,7 @@
   font-size: 20px;
   line-height: 140%;
   @include mixins.center-content;
+  @include mixins.link-style-reset;
 
   &:hover {
     cursor: pointer;

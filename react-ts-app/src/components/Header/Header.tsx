@@ -14,6 +14,7 @@ class Header extends React.Component {
             <Logo />
             <span>cultured kid.</span>
           </Link>
+          <Link to="apple.com">hi</Link>
           <Navigation />
         </div>
       </header>
