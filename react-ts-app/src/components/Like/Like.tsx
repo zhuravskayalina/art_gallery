@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { ReactComponent as LikeIcon } from '../../assets/icons/like.svg';
 import styles from './like.module.scss';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface LikeProps {}
 
 type LikeState = {

@@ -46,7 +46,8 @@ module.exports = {
     'react/jsx-uses-react': 'off',
     'class-methods-use-this': 'off',
     'react/prefer-stateless-function': 'off',
-    'react/destructuring-assignment': 'off'
+    'react/destructuring-assignment': 'off',
+    '@typescript-eslint/no-empty-interface': 'off'
   },
   'settings': {
     'react': {
