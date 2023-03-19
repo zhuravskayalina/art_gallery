@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import styles from './search-bar.module.scss';
 import { ReactComponent as SearchIcon } from '../../assets/icons/search.svg';
 import localStorageClient from '../../LocalStorageClient/LocalStorageClient';
-
-interface SearchBarProps {}
+import { SearchBarProps } from './types';
 
 type State = {
   inputValue: string | undefined;

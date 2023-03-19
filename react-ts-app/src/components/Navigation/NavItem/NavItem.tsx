@@ -1,11 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './nav-item.module.scss';
-
-interface NavItemProps {
-  title: string;
-  url: string;
-}
+import { NavItemProps } from './types';
 
 class NavItem extends React.Component<NavItemProps> {
   render() {
