@@ -3,7 +3,6 @@ import styles from './search-bar.module.scss';
 import { ReactComponent as SearchIcon } from '../../assets/icons/search.svg';
 import localStorageClient from '../../LocalStorageClient/LocalStorageClient';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface SearchBarProps {}
 
 type State = {
@@ -17,7 +16,7 @@ class SearchBar extends Component<SearchBarProps, State> {
     const searchValue = localStorageClient.getSearchValue();
 
     this.state = { inputValue: searchValue || '' };
-    // this.handleChange = this.handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   public componentWillUnmount() {
@@ -30,7 +29,7 @@ class SearchBar extends Component<SearchBarProps, State> {
     }
   }
 
-  private handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  private readonly handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({ inputValue: event.target.value });
   };
 
