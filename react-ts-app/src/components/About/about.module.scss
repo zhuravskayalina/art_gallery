@@ -1,0 +1,29 @@
+@use './src/stylesheets/variables/colors';
+@use './src/stylesheets/variables/numbers';
+@use './src/stylesheets/mixins/mixins';
+
+.main {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+
+  &__container {
+    width: 80%;
+    @include mixins.flex-column;
+    gap: 30px;
+  }
+
+  &__heading {
+    font-size: 40px;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__history {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+}

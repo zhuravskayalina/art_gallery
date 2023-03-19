@@ -2,7 +2,7 @@ import React from 'react';
 import Navigation from '../Navigation/Navigation';
 import styles from './header.module.scss';
 
-import { ReactComponent as Logo } from '../../assets/images/logo.svg';
+import { ReactComponent as Logo } from '../../../public/logo.svg';
 
 class Header extends React.Component {
   render() {

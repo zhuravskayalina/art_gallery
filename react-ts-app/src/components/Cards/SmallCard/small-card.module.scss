@@ -1,0 +1,52 @@
+@use './src/stylesheets/variables/colors';
+@use './src/stylesheets/variables/numbers';
+@use './src/stylesheets/mixins/mixins';
+
+.small-card {
+  font-family: 'Optima LT Std', sans-serif;
+  padding: 10px;
+  border-radius: numbers.$small-border-radius;
+  transition: .3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: colors.$offWhiteLighter;
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__info-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+
+  &__info {
+    @include mixins.flex-column;
+    gap: 5px;
+  }
+
+  &__name {
+    font-weight: bold;
+    font-style: normal;
+    font-size: 16px;
+  }
+
+  &__author,
+  &__details {
+    color: colors.$gray;
+    font-size: 14px;
+  }
+
+  &__details {
+    font-style: italic;
+  }
+
+}

@@ -1,5 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;600;700&display=swap');
 @import url('./assets/fonts/Optima/stylesheet.css');
+
+html,
+body {
+  font-family: 'Optima LT Std', sans-serif;
+  height: 100%;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
 * {
   box-sizing: border-box;

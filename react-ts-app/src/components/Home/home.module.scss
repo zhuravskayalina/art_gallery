@@ -1,0 +1,30 @@
+@use "./src/stylesheets/mixins/mixins";
+@use "./src/stylesheets/variables/colors";
+
+.main {
+  @include mixins.center-content;
+  margin-top: 50px;
+  flex: 1 1 auto;
+  margin-bottom: 100px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 90%;
+  }
+
+  &__heading {
+    font-size: 52px;
+    font-weight: normal;
+  }
+}
+
+.search-bar {
+  font-family: 'Optima LT Std', sans-serif;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}

@@ -26,6 +26,10 @@ class LocalStorageClient {
     }
     return null;
   };
+
+  public removeSearchValue = () => {
+    localStorage.removeItem('search-value');
+  };
 }
 
 const LocalStorage = new LocalStorageClient();

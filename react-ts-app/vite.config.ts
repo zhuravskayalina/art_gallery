@@ -16,11 +16,15 @@ export default defineConfig({
     setupFiles: ['./src/setupTests.ts'],
     coverage: {
       provider: 'istanbul',
+      all: true,
+      enabled: true,
+      reporter: ['text'],
+      include: ['**/*.{jsx,tsx}'],
     },
   },
   css: {
     modules: {
-      localsConvention: 'camelCaseOnly',
+      localsConvention: 'camelCase',
     },
   },
 });

@@ -1,0 +1,12 @@
+@use './src/stylesheets/mixins/mixins';
+
+.cards {
+  @include mixins.center-content;
+
+  &__container {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}

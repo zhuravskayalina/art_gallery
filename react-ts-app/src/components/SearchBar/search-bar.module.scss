@@ -7,10 +7,11 @@
   &-input {
     height: 25px;
     border-radius: 10px;
-    border: 1px solid black;
-    padding: 8px 22px 8px 8px;
+    border: 1px solid colors.$gray;
+    padding: 11px 22px 8px 8px;
     width: 130px;
-    color: colors.$gray;
+    color: colors.$lightGray;
+    font-family: 'Optima LT Std', sans-serif;
 
     &:focus-visible {
       outline: none;
