@@ -21,6 +21,7 @@
   line-height: 140%;
   @include mixins.center-content;
   @include mixins.link-style-reset;
+  display: flex;
 
   &:hover {
     cursor: pointer;
