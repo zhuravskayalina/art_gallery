@@ -6,7 +6,7 @@
   font-family: 'Optima LT Std', sans-serif;
   padding: 10px;
   border-radius: numbers.$small-border-radius;
-  transition: .3s;
+  transition: 0.3s;
 
   &:hover {
     transform: scale(1.05);
@@ -48,5 +48,4 @@
   &__details {
     font-style: italic;
   }
-
 }

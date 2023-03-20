@@ -3,7 +3,7 @@ module.exports = {
     'browser': true,
     'es6': true,
     'jest': true,
-    'node': true,
+    'node': true
   },
   extends: [
     'airbnb',
@@ -12,7 +12,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
-    'plugin:prettier/recommended',
+    'plugin:prettier/recommended'
   ],
   overrides: [],
   parser: '@typescript-eslint/parser',
@@ -21,8 +21,8 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json',
     'ecmaFeatures': {
-      'jsx': true,
-    },
+      'jsx': true
+    }
   },
   plugins: ['@typescript-eslint', 'react', 'prettier', 'react-hooks', 'import'],
   rules: {
@@ -52,16 +52,16 @@ module.exports = {
   'settings': {
     'react': {
       'pragma': 'React',
-      'version': 'detect',
+      'version': 'detect'
     },
     'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
+      '@typescript-eslint/parser': ['.ts', '.tsx']
     },
     'import/resolver': {
       'typescript': {
         'alwaysTryTypes': true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
-        'project': './tsconfig.json',
-      },
-    },
-  },
+        'project': './tsconfig.json'
+      }
+    }
+  }
 };

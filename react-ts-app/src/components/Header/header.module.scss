@@ -1,5 +1,5 @@
-@use "./src/stylesheets/mixins/mixins";
-@use "./src/stylesheets/variables/colors";
+@use './src/stylesheets/mixins/mixins';
+@use './src/stylesheets/variables/colors';
 
 .header {
   @include mixins.center-content;
@@ -27,4 +27,3 @@
     cursor: pointer;
   }
 }
-
