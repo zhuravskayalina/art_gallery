@@ -47,7 +47,8 @@ module.exports = {
     'class-methods-use-this': 'off',
     'react/prefer-stateless-function': 'off',
     'react/destructuring-assignment': 'off',
-    '@typescript-eslint/no-empty-interface': 'off'
+    '@typescript-eslint/no-empty-interface': 'off',
+    'react/button-has-type': 'off'
   },
   'settings': {
     'react': {
