@@ -1,0 +1,139 @@
+@use './src/stylesheets/variables/colors';
+@use './src/stylesheets/mixins/mixins';
+
+.form {
+  @include mixins.flex-column;
+  gap: 20px;
+  background-color: colors.$offWhiteLighter;
+  font-family: Karla, sans-serif;
+  padding: 30px;
+  border-radius: 20px;
+  margin-top: 30px;
+
+  &__checkboxes {
+    @include mixins.flex-column;
+    gap: 5px;
+  }
+
+  &__controls {
+    @include mixins.flex-column;
+    gap: 10px;
+  }
+
+  &__select {
+    display: flex;
+  }
+
+  &__btn {
+    padding: 12px;
+    border-radius: 16px;
+    background-color: white;
+    border: 1px solid #8d8d8d;
+    text-transform: uppercase;
+    transition: 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      background: colors.$transparent-gray;
+      color: white;
+      border-color: colors.$transparent-gray;
+    }
+  }
+}
+
+.list {
+  list-style: none;
+  @include mixins.flex-column;
+
+  &__item {
+    border-bottom: 1px solid colors.$offWhite;
+    padding: 15px 0;
+    width: 100%;
+    display: block;
+
+    &_textarea {
+      @include mixins.flex-column;
+      gap: 10px;
+    }
+
+    &_select,
+    &_date,
+    &_upload,
+    &_switcher,
+    &_radio {
+      display: flex;
+      gap: 20px;
+    }
+
+    &_checkboxes {
+      @include mixins.flex-column;
+      gap: 10px;
+    }
+  }
+}
+
+.textarea {
+  width: 100%;
+  max-width: 100%;
+  max-height: 300px;
+  height: 200px;
+  resize: none;
+  border: none;
+  border-radius: 6px;
+  padding: 20px;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.error {
+  border-bottom: 1px solid red;
+}
+
+.submit-message {
+  font-family: Karla, sans-serif;
+  color: colors.$lightGreen;
+  font-weight: bold;
+  text-align: center;
+  font-size: 25px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.switch-box {
+  display: flex;
+}
+
+.switch-box input {
+  display: none;
+}
+
+.switch-box label {
+  background-color: colors.$white;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  padding: 6px 14px;
+  border: 1px solid transparent;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.switch-box input:checked + label {
+  background-color: colors.$brightGreen;
+}
+
+.switch-box label:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.switch-box label:last-of-type {
+  border-radius: 0 4px 4px 0;
+}

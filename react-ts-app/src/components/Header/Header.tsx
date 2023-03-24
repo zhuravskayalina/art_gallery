@@ -15,6 +15,10 @@ const navItems: NavigationItem[] = [
     url: 'about',
     title: 'about us',
   },
+  {
+    url: 'feedback',
+    title: 'feedback',
+  },
 ];
 
 class Header extends React.Component<HeaderProps, HeaderState> {

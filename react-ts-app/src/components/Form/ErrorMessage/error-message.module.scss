@@ -1,0 +1,7 @@
+@use './src/stylesheets/variables/colors';
+
+.error {
+  font-weight: bold;
+  margin-top: 10px;
+  color: colors.$red;
+}

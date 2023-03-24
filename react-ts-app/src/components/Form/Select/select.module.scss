@@ -1,0 +1,9 @@
+@use './src/stylesheets/variables/colors';
+
+.select {
+  flex-grow: 1;
+
+  &:focus-visible {
+    outline-color: colors.$beige;
+  }
+}

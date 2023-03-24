@@ -48,7 +48,19 @@ module.exports = {
     'react/prefer-stateless-function': 'off',
     'react/destructuring-assignment': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
-    'react/button-has-type': 'off'
+    'react/button-has-type': 'off',
+    "@typescript-eslint/lines-between-class-members": 'off',
+    "react/no-unescaped-entities": 'off',
+    "jsx-a11y/label-has-associated-control": ["error", {
+      "required": {
+        "some": ["nesting", "id"]
+      }
+    }],
+    "jsx-a11y/label-has-for": ["error", {
+      "required": {
+        "some": ["nesting", "id"]
+      }
+    }]
   },
   'settings': {
     'react': {
@@ -60,7 +72,7 @@ module.exports = {
     },
     'import/resolver': {
       'typescript': {
-        'alwaysTryTypes': true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+        'alwaysTryTypes': true,
         'project': './tsconfig.json'
       }
     }

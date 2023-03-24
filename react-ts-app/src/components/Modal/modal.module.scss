@@ -1,0 +1,32 @@
+@use './src/stylesheets/variables/colors';
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  background: colors.$transparent-black;
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+
+  &_open {
+    opacity: 1;
+  }
+
+  &__container {
+    background-color: colors.$white;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: fit-content;
+    position: relative;
+  }
+}
