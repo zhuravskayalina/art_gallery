@@ -13,6 +13,7 @@ import { CheckboxData, FormProps, FormState, RadioButton } from './types';
 import dateClient from '../../DateClient/DateClient';
 import Cards from './Cards/Cards';
 import Modal from '../Modal/Modal';
+import Button from './Button/Button';
 
 const cx = classNames.bind(styles);
 
@@ -208,7 +209,7 @@ class Form extends Component<FormProps, FormState> {
 
   validateUserFeedback = () => {
     const value = this.feedback.current?.value;
-    if (!value?.trim() || value?.trim().length < 1) {
+    if (!value?.trim() || value?.trim().length < 10) {
       this.setState({
         feedbackError: true,
       });
@@ -316,7 +317,7 @@ class Form extends Component<FormProps, FormState> {
               <p>Write a comment:</p>
               <textarea name="comment" className={cx('textarea')} ref={this.feedback} />
               {this.state.feedbackError && (
-                <ErrorMessage text="Feedback should be longer than 50 symbols" />
+                <ErrorMessage text="Feedback should be longer than 10 symbols" />
               )}
             </li>
             <li className={cx('list__item')}>
@@ -369,12 +370,8 @@ class Form extends Component<FormProps, FormState> {
             </li>
           </ul>
           <div className={cx('form__controls')}>
-            <button type="reset" className={cx('form__btn')}>
-              Reset
-            </button>
-            <button type="submit" className={cx('form__btn')}>
-              Submit
-            </button>
+            <Button type="reset" title="reset" />
+            <Button type="submit" title="submit" />
           </div>
         </form>
         {this.state.cards.length > 0 && <Cards cards={this.state.cards} />}
