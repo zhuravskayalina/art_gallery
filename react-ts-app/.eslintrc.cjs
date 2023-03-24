@@ -14,7 +14,12 @@ module.exports = {
     'prettier',
     'plugin:prettier/recommended'
   ],
-  overrides: [],
+  overrides: [
+    {
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      extends: ['plugin:testing-library/react']
+    }
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -24,7 +29,7 @@ module.exports = {
       'jsx': true
     }
   },
-  plugins: ['@typescript-eslint', 'react', 'prettier', 'react-hooks', 'import'],
+  plugins: ['@typescript-eslint', 'react', 'prettier', 'react-hooks', 'import', 'testing-library'],
   rules: {
     'import/no-unresolved': 'error',
     'react/react-in-jsx-scope': 'off',
@@ -60,7 +65,11 @@ module.exports = {
       "required": {
         "some": ["nesting", "id"]
       }
-    }]
+    }],
+    "testing-library/await-async-query": "error",
+    "testing-library/no-await-sync-query": "error",
+    "testing-library/no-debugging-utils": "warn",
+    "testing-library/no-dom-import": "off"
   },
   'settings': {
     'react': {
