@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import classNames from 'classnames/bind';
 import Navigation from '../Navigation/Navigation';
 import styles from './header.module.scss';
 
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 import { HeaderProps, HeaderState, NavigationItem } from './types';
+
+const cx = classNames.bind(styles);
 
 const navItems: NavigationItem[] = [
   {
@@ -38,9 +41,9 @@ class Header extends React.Component<HeaderProps, HeaderState> {
 
   render() {
     return (
-      <header className={styles.header}>
-        <div className={styles.container}>
-          <Link to="/" className={styles.logo}>
+      <header className={cx('header')}>
+        <div className={cx('header__container')}>
+          <Link to="/" className={cx('header__logo')}>
             <Logo />
             <span>cultured kid.</span>
           </Link>

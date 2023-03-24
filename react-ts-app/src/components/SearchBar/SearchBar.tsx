@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import classNames from 'classnames/bind';
 import styles from './search-bar.module.scss';
 import { ReactComponent as SearchIcon } from '../../assets/icons/search.svg';
 import localStorageClient from '../../LocalStorageClient/LocalStorageClient';
 import { SearchBarProps } from './types';
+
+const cx = classNames.bind(styles);
 
 type State = {
   inputValue: string | undefined;
@@ -35,16 +38,16 @@ class SearchBar extends Component<SearchBarProps, State> {
   render() {
     const { inputValue } = this.state;
     return (
-      <div className={styles.search}>
+      <div className={cx('search')}>
         <input
           data-testid="search-input"
           type="search"
-          className={styles.searchInput}
+          className={cx('search__input')}
           value={inputValue}
           onChange={this.handleChange}
           placeholder="Search"
         />
-        <SearchIcon className={styles.searchIcon} />
+        <SearchIcon className={cx('search__icon')} />
       </div>
     );
   }

@@ -1,10 +1,11 @@
 @use './src/stylesheets/variables/colors';
+@use './src/stylesheets/mixins/mixins';
 
 .search {
   position: relative;
   width: fit-content;
 
-  &-input {
+  &__input {
     height: 25px;
     border-radius: 10px;
     border: 1px solid colors.$gray;

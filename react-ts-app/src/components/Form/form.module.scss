@@ -69,6 +69,14 @@
       @include mixins.flex-column;
       gap: 10px;
     }
+
+    &_select,
+    &_radio {
+      @media screen and (max-width: 500px) {
+        @include mixins.flex-column;
+        gap: 10px;
+      }
+    }
   }
 }
 

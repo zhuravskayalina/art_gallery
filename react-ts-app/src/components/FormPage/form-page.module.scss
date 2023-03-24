@@ -6,6 +6,10 @@
   &__container {
     width: 60%;
     margin-top: 40px;
+
+    @media screen and (max-width: 900px){
+      width: 90%;
+    }
   }
 
   &__heading {
