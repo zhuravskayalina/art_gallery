@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import classNames from 'classnames/bind';
 import styles from './cards.module.scss';
 import SmallCard from './SmallCard/SmallCard';
-import paintings from '../../db/dataBase';
+import { CardsProps } from './types';
 
 const cx = classNames.bind(styles);
 
-class Cards extends Component {
+class Cards extends Component<CardsProps> {
   render() {
     return (
       <section className={cx('cards')}>
-        <div className={cx('cards__container')}>
-          {paintings.map((painting) => (
+        <div className={cx('cards__container')} data-testid="cards">
+          {this.props.paintings.map((painting) => (
             <SmallCard
               key={painting.id}
               name={painting.name}

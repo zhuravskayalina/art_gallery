@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import SearchBar from '../SearchBar/SearchBar';
 import Cards from '../Cards/Cards';
 import styles from './home.module.scss';
+import paintings from '../../db/dataBase';
 
 const cx = classNames.bind(styles);
 
@@ -16,7 +17,7 @@ class Home extends React.Component {
             <p>Looking for something special?</p>
             <SearchBar />
           </div>
-          <Cards />
+          <Cards paintings={paintings} />
         </section>
       </main>
     );
