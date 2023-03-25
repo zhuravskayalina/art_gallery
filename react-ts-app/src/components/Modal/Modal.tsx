@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 class Modal extends Component<ModalProps> {
   render() {
     return (
-      <div className={cx('modal', { modal_open: this.props.showModal })}>
+      <div className={cx('modal', 'modal_open')}>
         <div className={cx('modal__container')}>{this.props.children}</div>
       </div>
     );

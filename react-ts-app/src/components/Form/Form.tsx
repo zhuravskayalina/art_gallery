@@ -301,7 +301,13 @@ class Form extends Component<FormProps, FormState> {
   render() {
     return (
       <>
-        <form method="post" onSubmit={this.handleSubmit} className={cx('form')} ref={this.form}>
+        <form
+          name="feedbackForm"
+          method="post"
+          onSubmit={this.handleSubmit}
+          className={cx('form')}
+          ref={this.form}
+        >
           <ul className={cx('list')}>
             <li className={cx('list__item')}>
               <Input name="name" label="your name" type="text" ref={this.userName} />
@@ -314,15 +320,19 @@ class Form extends Component<FormProps, FormState> {
               {this.state.userEmailError && <ErrorMessage text="Please, write correct email" />}
             </li>
             <li className={cx('list__item', 'list__item_textarea')}>
-              <p>Write a comment:</p>
-              <textarea name="comment" className={cx('textarea')} ref={this.feedback} />
+              <label htmlFor="textarea">Write a comment:</label>
+              <textarea
+                id="textarea"
+                name="comment"
+                className={cx('textarea')}
+                ref={this.feedback}
+              />
               {this.state.feedbackError && (
                 <ErrorMessage text="Feedback should be longer than 10 symbols" />
               )}
             </li>
             <li className={cx('list__item')}>
               <div className={cx('list__item_select')}>
-                <p>Most impressive art work:</p>
                 <Select
                   validateChosenArtwork={this.validateChosenArtwork}
                   ref={this.artworkChoice}
@@ -375,9 +385,11 @@ class Form extends Component<FormProps, FormState> {
           </div>
         </form>
         {this.state.cards.length > 0 && <Cards cards={this.state.cards} />}
-        <Modal showModal={this.state.submit}>
-          <p className={cx('submit-message')}>Thank you! Your feedback has been saved.</p>
-        </Modal>
+        {this.state.submit && (
+          <Modal>
+            <p className={cx('submit-message')}>Thank you! Your feedback has been saved.</p>
+          </Modal>
+        )}
       </>
     );
   }
