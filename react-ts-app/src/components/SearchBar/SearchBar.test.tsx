@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import SearchBar from '../components/SearchBar/SearchBar';
-import localStorageClient from '../LocalStorageClient/LocalStorageClient';
+import SearchBar from './SearchBar';
+import localStorageClient from '../../LocalStorageClient/LocalStorageClient';
 
 describe('SearchBar', () => {
   it('input focus', () => {
