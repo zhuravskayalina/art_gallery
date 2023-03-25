@@ -13,7 +13,7 @@ class SmallCard extends Component<SmallCardProps> {
   render() {
     const { name, author, image, info } = this.props;
     return (
-      <div className={styles.smallCard}>
+      <div className={styles.smallCard} data-testid="smallCard">
         <img src={image} alt={`${name} by ${author}`} className={styles.smallCardImage} />
         <div className={styles.smallCardInfoBox}>
           <div className={styles.smallCardInfo}>
