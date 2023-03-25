@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import classNames from 'classnames/bind';
 import { ReactComponent as LikeIcon } from '../../assets/icons/like.svg';
 import styles from './like.module.scss';
+
+const cx = classNames.bind(styles);
 
 interface LikeProps {}
 
@@ -26,18 +29,14 @@ class Like extends Component<LikeProps, LikeState> {
   render() {
     const { isLiked } = this.state;
     return (
-      <div className={styles.like}>
+      <div className={cx('like')}>
         <button
           type="button"
-          className={isLiked ? `btn-liked ${styles.like__btn}` : styles.like__btn}
+          className={cx('button', { button_liked: isLiked })}
           onClick={this.handleLike}
-          aria-describedby="like-button"
+          data-liked={isLiked}
         >
-          <LikeIcon
-            className={
-              isLiked ? `${styles.like__icon_liked} ${styles.like__icon}` : styles.like__icon
-            }
-          />
+          <LikeIcon className={cx('button__icon', { button__icon_liked: isLiked })} />
         </button>
       </div>
     );
