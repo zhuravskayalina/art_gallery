@@ -7,7 +7,7 @@
     width: 60%;
     margin-top: 40px;
 
-    @media screen and (max-width: 900px){
+    @media screen and (max-width: 900px) {
       width: 90%;
     }
   }
@@ -15,5 +15,6 @@
   &__heading {
     font-size: 30px;
     text-align: center;
+    font-weight: normal;
   }
 }

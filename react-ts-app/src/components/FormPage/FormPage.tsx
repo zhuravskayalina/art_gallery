@@ -10,9 +10,9 @@ class FormPage extends Component {
     return (
       <main className={cx('main')}>
         <div className={cx('main__container')}>
-          <p className={cx('main__heading')}>
+          <h2 className={cx('main__heading')}>
             Tell us about your experience at Cultured Kid Gallery:
-          </p>
+          </h2>
           <Form />
         </div>
       </main>
