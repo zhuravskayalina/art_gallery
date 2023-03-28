@@ -1,31 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
+import classNames from 'classnames/bind';
 import styles from './small-card.module.scss';
 import Like from '../../Like/Like';
+import { SmallCardProps } from './types';
 
-interface SmallCardProps {
-  name: string;
-  author: string;
-  image: string;
-  info: string;
-}
+const cx = classNames.bind(styles);
 
-class SmallCard extends Component<SmallCardProps> {
-  render() {
-    const { name, author, image, info } = this.props;
-    return (
-      <div className={styles.smallCard} data-testid="smallCard">
-        <img src={image} alt={`${name} by ${author}`} className={styles.smallCardImage} />
-        <div className={styles.smallCardInfoBox}>
-          <div className={styles.smallCardInfo}>
-            <p className={styles.smallCardName}>{name}</p>
-            <p className={styles.smallCardAuthor}>{author}</p>
-            <p className={styles.smallCardDetails}>{info}</p>
-          </div>
-          <Like />
+function SmallCard({ name, author, info, image }: SmallCardProps) {
+  return (
+    <div className={cx('small-card')} data-testid="smallCard">
+      <img src={image} alt={`${name} by ${author}`} className={cx('small-card__image')} />
+      <div className={cx('small-card__info-box')}>
+        <div className={cx('small-card__info')}>
+          <p className={cx('small-card__name')}>{name}</p>
+          <p className={cx('small-card__author')}>{author}</p>
+          <p className={cx('small-card__details')}>{info}</p>
         </div>
+        <Like />
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default SmallCard;
