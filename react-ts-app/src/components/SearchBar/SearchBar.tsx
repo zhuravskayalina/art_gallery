@@ -1,56 +1,43 @@
-import React, { Component } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './search-bar.module.scss';
 import { ReactComponent as SearchIcon } from '../../assets/icons/search.svg';
 import localStorageClient from '../../LocalStorageClient/LocalStorageClient';
-import { SearchBarProps } from './types';
 
 const cx = classNames.bind(styles);
 
-type State = {
-  inputValue: string | undefined;
-};
+function SearchBar() {
+  const [inputValue, setInputValue] = useState(localStorageClient.getSearchValue() || '');
+  const inputRef = useRef<string>();
 
-class SearchBar extends Component<SearchBarProps, State> {
-  constructor(props: SearchBarProps) {
-    super(props);
+  useEffect(() => {
+    inputRef.current = inputValue;
+  }, [inputValue]);
 
-    const searchValue = localStorageClient.getSearchValue();
+  useEffect(() => {
+    return () => {
+      localStorageClient.setSearchValue(inputRef.current || '');
+    };
+  }, []);
 
-    this.state = { inputValue: searchValue || '' };
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  public componentWillUnmount() {
-    const { inputValue } = this.state;
-
-    if (inputValue) {
-      localStorageClient.setSearchValue(inputValue);
-    } else {
-      localStorageClient.removeSearchValue();
-    }
-  }
-
-  private readonly handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({ inputValue: event.target.value });
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
+    inputRef.current = event.target.value;
   };
 
-  render() {
-    const { inputValue } = this.state;
-    return (
-      <div className={cx('search')}>
-        <input
-          data-testid="search-input"
-          type="search"
-          className={cx('search__input')}
-          value={inputValue}
-          onChange={this.handleChange}
-          placeholder="Search"
-        />
-        <SearchIcon className={cx('search__icon')} />
-      </div>
-    );
-  }
+  return (
+    <div className={cx('search')}>
+      <input
+        data-testid="search-input"
+        type="search"
+        className={cx('search__input')}
+        value={inputValue}
+        onChange={handleChange}
+        placeholder="Search"
+      />
+      <SearchIcon className={cx('search__icon')} />
+    </div>
+  );
 }
 
 export default SearchBar;
