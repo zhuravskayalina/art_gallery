@@ -26,6 +26,5 @@ export interface CardData {
 }
 
 export interface FormProps {
-  cards: CardData[];
   setCards: React.Dispatch<React.SetStateAction<CardData[]>>;
 }

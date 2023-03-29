@@ -16,7 +16,7 @@ const FormPage = () => {
         <h2 className={cx('main__heading')}>
           Tell us about your experience at Cultured Kid Gallery:
         </h2>
-        <Form cards={cards} setCards={setCards} />
+        <Form setCards={setCards} />
         {cards && <FormCards cards={cards} />}
       </div>
     </main>
