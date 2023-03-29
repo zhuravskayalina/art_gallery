@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import FormCard from './FormCard';
-import { exampleCards } from '../../../tests/testsDataBase';
+import exampleCards from '../../../tests/testsDataBase';
 
 describe('Card', () => {
   it('have the following elements', () => {
