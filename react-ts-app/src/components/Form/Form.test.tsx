@@ -1,22 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Form from './Form';
-import exampleImage from '../../assets/images/gallery1.jpeg';
-
-const exampleCards = [
-  {
-    id: 2,
-    userName: 'Lola',
-    userEmail: 'lola@gmail.com',
-    feedback: 'Hi! I am feedback!',
-    visitDate: '02.03.2023',
-    photo: exampleImage,
-    isAnonymously: true,
-    favouriteArtwork: `"Innocence" Ria Arante`,
-    likeCheckboxes: ['nice lightning'],
-    isWantPostcard: 'yes',
-  },
-];
 
 describe('Form', () => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -24,7 +8,7 @@ describe('Form', () => {
   window.URL.createObjectURL = () => {};
 
   it('have all fields', () => {
-    render(<Form cards={exampleCards} setCards={() => {}} />);
+    render(<Form setCards={() => {}} />);
     expect(screen.getByRole('form', { name: '' })).toBeInTheDocument();
     expect(screen.getByRole('list', { name: '' })).toBeInTheDocument();
     expect(screen.getByRole('textbox', { name: /your name/i })).toBeInTheDocument();
@@ -52,7 +36,7 @@ describe('Form', () => {
 
   it('submit with empty fields', async () => {
     const user = userEvent.setup();
-    render(<Form cards={[]} setCards={() => {}} />);
+    render(<Form setCards={() => {}} />);
     const submitButton = screen.getByRole('button', {
       name: /submit/i,
     });
@@ -65,7 +49,7 @@ describe('Form', () => {
   it('submit with full fields', async () => {
     const user = userEvent.setup();
 
-    render(<Form cards={exampleCards} setCards={() => {}} />);
+    render(<Form setCards={() => {}} />);
 
     const name = screen.getByRole('textbox', { name: /your name/i });
     const email = screen.getByRole('textbox', { name: /your email/i });
