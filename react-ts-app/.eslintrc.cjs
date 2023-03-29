@@ -56,6 +56,8 @@ module.exports = {
     'react/button-has-type': 'off',
     "@typescript-eslint/lines-between-class-members": 'off',
     "react/no-unescaped-entities": 'off',
+    "react/jsx-props-no-spreading": 'off',
+    "react/function-component-definition": "off",
     "jsx-a11y/label-has-associated-control": ["error", {
       "required": {
         "some": ["nesting", "id"]

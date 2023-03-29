@@ -5,7 +5,7 @@ import { CardProps } from './types';
 
 const cx = classNames.bind(styles);
 
-class Card extends Component<CardProps> {
+class FormCard extends Component<CardProps> {
   render() {
     const {
       userName,
@@ -13,7 +13,7 @@ class Card extends Component<CardProps> {
       favouriteArtwork,
       visitDate,
       photo,
-      whatLikeAboutGallery,
+      likeCheckboxes,
       isWantPostcard,
       isAnonymously,
     } = this.props.card;
@@ -34,14 +34,14 @@ class Card extends Component<CardProps> {
         <div className={cx('notes')}>
           <p className={cx('notes__heading')}>What {name} likes about gallery:</p>
           <ul className={cx('notes-list')}>
-            {whatLikeAboutGallery.map((item) => (
+            {likeCheckboxes.map((item) => (
               <li key={item} className={cx('notes-list__item')}>
                 {item}
               </li>
             ))}
           </ul>
         </div>
-        {isWantPostcard && (
+        {isWantPostcard === 'yes' && (
           <p className={cx('postcard')}>
             {name} has got our postcard! Do you want one? Leave a feedback!
           </p>
@@ -51,4 +51,4 @@ class Card extends Component<CardProps> {
   }
 }
 
-export default Card;
+export default FormCard;

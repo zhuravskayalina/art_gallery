@@ -1,11 +1,18 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import { RadioProps } from './types';
 
-const Radio = forwardRef<HTMLInputElement, RadioProps>(({ name, value, title }, ref) => (
-  <>
-    <input type="radio" name={name} id={value} ref={ref} />
-    <label htmlFor={value}>{title}</label>
-  </>
-));
+const Radio = ({ title, value, register }: RadioProps) => {
+  return (
+    <>
+      <input
+        type="radio"
+        id={value}
+        {...register('isWantPostcard', { required: true })}
+        value={value}
+      />
+      <label htmlFor={value}>{title}</label>
+    </>
+  );
+};
 
 export default Radio;

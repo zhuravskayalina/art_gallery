@@ -1,16 +1,18 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import { FileUploadProps } from './types';
 
-const FileUpload = forwardRef<HTMLInputElement, FileUploadProps>((props, ref) => (
-  <label>
-    <input
-      type="file"
-      name="file"
-      onChange={props.handleFileUpload}
-      ref={ref}
-      data-testid="fileInput"
-    />
-  </label>
-));
-
+const FileUpload = ({ register }: FileUploadProps) => {
+  return (
+    <label>
+      <input
+        type="file"
+        accept="image/*"
+        data-testid="fileInput"
+        {...register('photo', {
+          required: true,
+        })}
+      />
+    </label>
+  );
+};
 export default FileUpload;
