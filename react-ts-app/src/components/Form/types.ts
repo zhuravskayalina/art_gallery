@@ -16,6 +16,7 @@ export interface FormValues extends FormData {
 }
 
 export interface CardData extends FormData {
+  id: number;
   photo: string;
 }
 
