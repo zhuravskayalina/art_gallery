@@ -1,5 +1,4 @@
 import classNames from 'classnames/bind';
-import React from 'react';
 import { UseFormRegister } from 'react-hook-form';
 import styles from './textarea.module.scss';
 import { FormValues } from '../types';

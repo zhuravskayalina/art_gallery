@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './form-page.module.scss';
 import Form from '../Form/Form';

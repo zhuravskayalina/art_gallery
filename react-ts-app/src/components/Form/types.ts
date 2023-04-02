@@ -1,4 +1,4 @@
-import React from 'react';
+import { Dispatch, SetStateAction } from 'react';
 
 interface FormData {
   userName: string;
@@ -21,5 +21,5 @@ export interface CardData extends FormData {
 }
 
 export interface FormProps {
-  setCards: React.Dispatch<React.SetStateAction<CardData[]>>;
+  setCards: Dispatch<SetStateAction<CardData[]>>;
 }

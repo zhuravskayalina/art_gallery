@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import styles from './about.module.scss';
 import galleryImg from '../../assets/images/gallery.jpeg';
 import galleryImg1 from '../../assets/images/gallery1.jpeg';

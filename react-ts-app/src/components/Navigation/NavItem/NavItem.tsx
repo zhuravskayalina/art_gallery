@@ -1,9 +1,9 @@
-import React from 'react';
+import { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './nav-item.module.scss';
 import { NavItemProps } from './types';
 
-class NavItem extends React.Component<NavItemProps> {
+class NavItem extends Component<NavItemProps> {
   render() {
     const { title, url, showCurrentPageName } = this.props;
 

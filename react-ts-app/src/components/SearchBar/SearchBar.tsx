@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './search-bar.module.scss';
 import { ReactComponent as SearchIcon } from '../../assets/icons/search.svg';

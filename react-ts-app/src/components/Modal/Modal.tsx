@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import classNames from 'classnames/bind';
 import styles from './modal.module.scss';
 import { ModalProps } from './types';

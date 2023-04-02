@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames/bind';
 import FormCard from '../FormCard/FormCard';
 import styles from './cards.module.scss';

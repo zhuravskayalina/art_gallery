@@ -1,4 +1,3 @@
-import React from 'react';
 import { FileUploadProps } from './types';
 
 const FileUpload = ({ register }: FileUploadProps) => {

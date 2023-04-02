@@ -1,5 +1,4 @@
 import classNames from 'classnames/bind';
-import React from 'react';
 import { UseFormRegister } from 'react-hook-form';
 import styles from './select.module.scss';
 import dataBase from '../../../db/dataBase';

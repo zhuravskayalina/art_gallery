@@ -1,4 +1,3 @@
-import React from 'react';
 import { RadioProps } from './types';
 
 const Radio = ({ title, value, register }: RadioProps) => {

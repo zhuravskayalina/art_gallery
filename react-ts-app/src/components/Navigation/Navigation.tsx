@@ -1,9 +1,9 @@
-import React from 'react';
+import { Component } from 'react';
 import styles from './navigation.module.scss';
 import NavItem from './NavItem/NavItem';
 import { NavigationProps } from './types';
 
-class Navigation extends React.Component<NavigationProps> {
+class Navigation extends Component<NavigationProps> {
   render() {
     const { items, showCurrentPageName } = this.props;
     return (

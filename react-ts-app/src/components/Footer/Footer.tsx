@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './footer.module.scss';
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';

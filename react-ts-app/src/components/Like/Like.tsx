@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import classNames from 'classnames/bind';
 import { ReactComponent as LikeIcon } from '../../assets/icons/like.svg';
 import styles from './like.module.scss';

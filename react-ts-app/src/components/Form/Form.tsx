@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import classNames from 'classnames/bind';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import styles from './form.module.scss';

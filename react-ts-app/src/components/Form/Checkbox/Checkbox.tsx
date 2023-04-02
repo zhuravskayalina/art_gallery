@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames/bind';
 import { CheckboxProps } from './types';
 import styles from './checkbox.module.scss';
