@@ -46,7 +46,10 @@ const Form = ({ setCards }: FormProps) => {
     formState: { errors },
     getValues,
     reset,
-  } = useForm<FormValues>();
+  } = useForm<FormValues>({
+    mode: 'onSubmit',
+    reValidateMode: 'onSubmit',
+  });
 
   const handleImageUpload = async (image: FileList) => {
     if (image[0]) {
@@ -98,7 +101,7 @@ const Form = ({ setCards }: FormProps) => {
         <ul className={cx('list')}>
           <li className={cx('list__item')}>
             <Input name="userName" label="Your Name" register={register} type="text" />
-            {errors.userName && <ErrorMessage text="Your name is less than 2 letters" />}
+            {errors.userName && <ErrorMessage text="Write correct name with a capital letter" />}
           </li>
           <li className={cx('list__item')}>
             <Input name="userEmail" label="Your Email" register={register} type="email" />
