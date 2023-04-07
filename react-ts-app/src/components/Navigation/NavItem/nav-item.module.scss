@@ -1,9 +1,6 @@
 @use '../../../stylesheets/mixins/mixins';
 @use '../../../stylesheets/variables/colors';
 
-.nav-item {
-}
-
 .nav-link {
   @include mixins.link-style-reset;
   font-size: 15px;
@@ -14,7 +11,7 @@
     border-bottom: 1px solid colors.$black;
   }
 
-  &-active {
+  &_active {
     border-bottom: 1px solid colors.$black;
   }
 }
