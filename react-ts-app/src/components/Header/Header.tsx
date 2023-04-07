@@ -14,6 +14,10 @@ const navItems: NavigationItem[] = [
     title: 'home',
   },
   {
+    url: 'exhibitions',
+    title: 'exhibitions',
+  },
+  {
     url: 'about',
     title: 'about us',
   },

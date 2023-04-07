@@ -6,6 +6,8 @@ import NotFound from './components/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
 import About from './components/About/About';
 import FormPage from './components/FormPage/FormPage';
+import Exhibition from './components/Exhibition/Exhibition';
+import RickAndMorty from './components/Exhibition/RickMorty/RickAndMorty';
 
 function App() {
   return (
@@ -15,6 +17,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/feedback" element={<FormPage />} />
+        <Route
+          path="/exhibitions"
+          element={
+            <Exhibition>
+              <RickAndMorty />
+            </Exhibition>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
