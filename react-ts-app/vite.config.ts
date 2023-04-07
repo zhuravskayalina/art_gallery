@@ -21,9 +21,4 @@ export default defineConfig({
       include: ['**/*.{jsx,tsx}'],
     },
   },
-  css: {
-    modules: {
-      localsConvention: 'camelCase',
-    },
-  },
 });
