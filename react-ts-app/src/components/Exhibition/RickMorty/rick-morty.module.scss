@@ -3,7 +3,8 @@
 .container {
   width: 80%;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .text {
@@ -16,4 +17,9 @@
   &__heading {
     font-size: 30px;
   }
+}
+
+.searchbar {
+  margin-top: 20px;
+  margin-left: auto;
 }
