@@ -1,0 +1,19 @@
+@use '../../../stylesheets/mixins/mixins';
+
+.container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  width: 75%;
+  @include mixins.flex-column;
+  gap: 20px;
+  align-items: center;
+  margin-top: 50px;
+
+  &__heading {
+    font-size: 30px;
+  }
+}
