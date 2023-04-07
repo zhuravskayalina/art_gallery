@@ -1,5 +1,5 @@
-@use './src/stylesheets/mixins/mixins';
-@use './src/stylesheets/variables/colors';
+@use '../../stylesheets/mixins/mixins';
+@use '../../stylesheets/variables/colors';
 
 .main {
   @include mixins.center-content;

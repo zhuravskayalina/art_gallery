@@ -1,4 +1,4 @@
-@use './src/stylesheets/mixins/mixins';
+@use '../../stylesheets/mixins/mixins';
 
 .cards {
   @include mixins.center-content;
