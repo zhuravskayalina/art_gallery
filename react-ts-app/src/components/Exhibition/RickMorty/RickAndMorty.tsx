@@ -3,17 +3,28 @@ import { useEffect, useState } from 'react';
 import styles from './rick-morty.module.scss';
 import SearchBar from '../../SearchBar/SearchBar';
 import { APIResponse, Character } from '../../../APIClient/types';
-import ApiClient from '../../../APIClient/APIClient';
 import Cards from './Cards/Cards';
 import Modal from '../../Modal/Modal';
 import BigCard from './BigCard/BigCard';
+import localStorageClient from '../../../LocalStorageClient/LocalStorageClient';
+import ApiClient from '../../../APIClient/APIClient';
+import Loader from '../../Loader/Loader';
 
 const cx = classNames.bind(styles);
+
+function LoaderBox(): JSX.Element {
+  return (
+    <div className={cx('loader-box')}>
+      <Loader />
+    </div>
+  );
+}
 
 const RickAndMortyExhibition = () => {
   const [characters, setCharacters] = useState<Character[]>();
   const [isModalActive, setModalActive] = useState(false);
   const [specificCharacter, setSpecificCharacter] = useState<Character>();
+  const [isLoadingSearch, setLoadingSearch] = useState(false);
 
   useEffect(() => {
     ApiClient.getCharacters().then((response: APIResponse) => {
@@ -27,6 +38,28 @@ const RickAndMortyExhibition = () => {
     ApiClient.getCharacter(id).then((character) => {
       setSpecificCharacter(character);
     });
+  };
+
+  const handleKeyDown = (searchValue: string) => {
+    localStorageClient.setSearchValue(searchValue.toLowerCase());
+    if (characters) {
+      if (searchValue) {
+        setLoadingSearch(true);
+        ApiClient.getCharacters().then((response) => {
+          const filtered = response.results.filter((item: Character) =>
+            item.name.toLowerCase().startsWith(searchValue)
+          );
+          setCharacters(filtered);
+          setLoadingSearch(false);
+        });
+      } else {
+        setLoadingSearch(true);
+        ApiClient.getCharacters().then((response) => {
+          setCharacters(response.results);
+          setLoadingSearch(false);
+        });
+      }
+    }
   };
 
   return (
@@ -47,15 +80,15 @@ const RickAndMortyExhibition = () => {
         </p>
       </div>
       <div className={cx('searchbar')}>
-        <SearchBar />
+        <SearchBar handleKeyDown={handleKeyDown} />
       </div>
-      {characters ? (
+      {characters && !isLoadingSearch ? (
         <Cards characters={characters} openCard={handleCardClick} />
       ) : (
-        <p>Loading...</p>
+        LoaderBox()
       )}
       <Modal active={isModalActive} setActive={setModalActive}>
-        {specificCharacter ? <BigCard character={specificCharacter} /> : <p>Loading...</p>}
+        {specificCharacter ? <BigCard character={specificCharacter} /> : LoaderBox()}
       </Modal>
     </div>
   );
