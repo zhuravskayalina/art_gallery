@@ -1,13 +1,16 @@
+@use '../../stylesheets/variables/colors';
+
 .loader {
   width: 48px;
   height: 48px;
-  border: 3px solid #FFF;
+  border: 3px solid colors.$black;
   border-radius: 50%;
   display: inline-block;
   position: relative;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
+
 .loader::after {
   content: '';
   box-sizing: border-box;
