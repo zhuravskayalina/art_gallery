@@ -39,6 +39,7 @@ const postcardRadioOptions = [
 const Form = ({ setCards }: FormProps) => {
   const [submit, setSubmit] = useState(false);
   const [feedbackId, setFeedbackId] = useState(0);
+  const [isModalActive, setModalActive] = useState(false);
 
   const {
     register,
@@ -83,10 +84,12 @@ const Form = ({ setCards }: FormProps) => {
     };
 
     setSubmit(true);
+    setModalActive(true);
     setCards((oldCards) => [...oldCards, newCard]);
     reset();
     setTimeout(() => {
       setSubmit(false);
+      setModalActive(false);
     }, 1500);
     setFeedbackId((prevId) => prevId + 1);
   };
@@ -167,7 +170,7 @@ const Form = ({ setCards }: FormProps) => {
         </div>
       </form>
       {submit && (
-        <Modal>
+        <Modal active={isModalActive} setActive={setModalActive}>
           <p data-testid="submit-modal" className={cx('submit-message')}>
             Thank you! Your feedback has been saved.
           </p>
