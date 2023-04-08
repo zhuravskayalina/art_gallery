@@ -7,7 +7,7 @@ interface ExhibitionProps {
   children: JSX.Element;
 }
 
-const Exhibition = ({children}: ExhibitionProps) => {
+const Exhibition = ({ children }: ExhibitionProps) => {
   return (
     <main className={cx('main', 'exhibition')}>
       <div className={cx('exhibition__container')}>{children}</div>
