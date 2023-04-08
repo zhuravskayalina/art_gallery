@@ -1,5 +1,7 @@
-import { ReactNode } from 'react';
+import { Dispatch, ReactNode, SetStateAction } from 'react';
 
 export interface ModalProps {
+  active: boolean;
+  setActive: Dispatch<SetStateAction<boolean>>;
   children: ReactNode;
 }
