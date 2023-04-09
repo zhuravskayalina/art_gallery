@@ -58,6 +58,7 @@ module.exports = {
     "react/no-unescaped-entities": 'off',
     "react/jsx-props-no-spreading": 'off',
     "react/function-component-definition": "off",
+    'import/prefer-default-export': 'off',
     "jsx-a11y/label-has-associated-control": ["error", {
       "required": {
         "some": ["nesting", "id"]
