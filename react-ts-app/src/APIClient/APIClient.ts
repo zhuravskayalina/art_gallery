@@ -26,6 +26,17 @@ class APIClient {
     }
   };
 
+  public getCharactersPerPage = async (url: string) => {
+    try {
+      const response = await HttpClient.get(url);
+      if (response.ok) {
+        return await response.json();
+      }
+    } catch (error) {
+      return false;
+    }
+  };
+
   public getCharacter = async (id: number) => {
     try {
       const response = await HttpClient.get(`${this.baseUrl}${Path.characters}/${id}`);

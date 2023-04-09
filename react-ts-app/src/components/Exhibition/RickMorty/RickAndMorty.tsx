@@ -9,6 +9,7 @@ import BigCard from './BigCard/BigCard';
 import localStorageClient from '../../../LocalStorageClient/LocalStorageClient';
 import ApiClient from '../../../APIClient/APIClient';
 import Loader from '../../Loader/Loader';
+import Pagination from './Pagination/Pagination';
 
 const cx = classNames.bind(styles);
 
@@ -25,10 +26,18 @@ const RickAndMortyExhibition = () => {
   const [isModalActive, setModalActive] = useState(false);
   const [specificCharacter, setSpecificCharacter] = useState<Character>();
   const [isLoadingSearch, setLoadingSearch] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pagesCount, setPagesCount] = useState(0);
+  const [prevPage, setPrevPage] = useState<string | null>(null);
+  const [nextPage, setNextPage] = useState<string | null>(null);
+  const [disablePaginationButtons, setDisablePaginationButtons] = useState(false);
 
   useEffect(() => {
     ApiClient.getCharacters().then((response: APIResponse) => {
       setCharacters(response.results);
+      setPagesCount(response.info.pages);
+      setPrevPage(response.info.prev);
+      setNextPage(response.info.next);
     });
   }, []);
 
@@ -41,22 +50,49 @@ const RickAndMortyExhibition = () => {
     });
   };
 
+  const setResponseData = (response: APIResponse) => {
+    setCharacters(response.results);
+    setPagesCount(response.info.pages);
+    setPrevPage(response.info.prev);
+    setNextPage(response.info.next);
+  };
+
   const handleKeyDown = (searchValue: string) => {
     localStorageClient.setSearchValue(searchValue.toLowerCase());
     if (characters) {
       if (searchValue) {
         setLoadingSearch(true);
-        ApiClient.getCharactersByName(searchValue).then((response) => {
-          setCharacters(response.results);
+        ApiClient.getCharactersByName(searchValue).then((response: APIResponse) => {
           setLoadingSearch(false);
+          setResponseData(response);
         });
       } else {
         setLoadingSearch(true);
-        ApiClient.getCharacters().then((response) => {
-          setCharacters(response.results);
+        ApiClient.getCharacters().then((response: APIResponse) => {
           setLoadingSearch(false);
+          setResponseData(response);
         });
       }
+    }
+  };
+
+  const handleSwitchPage = (to: 'prev' | 'next') => {
+    if (to === 'next' && nextPage) {
+      setDisablePaginationButtons(true);
+      setCharacters(undefined);
+      ApiClient.getCharactersPerPage(nextPage).then((response) => {
+        setCurrentPage((prev) => prev + 1);
+        setResponseData(response);
+        setDisablePaginationButtons(false);
+      });
+    } else if (to === 'prev' && prevPage) {
+      setDisablePaginationButtons(true);
+      setCharacters(undefined);
+      ApiClient.getCharactersPerPage(prevPage).then((response) => {
+        setCurrentPage((prev) => prev - 1);
+        setResponseData(response);
+        setDisablePaginationButtons(false);
+      });
     }
   };
 
@@ -81,7 +117,17 @@ const RickAndMortyExhibition = () => {
         <SearchBar handleKeyDown={handleKeyDown} />
       </div>
       {characters && !isLoadingSearch ? (
-        <Cards characters={characters} openCard={handleCardClick} />
+        <>
+          <Pagination
+            disablePaginationButtons={disablePaginationButtons}
+            currentPage={currentPage}
+            handleSwitchPage={handleSwitchPage}
+            nextPage={nextPage}
+            pagesCount={pagesCount}
+            prevPage={prevPage}
+          />
+          <Cards characters={characters} openCard={handleCardClick} />
+        </>
       ) : (
         LoaderBox()
       )}
