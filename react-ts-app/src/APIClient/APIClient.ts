@@ -18,7 +18,6 @@ class APIClient {
   public getCharacters = async () => {
     try {
       const response = await HttpClient.get(`${this.baseUrl}${Path.characters}`);
-
       if (response.ok) {
         return await response.json();
       }
@@ -26,14 +25,27 @@ class APIClient {
       return false;
     }
   };
+
   public getCharacter = async (id: number) => {
     try {
       const response = await HttpClient.get(`${this.baseUrl}${Path.characters}/${id}`);
-
       if (response.ok) {
         return await response.json();
       }
     } catch (error) {
+      return false;
+    }
+  };
+
+  public getCharactersByName = async (searchString: string) => {
+    try {
+      const response = await HttpClient.get(
+        `${this.baseUrl}${Path.characters}/?name=${searchString}`
+      );
+      if (response.ok) {
+        return await response.json();
+      }
+    } catch {
       return false;
     }
   };

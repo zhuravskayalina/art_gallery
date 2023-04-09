@@ -33,6 +33,7 @@ const RickAndMortyExhibition = () => {
   }, []);
 
   const handleCardClick = (id: number) => {
+    setSpecificCharacter(undefined);
     setModalActive(true);
 
     ApiClient.getCharacter(id).then((character) => {
@@ -45,11 +46,8 @@ const RickAndMortyExhibition = () => {
     if (characters) {
       if (searchValue) {
         setLoadingSearch(true);
-        ApiClient.getCharacters().then((response) => {
-          const filtered = response.results.filter((item: Character) =>
-            item.name.toLowerCase().startsWith(searchValue)
-          );
-          setCharacters(filtered);
+        ApiClient.getCharactersByName(searchValue).then((response) => {
+          setCharacters(response.results);
           setLoadingSearch(false);
         });
       } else {
