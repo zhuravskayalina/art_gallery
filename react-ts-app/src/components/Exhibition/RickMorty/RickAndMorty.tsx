@@ -117,7 +117,7 @@ const RickAndMortyExhibition = () => {
         <SearchBar handleKeyDown={handleKeyDown} />
       </div>
       {characters && !isLoadingSearch ? (
-        <>
+        <div data-testid="cards">
           <Pagination
             disablePaginationButtons={disablePaginationButtons}
             currentPage={currentPage}
@@ -127,7 +127,7 @@ const RickAndMortyExhibition = () => {
             prevPage={prevPage}
           />
           <Cards characters={characters} openCard={handleCardClick} />
-        </>
+        </div>
       ) : (
         LoaderBox()
       )}
