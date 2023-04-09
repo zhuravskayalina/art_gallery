@@ -117,7 +117,7 @@ const RickAndMortyExhibition = () => {
         <SearchBar handleKeyDown={handleKeyDown} />
       </div>
       {characters && !isLoadingSearch ? (
-        <div data-testid="cards">
+        <div data-testid="cards" className={cx('cards')}>
           <Pagination
             disablePaginationButtons={disablePaginationButtons}
             currentPage={currentPage}
