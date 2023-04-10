@@ -31,6 +31,7 @@ const RickAndMortyExhibition = () => {
   const [prevPage, setPrevPage] = useState<string | null>(null);
   const [nextPage, setNextPage] = useState<string | null>(null);
   const [disablePaginationButtons, setDisablePaginationButtons] = useState(false);
+  const [searchError, setSearchError] = useState(false);
 
   useEffect(() => {
     ApiClient.getCharacters().then((response: APIResponse) => {
@@ -58,21 +59,26 @@ const RickAndMortyExhibition = () => {
   };
 
   const handleKeyDown = (searchValue: string) => {
+    setSearchError(false);
     localStorageClient.setSearchValue(searchValue.toLowerCase());
-    if (characters) {
-      if (searchValue) {
-        setLoadingSearch(true);
-        ApiClient.getCharactersByName(searchValue).then((response: APIResponse) => {
+    if (searchValue) {
+      setLoadingSearch(true);
+      ApiClient.getCharactersByName(searchValue).then((response: APIResponse) => {
+        if (response) {
           setLoadingSearch(false);
           setResponseData(response);
-        });
-      } else {
-        setLoadingSearch(true);
-        ApiClient.getCharacters().then((response: APIResponse) => {
+        } else {
+          setCharacters(undefined);
           setLoadingSearch(false);
-          setResponseData(response);
-        });
-      }
+          setSearchError(true);
+        }
+      });
+    } else {
+      setLoadingSearch(true);
+      ApiClient.getCharacters().then((response: APIResponse) => {
+        setLoadingSearch(false);
+        setResponseData(response);
+      });
     }
   };
 
@@ -129,8 +135,9 @@ const RickAndMortyExhibition = () => {
           <Cards characters={characters} openCard={handleCardClick} />
         </div>
       ) : (
-        LoaderBox()
+        !searchError && LoaderBox()
       )}
+      {searchError && <p className={cx('search-error-message')}>Sorry, no results found</p>}
       <Modal active={isModalActive} setActive={setModalActive}>
         {specificCharacter ? <BigCard character={specificCharacter} /> : LoaderBox()}
       </Modal>
