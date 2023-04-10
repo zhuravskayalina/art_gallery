@@ -34,12 +34,18 @@ const RickAndMortyExhibition = () => {
   const [disablePaginationButtons, setDisablePaginationButtons] = useState(false);
   const [searchError, setSearchError] = useState(false);
 
+  const setResponseData = (response: APIResponse) => {
+    setCharacters(response.results);
+    setPagesCount(response.info.pages);
+    setPrevPage(response.info.prev);
+    setNextPage(response.info.next);
+  };
+
   useEffect(() => {
     if (searchValue) {
       ApiClient.getCharactersByName(searchValue).then((response: APIResponse) => {
         if (response) {
           setLoadingSearch(false);
-          // eslint-disable-next-line @typescript-eslint/no-use-before-define
           setResponseData(response);
         } else {
           setCharacters(undefined);
@@ -49,10 +55,7 @@ const RickAndMortyExhibition = () => {
       });
     } else {
       ApiClient.getCharacters().then((response: APIResponse) => {
-        setCharacters(response.results);
-        setPagesCount(response.info.pages);
-        setPrevPage(response.info.prev);
-        setNextPage(response.info.next);
+        setResponseData(response);
       });
     }
   }, []);
@@ -64,13 +67,6 @@ const RickAndMortyExhibition = () => {
     ApiClient.getCharacter(id).then((character) => {
       setSpecificCharacter(character);
     });
-  };
-
-  const setResponseData = (response: APIResponse) => {
-    setCharacters(response.results);
-    setPagesCount(response.info.pages);
-    setPrevPage(response.info.prev);
-    setNextPage(response.info.next);
   };
 
   const handleKeyDown = (value: string) => {
