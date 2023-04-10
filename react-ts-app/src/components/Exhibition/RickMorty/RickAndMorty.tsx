@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { useEffect, useState } from 'react';
+import { ChangeEvent, KeyboardEvent, useEffect, useState } from 'react';
 import styles from './rick-morty.module.scss';
 import SearchBar from '../../SearchBar/SearchBar';
 import { APIResponse, Character } from '../../../APIClient/types';
@@ -22,6 +22,7 @@ function LoaderBox(): JSX.Element {
 }
 
 const RickAndMortyExhibition = () => {
+  const [searchValue, setSearchValue] = useState(localStorageClient.getSearchValue() || '');
   const [characters, setCharacters] = useState<Character[]>();
   const [isModalActive, setModalActive] = useState(false);
   const [specificCharacter, setSpecificCharacter] = useState<Character>();
@@ -34,12 +35,26 @@ const RickAndMortyExhibition = () => {
   const [searchError, setSearchError] = useState(false);
 
   useEffect(() => {
-    ApiClient.getCharacters().then((response: APIResponse) => {
-      setCharacters(response.results);
-      setPagesCount(response.info.pages);
-      setPrevPage(response.info.prev);
-      setNextPage(response.info.next);
-    });
+    if (searchValue) {
+      ApiClient.getCharactersByName(searchValue).then((response: APIResponse) => {
+        if (response) {
+          setLoadingSearch(false);
+          // eslint-disable-next-line @typescript-eslint/no-use-before-define
+          setResponseData(response);
+        } else {
+          setCharacters(undefined);
+          setLoadingSearch(false);
+          setSearchError(true);
+        }
+      });
+    } else {
+      ApiClient.getCharacters().then((response: APIResponse) => {
+        setCharacters(response.results);
+        setPagesCount(response.info.pages);
+        setPrevPage(response.info.prev);
+        setNextPage(response.info.next);
+      });
+    }
   }, []);
 
   const handleCardClick = (id: number) => {
@@ -58,12 +73,12 @@ const RickAndMortyExhibition = () => {
     setNextPage(response.info.next);
   };
 
-  const handleKeyDown = (searchValue: string) => {
+  const handleKeyDown = (value: string) => {
     setSearchError(false);
-    localStorageClient.setSearchValue(searchValue.toLowerCase());
-    if (searchValue) {
+    localStorageClient.setSearchValue(value.toLowerCase());
+    if (value) {
       setLoadingSearch(true);
-      ApiClient.getCharactersByName(searchValue).then((response: APIResponse) => {
+      ApiClient.getCharactersByName(value).then((response: APIResponse) => {
         if (response) {
           setLoadingSearch(false);
           setResponseData(response);
@@ -80,6 +95,16 @@ const RickAndMortyExhibition = () => {
         setResponseData(response);
       });
     }
+  };
+
+  const handleSearch = (e: KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleKeyDown(searchValue);
+    }
+  };
+
+  const handleChangeSearch = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(event.target.value);
   };
 
   const handleSwitchPage = (to: 'prev' | 'next') => {
@@ -120,7 +145,11 @@ const RickAndMortyExhibition = () => {
         </p>
       </div>
       <div className={cx('searchbar')}>
-        <SearchBar handleKeyDown={handleKeyDown} />
+        <SearchBar
+          searchValue={searchValue}
+          handleChangeSearch={handleChangeSearch}
+          handleSearch={handleSearch}
+        />
       </div>
       {characters && !isLoadingSearch ? (
         <div data-testid="cards" className={cx('cards')}>
