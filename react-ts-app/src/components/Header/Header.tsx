@@ -28,8 +28,7 @@ const navItems: NavigationItem[] = [
 ];
 
 function Header() {
-  const location = window.location.href.split('/')[window.location.href.split('/').length - 1];
-  const [pageName, setPageName] = useState(location || 'home');
+  const [pageName, setPageName] = useState('home');
 
   const showCurrentPageName = (name: string) => {
     setPageName(name);
