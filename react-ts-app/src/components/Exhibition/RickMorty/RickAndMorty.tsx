@@ -1,15 +1,17 @@
 import classNames from 'classnames/bind';
 import { ChangeEvent, KeyboardEvent, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './rick-morty.module.scss';
 import SearchBar from '../../SearchBar/SearchBar';
 import { APIResponse, Character } from '../../../APIClient/types';
 import Cards from './Cards/Cards';
 import Modal from '../../Modal/Modal';
 import BigCard from './BigCard/BigCard';
-import localStorageClient from '../../../LocalStorageClient/LocalStorageClient';
 import ApiClient from '../../../APIClient/APIClient';
 import Loader from '../../Loader/Loader';
 import Pagination from './Pagination/Pagination';
+import { RootState } from '../../../redux/store';
+import { setSavedValue, setCurrentValue } from '../../../redux/searchBar/searchBarSlice';
 
 const cx = classNames.bind(styles);
 
@@ -22,7 +24,8 @@ function LoaderBox(): JSX.Element {
 }
 
 const RickAndMortyExhibition = () => {
-  const [searchValue, setSearchValue] = useState(localStorageClient.getSearchValue() || '');
+  const searchValue = useSelector((state: RootState) => state.searchbar.currentValue);
+  const dispatch = useDispatch();
   const [characters, setCharacters] = useState<Character[]>();
   const [isModalActive, setModalActive] = useState(false);
   const [specificCharacter, setSpecificCharacter] = useState<Character>();
@@ -69,38 +72,34 @@ const RickAndMortyExhibition = () => {
     });
   };
 
-  const handleKeyDown = (value: string) => {
-    setSearchError(false);
-    localStorageClient.setSearchValue(value.toLowerCase());
-    if (value) {
-      setLoadingSearch(true);
-      ApiClient.getCharactersByName(value).then((response: APIResponse) => {
-        if (response) {
-          setLoadingSearch(false);
-          setResponseData(response);
-        } else {
-          setCharacters(undefined);
-          setLoadingSearch(false);
-          setSearchError(true);
-        }
-      });
-    } else {
-      setLoadingSearch(true);
-      ApiClient.getCharacters().then((response: APIResponse) => {
-        setLoadingSearch(false);
-        setResponseData(response);
-      });
-    }
-  };
-
   const handleSearch = (e: KeyboardEvent) => {
     if (e.key === 'Enter') {
-      handleKeyDown(searchValue);
+      setSearchError(false);
+      dispatch(setSavedValue(searchValue));
+      if (searchValue) {
+        setLoadingSearch(true);
+        ApiClient.getCharactersByName(searchValue).then((response: APIResponse) => {
+          if (response) {
+            setLoadingSearch(false);
+            setResponseData(response);
+          } else {
+            setCharacters(undefined);
+            setLoadingSearch(false);
+            setSearchError(true);
+          }
+        });
+      } else {
+        setLoadingSearch(true);
+        ApiClient.getCharacters().then((response: APIResponse) => {
+          setLoadingSearch(false);
+          setResponseData(response);
+        });
+      }
     }
   };
 
   const handleChangeSearch = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(event.target.value);
+    dispatch(setCurrentValue(event.target.value));
   };
 
   const handleSwitchPage = (to: 'prev' | 'next') => {
