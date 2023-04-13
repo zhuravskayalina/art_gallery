@@ -12,7 +12,7 @@ interface FormData {
 }
 
 export interface FormValues extends FormData {
-  photo: FileList;
+  photo: FileList | undefined;
 }
 
 export interface CardData extends FormData {

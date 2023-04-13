@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './form.module.scss';
 import Input from './Input/Input';
 import Select from './Select/Select';
@@ -10,11 +11,14 @@ import DateInput from './DateInput/DateInput';
 import Switcher from './Switcher/Switcher';
 import FileUpload from './FileUpload/FileUpload';
 import ErrorMessage from './ErrorMessage/ErrorMessage';
-import { CardData, FormProps, FormValues } from './types';
+import { CardData, FormValues } from './types';
 import dateClient from '../../DateClient/DateClient';
 import Modal from '../Modal/Modal';
 import Button from './Button/Button';
 import Textarea from './Textarea/Textarea';
+import { RootState } from '../../redux/store';
+import { resetForm, setFormData } from '../../redux/form/formSlice';
+import { incrementCardId, setCards } from '../../redux/form/formCardsSlice';
 
 const cx = classNames.bind(styles);
 
@@ -36,9 +40,12 @@ const postcardRadioOptions = [
   },
 ];
 
-const Form = ({ setCards }: FormProps) => {
+const Form = () => {
+  const formData = useSelector((state: RootState) => state.form);
+  const dispatch = useDispatch();
+  const cardId = useSelector((state: RootState) => state.formCards.cardId);
+
   const [submit, setSubmit] = useState(false);
-  const [feedbackId, setFeedbackId] = useState(0);
   const [isModalActive, setModalActive] = useState(false);
 
   const {
@@ -48,11 +55,16 @@ const Form = ({ setCards }: FormProps) => {
     getValues,
     reset,
   } = useForm<FormValues>({
-    mode: 'onSubmit',
-    reValidateMode: 'onSubmit',
+    defaultValues: formData,
   });
 
-  const handleImageUpload = async (image: FileList) => {
+  useEffect(() => {
+    return () => {
+      dispatch(setFormData(getValues()));
+    };
+  }, []);
+
+  const handleImageUpload = (image: FileList) => {
     if (image[0]) {
       return URL.createObjectURL(image[0]);
     }
@@ -69,29 +81,32 @@ const Form = ({ setCards }: FormProps) => {
     isAnonymously,
     isWantPostcard,
   }) => {
-    const image = await handleImageUpload(photo);
     const newCard: CardData = {
-      id: feedbackId,
+      id: cardId,
       userName,
       userEmail,
       feedback,
+      photo: '',
       visitDate: dateClient.formatDate(dateClient.formatDateToNumber(visitDate)),
-      photo: image,
       isAnonymously,
       favouriteArtwork,
       likeCheckboxes: getValues('likeCheckboxes'),
       isWantPostcard,
     };
 
+    if (photo) {
+      newCard.photo = handleImageUpload(photo);
+    }
+    dispatch(setCards(newCard));
+    dispatch(incrementCardId());
     setSubmit(true);
     setModalActive(true);
-    setCards((oldCards) => [...oldCards, newCard]);
+    dispatch(resetForm());
     reset();
     setTimeout(() => {
       setSubmit(false);
       setModalActive(false);
     }, 1500);
-    setFeedbackId((prevId) => prevId + 1);
   };
 
   const atLeastOneCheckbox = () => {
