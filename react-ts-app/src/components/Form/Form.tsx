@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { nanoid } from '@reduxjs/toolkit';
 import classNames from 'classnames/bind';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,7 +19,7 @@ import Button from './Button/Button';
 import Textarea from './Textarea/Textarea';
 import { RootState } from '../../redux/store';
 import { resetForm, setFormData } from '../../redux/form/formSlice';
-import { incrementCardId, setCards } from '../../redux/form/formCardsSlice';
+import { setCards } from '../../redux/form/formCardsSlice';
 
 const cx = classNames.bind(styles);
 
@@ -43,7 +44,6 @@ const postcardRadioOptions = [
 const Form = () => {
   const formData = useSelector((state: RootState) => state.form);
   const dispatch = useDispatch();
-  const cardId = useSelector((state: RootState) => state.formCards.cardId);
 
   const [submit, setSubmit] = useState(false);
   const [isModalActive, setModalActive] = useState(false);
@@ -82,7 +82,7 @@ const Form = () => {
     isWantPostcard,
   }) => {
     const newCard: CardData = {
-      id: cardId,
+      id: nanoid(),
       userName,
       userEmail,
       feedback,
@@ -98,7 +98,6 @@ const Form = () => {
       newCard.photo = handleImageUpload(photo);
     }
     dispatch(setCards(newCard));
-    dispatch(incrementCardId());
     setSubmit(true);
     setModalActive(true);
     dispatch(resetForm());
