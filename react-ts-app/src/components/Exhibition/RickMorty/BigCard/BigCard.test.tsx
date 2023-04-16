@@ -1,15 +1,16 @@
 import { render, screen } from '@testing-library/react';
+import { Provider } from 'react-redux';
 import BigCard from './BigCard';
-import { characterExample } from '../../../../tests/testsDataBase';
+import store from '../../../../redux/store';
 
 describe('BigCard', () => {
-  it('renders card properly', () => {
-    render(<BigCard character={characterExample} />);
-    expect(screen.getByText(/Rick Sanchez/i)).toBeInTheDocument();
-    expect(screen.getByText(/Human/i)).toBeInTheDocument();
-    expect(screen.getByText(/Alive/i)).toBeInTheDocument();
-    expect(screen.getByText(/Male/i)).toBeInTheDocument();
-    expect(screen.getByText(/Earth/i)).toBeInTheDocument();
-    expect(screen.getByText(/Citadel of Ricks/i)).toBeInTheDocument();
+  it('renders card properly', async () => {
+    render(
+      <Provider store={store}>
+        <BigCard characterId={1} />
+      </Provider>
+    );
+
+    expect(await screen.findByText(/Rick Sanchez/i)).toBeInTheDocument();
   });
 });

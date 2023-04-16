@@ -10,6 +10,6 @@ describe('RickAndMorty', () => {
         <RickAndMorty />
       </Provider>
     );
-    expect(await screen.findByTestId('cards')).toBeInTheDocument();
+    expect(await screen.findByTestId('rm-cards')).toBeInTheDocument();
   });
 });
