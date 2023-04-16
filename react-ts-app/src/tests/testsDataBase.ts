@@ -3,7 +3,7 @@ import { Character } from '../APIClient/types';
 
 export const exampleCards = [
   {
-    id: 2,
+    id: '2',
     userName: 'Lola',
     userEmail: 'lola@gmail.com',
     feedback: 'Hi! I am feedback!',
