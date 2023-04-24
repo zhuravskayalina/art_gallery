@@ -23,8 +23,13 @@
     "./src/**/*",
     "styled.d.ts",
     "vite.config.ts",
-    ".eslintrc.cjs",
+    ".eslintrc.cjs"
   ],
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "esm": true,
+    "transpileOnly": true
+  },
   "references": [
     {
       "path": "./tsconfig.node.json"
