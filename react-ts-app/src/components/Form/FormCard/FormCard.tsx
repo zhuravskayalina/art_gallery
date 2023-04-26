@@ -18,7 +18,7 @@ const FormCard = ({ card }: CardProps) => {
 
   const name = isAnonymously ? 'Our Guest' : userName;
   return (
-    <div className={cx('card')}>
+    <div className={cx('card')} data-test="feedback-card">
       <p className={cx('card__heading')}>Feedback from {name}</p>
       <div className={cx('card__info')}>
         <p className={cx('card__visit-date')}>Was at Cultured Kid Gallery {visitDate}</p>

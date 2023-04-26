@@ -4,6 +4,7 @@ const FileUpload = ({ register }: FileUploadProps) => {
   return (
     <label>
       <input
+        data-test="form-file-input"
         type="file"
         accept="image/*"
         data-testid="fileInput"
