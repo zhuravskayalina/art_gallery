@@ -8,7 +8,7 @@ import { createServer as createViteServer } from 'vite';
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const PORT = process.env.PORT || 5173;
+const PORT = 5173;
 
 const isError = (err: unknown): err is Error => err instanceof Error;
 

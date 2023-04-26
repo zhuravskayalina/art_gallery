@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 class Footer extends Component {
   render() {
     return (
-      <footer className={cx('footer')}>
+      <footer className={cx('footer')} data-test="footer">
         <div className={cx('footer__container')}>
           <Logo className={cx('footer__logo')} />
           <Link to="https://github.com/zhuravskayalina" className={styles.footer__author}>

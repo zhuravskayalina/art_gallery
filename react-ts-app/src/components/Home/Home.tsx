@@ -14,7 +14,9 @@ const Home = () => {
           <span className={cx('accent')}>TASK 05</span> go to{' '}
           <span className={cx('accent')}>Exhibitions</span> page!
         </div>
-        <h1 className={cx('main__heading')}>Featured Paintings</h1>
+        <h1 className={cx('main__heading')} data-test="home-heading">
+          Featured Paintings
+        </h1>
         <Cards paintings={paintings} />
       </section>
     </main>
