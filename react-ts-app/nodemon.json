@@ -1,7 +1,7 @@
 {
   "verbose": true,
   "ext": ".tsx",
-  "exec": "ts-node ./server.tsx",
+  "exec": "ts-node ./server.ts",
   "ignore": [
     "node_modules"
   ]
