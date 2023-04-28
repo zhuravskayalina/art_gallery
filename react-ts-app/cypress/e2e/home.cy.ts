@@ -3,6 +3,10 @@ describe('template spec', () => {
     cy.visit('http://localhost:5173/');
   });
 
+  afterEach(() => {
+    cy.window().trigger('unload');
+  });
+
   it('contains header', () => {
     cy.getByData('header');
   });

@@ -1,4 +1,8 @@
 describe('Form', () => {
+  afterEach(() => {
+    cy.window().trigger('unload');
+  });
+
   it('does not allow to save feedback with empty fields', () => {
     cy.visit('http://localhost:5173/feedback');
     cy.getByData('feedback-form').should('exist');

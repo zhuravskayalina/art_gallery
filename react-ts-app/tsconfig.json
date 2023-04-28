@@ -20,6 +20,7 @@
     "resolveJsonModule": true
   },
   "include": [
+    "**/*.js",
     "**/*.ts",
     "**/*.tsx",
     "styled.d.ts",

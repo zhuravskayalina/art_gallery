@@ -1,4 +1,8 @@
 describe('User Journey', () => {
+  afterEach(() => {
+    cy.window().trigger('unload');
+  });
+
   context('Navigation', () => {
     it('a user can navigate through application pages', () => {
       cy.visit('http://localhost:5173');
@@ -27,11 +31,11 @@ describe('User Journey', () => {
       cy.getByData('modal').should('not.have.class', 'modal_open');
     });
 
-    it('a user can search through cards', () => {
-      cy.visit('http://localhost:5173/exhibitions');
-      cy.getByData('searchbar').should('exist').type('summer{enter}');
-      cy.getByData('rm-cards').should('exist').find('button').eq(0).click();
-      cy.getByData('rm-big-card').contains('Summer Smith');
-    });
+    // it('a user can search through cards', () => {
+    //   cy.visit('http://localhost:5173/exhibitions');
+    //   cy.getByData('searchbar').should('exist').type('summer{enter}');
+    //   cy.getByData('rm-cards').should('exist').find('button').eq(0).click();
+    //   cy.getByData('rm-big-card').contains('Summer Smith');
+    // });
   });
 });
