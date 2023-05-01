@@ -11,6 +11,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "test": "vitest",
+    "cypress": "npx cypress open",
     "coverage:unit": "vitest run --coverage",
     "coverage:cypress": "npx nyc report --reporter=text-summary"
   },
