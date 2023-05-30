@@ -1,19 +1,19 @@
 import classNames from 'classnames/bind';
-import { ChangeEvent, KeyboardEvent, useEffect, useState } from 'react';
+import { ChangeEvent, KeyboardEvent, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './rick-morty.module.scss';
 import SearchBar from '../../SearchBar/SearchBar';
-import { APIResponse, Character } from '../../../APIClient/types';
 import Cards from './Cards/Cards';
 import Modal from '../../Modal/Modal';
 import BigCard from './BigCard/BigCard';
-import localStorageClient from '../../../LocalStorageClient/LocalStorageClient';
-import ApiClient from '../../../APIClient/APIClient';
 import Loader from '../../Loader/Loader';
-import Pagination from './Pagination/Pagination';
+import { RootState } from '../../../redux/store';
+import { setSavedValue, setCurrentValue } from '../../../redux/searchBar/searchBarSlice';
+import { useGetCharactersQuery } from '../../../redux/api/apiSlice';
 
 const cx = classNames.bind(styles);
 
-function LoaderBox(): JSX.Element {
+export function LoaderBox(): JSX.Element {
   return (
     <div className={cx('loader-box')}>
       <Loader />
@@ -22,105 +22,32 @@ function LoaderBox(): JSX.Element {
 }
 
 const RickAndMortyExhibition = () => {
-  const [searchValue, setSearchValue] = useState(localStorageClient.getSearchValue() || '');
-  const [characters, setCharacters] = useState<Character[]>();
+  const currentSearchValue = useSelector((state: RootState) => state.searchbar.currentValue);
+  const savedSearchValue = useSelector((state: RootState) => state.searchbar.savedValue);
+  const [characterId, setCharacterId] = useState<number>();
   const [isModalActive, setModalActive] = useState(false);
-  const [specificCharacter, setSpecificCharacter] = useState<Character>();
-  const [isLoadingSearch, setLoadingSearch] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [pagesCount, setPagesCount] = useState(0);
-  const [prevPage, setPrevPage] = useState<string | null>(null);
-  const [nextPage, setNextPage] = useState<string | null>(null);
-  const [disablePaginationButtons, setDisablePaginationButtons] = useState(false);
-  const [searchError, setSearchError] = useState(false);
 
-  const setResponseData = (response: APIResponse) => {
-    setCharacters(response.results);
-    setPagesCount(response.info.pages);
-    setPrevPage(response.info.prev);
-    setNextPage(response.info.next);
-  };
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (searchValue) {
-      ApiClient.getCharactersByName(searchValue).then((response: APIResponse) => {
-        if (response) {
-          setLoadingSearch(false);
-          setResponseData(response);
-        } else {
-          setCharacters(undefined);
-          setLoadingSearch(false);
-          setSearchError(true);
-        }
-      });
-    } else {
-      ApiClient.getCharacters().then((response: APIResponse) => {
-        setResponseData(response);
-      });
-    }
-  }, []);
+  const { data: response, isLoading, isSuccess, isError } = useGetCharactersQuery(savedSearchValue);
 
   const handleCardClick = (id: number) => {
-    setSpecificCharacter(undefined);
+    setCharacterId(id);
     setModalActive(true);
-
-    ApiClient.getCharacter(id).then((character) => {
-      setSpecificCharacter(character);
-    });
   };
 
-  const handleKeyDown = (value: string) => {
-    setSearchError(false);
-    localStorageClient.setSearchValue(value.toLowerCase());
-    if (value) {
-      setLoadingSearch(true);
-      ApiClient.getCharactersByName(value).then((response: APIResponse) => {
-        if (response) {
-          setLoadingSearch(false);
-          setResponseData(response);
-        } else {
-          setCharacters(undefined);
-          setLoadingSearch(false);
-          setSearchError(true);
-        }
-      });
-    } else {
-      setLoadingSearch(true);
-      ApiClient.getCharacters().then((response: APIResponse) => {
-        setLoadingSearch(false);
-        setResponseData(response);
-      });
-    }
+  const handleCloseCard = () => {
+    setCharacterId(undefined);
   };
 
   const handleSearch = (e: KeyboardEvent) => {
     if (e.key === 'Enter') {
-      handleKeyDown(searchValue);
+      dispatch(setSavedValue(currentSearchValue));
     }
   };
 
   const handleChangeSearch = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(event.target.value);
-  };
-
-  const handleSwitchPage = (to: 'prev' | 'next') => {
-    if (to === 'next' && nextPage) {
-      setDisablePaginationButtons(true);
-      setCharacters(undefined);
-      ApiClient.getCharactersPerPage(nextPage).then((response) => {
-        setCurrentPage((prev) => prev + 1);
-        setResponseData(response);
-        setDisablePaginationButtons(false);
-      });
-    } else if (to === 'prev' && prevPage) {
-      setDisablePaginationButtons(true);
-      setCharacters(undefined);
-      ApiClient.getCharactersPerPage(prevPage).then((response) => {
-        setCurrentPage((prev) => prev - 1);
-        setResponseData(response);
-        setDisablePaginationButtons(false);
-      });
-    }
+    dispatch(setCurrentValue(event.target.value));
   };
 
   return (
@@ -142,30 +69,19 @@ const RickAndMortyExhibition = () => {
       </div>
       <div className={cx('searchbar')}>
         <SearchBar
-          searchValue={searchValue}
+          searchValue={currentSearchValue}
           handleChangeSearch={handleChangeSearch}
           handleSearch={handleSearch}
         />
       </div>
-      {characters && !isLoadingSearch ? (
-        <div data-testid="cards" className={cx('cards')}>
-          <Pagination
-            disablePaginationButtons={disablePaginationButtons}
-            currentPage={currentPage}
-            handleSwitchPage={handleSwitchPage}
-            nextPage={nextPage}
-            pagesCount={pagesCount}
-            prevPage={prevPage}
-          />
-          <Cards characters={characters} openCard={handleCardClick} />
-        </div>
-      ) : (
-        !searchError && LoaderBox()
+      {isLoading && LoaderBox()}
+      {isSuccess && <Cards characters={response.results} openCard={handleCardClick} />}
+      {isError && <p className={cx('search-error-message')}>Sorry, no results found</p>}
+      {characterId && (
+        <Modal active={isModalActive} setActive={setModalActive} handleCloseCard={handleCloseCard}>
+          <BigCard characterId={characterId} />
+        </Modal>
       )}
-      {searchError && <p className={cx('search-error-message')}>Sorry, no results found</p>}
-      <Modal active={isModalActive} setActive={setModalActive}>
-        {specificCharacter ? <BigCard character={specificCharacter} /> : LoaderBox()}
-      </Modal>
     </div>
   );
 };

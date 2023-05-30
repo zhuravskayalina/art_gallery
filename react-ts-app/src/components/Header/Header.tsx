@@ -34,7 +34,7 @@ function Header() {
     setPageName(name);
   };
   return (
-    <header className={cx('header')}>
+    <header className={cx('header')} data-test="header">
       <div className={cx('header__container')}>
         <Link to="/" className={cx('header__logo')}>
           <Logo />

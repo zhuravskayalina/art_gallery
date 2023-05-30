@@ -9,7 +9,7 @@ import { ReactComponent as CloseIcon } from '../../assets/icons/close.svg';
 
 const cx = classNames.bind(styles);
 
-const Modal = ({ active, setActive, children }: ModalProps) => {
+const Modal = ({ active, setActive, children, handleCloseCard }: ModalProps) => {
   useEffect(() =>
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && active) {
@@ -18,10 +18,17 @@ const Modal = ({ active, setActive, children }: ModalProps) => {
     })
   );
 
+  const closeModal = () => {
+    setActive(false);
+    if (handleCloseCard) {
+      handleCloseCard();
+    }
+  };
+
   return (
-    <div className={cx('modal', { modal_open: active })} onClick={() => setActive(false)}>
+    <div className={cx('modal', { modal_open: active })} onClick={closeModal} data-test="modal">
       <div className={cx('modal__container')} onClick={(e) => e.stopPropagation()}>
-        <button className={cx('close')} onClick={() => setActive(false)}>
+        <button className={cx('close')} onClick={() => setActive(false)} data-test="modal-close">
           <CloseIcon className={cx('close-icon')} />
         </button>
         {children}

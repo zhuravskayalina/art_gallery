@@ -1,6 +1,8 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { Provider } from 'react-redux';
 import Form from './Form';
+import store from '../../redux/store';
 
 describe('Form', () => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -8,7 +10,11 @@ describe('Form', () => {
   window.URL.createObjectURL = () => {};
 
   it('have all fields', () => {
-    render(<Form setCards={() => {}} />);
+    render(
+      <Provider store={store}>
+        <Form />
+      </Provider>
+    );
     expect(screen.getByRole('form', { name: '' })).toBeInTheDocument();
     expect(screen.getByRole('list', { name: '' })).toBeInTheDocument();
     expect(screen.getByRole('textbox', { name: /your name/i })).toBeInTheDocument();
@@ -36,7 +42,11 @@ describe('Form', () => {
 
   it('submit with empty fields', async () => {
     const user = userEvent.setup();
-    render(<Form setCards={() => {}} />);
+    render(
+      <Provider store={store}>
+        <Form />
+      </Provider>
+    );
     const submitButton = screen.getByRole('button', {
       name: /submit/i,
     });
@@ -49,7 +59,11 @@ describe('Form', () => {
   it('submit with full fields', async () => {
     const user = userEvent.setup();
 
-    render(<Form setCards={() => {}} />);
+    render(
+      <Provider store={store}>
+        <Form />
+      </Provider>
+    );
 
     const name = screen.getByRole('textbox', { name: /your name/i });
     const email = screen.getByRole('textbox', { name: /your email/i });

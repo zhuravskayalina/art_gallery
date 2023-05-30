@@ -9,6 +9,7 @@ const DateInput = ({ register }: DateProps) => {
   return (
     <input
       type="date"
+      data-test="form-date-input"
       className={cx('date')}
       data-testid="dateInput"
       {...register('visitDate', {

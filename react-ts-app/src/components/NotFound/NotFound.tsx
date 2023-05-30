@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 class NotFound extends Component {
   render() {
     return (
-      <div className={cx('main')}>
+      <div className={cx('main')} data-test="not-found">
         <div className={cx('text')}>
           <h2 className={cx('main__heading')}>Oops..</h2>
           <h3>Page not found</h3>

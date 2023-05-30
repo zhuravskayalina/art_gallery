@@ -22,7 +22,7 @@ const Select = ({ register }: SelectProps) => {
         {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
         <option className="option" value="" />
         {dataBase.map(({ name, author, id }) => (
-          <option value={`"${name}" ${author}`} key={id}>
+          <option value={name} key={id}>
             {`"${name}" ${author}`}
           </option>
         ))}
