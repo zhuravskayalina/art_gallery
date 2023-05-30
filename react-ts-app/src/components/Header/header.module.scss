@@ -1,29 +1,39 @@
-@use './src/stylesheets/mixins/mixins';
-@use './src/stylesheets/variables/colors';
+@use '../../stylesheets/mixins/mixins';
+@use '../../stylesheets/variables/colors';
 
 .header {
   @include mixins.center-content;
   font-family: 'karla', sans-serif;
   padding: 40px 0;
   border-bottom: 1px solid colors.$transparent-black;
+
+  &__container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    gap: 5px;
+    font-size: 20px;
+    line-height: 140%;
+    @include mixins.center-content;
+    @include mixins.link-style-reset;
+    display: flex;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
-.container {
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  gap: 5px;
-  font-size: 20px;
-  line-height: 140%;
-  @include mixins.center-content;
-  @include mixins.link-style-reset;
-  display: flex;
-
-  &:hover {
-    cursor: pointer;
+@media screen and (max-width: 800px) {
+  .header {
+    &__container {
+      width: 90%;
+      @include mixins.flex-column;
+      gap: 20px;
+    }
   }
 }

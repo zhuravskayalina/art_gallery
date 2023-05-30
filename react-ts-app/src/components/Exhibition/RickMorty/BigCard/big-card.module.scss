@@ -1,0 +1,40 @@
+@use '../../../../stylesheets/variables/colors';
+@use '../../../../stylesheets/mixins/mixins';
+
+.container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+  list-style: none;
+  @include mixins.flex-column;
+  gap: 5px;
+  font-size: 20px;
+
+  &__item {
+
+  }
+
+  &__name {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  &__status {
+    color: colors.$gray;
+    margin-bottom: 10px;
+  }
+}
+
+.image {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.accent {
+  font-weight: bold;
+  color: colors.$morty-pink;
+}

@@ -1,6 +1,6 @@
-@use './src/stylesheets/variables/colors';
-@use './src/stylesheets/variables/numbers';
-@use './src/stylesheets/mixins/mixins';
+@use '../../../stylesheets/variables/colors';
+@use '../../../stylesheets/variables/numbers';
+@use '../../../stylesheets/mixins/mixins';
 
 .small-card {
   font-family: 'Optima LT Std', sans-serif;

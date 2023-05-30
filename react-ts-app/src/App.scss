@@ -7,6 +7,10 @@ body {
   height: 100%;
 }
 
+.main {
+  flex: 1 1 auto;
+}
+
 #root {
   min-height: 100%;
   display: flex;

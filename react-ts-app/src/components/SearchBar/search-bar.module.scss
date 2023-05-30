@@ -1,15 +1,16 @@
-@use './src/stylesheets/variables/colors';
+@use '../../stylesheets/variables/colors';
+@use '../../stylesheets/mixins/mixins';
 
 .search {
   position: relative;
   width: fit-content;
 
-  &-input {
+  &__input {
     height: 25px;
     border-radius: 10px;
     border: 1px solid colors.$gray;
     padding: 11px 22px 8px 8px;
-    width: 130px;
+    width: 160px;
     color: colors.$lightGray;
     font-family: 'Optima LT Std', sans-serif;
 

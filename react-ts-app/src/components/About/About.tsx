@@ -1,30 +1,33 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
+import classNames from 'classnames/bind';
 import styles from './about.module.scss';
 import galleryImg from '../../assets/images/gallery.jpeg';
 import galleryImg1 from '../../assets/images/gallery1.jpeg';
 
+const cx = classNames.bind(styles);
+
 class About extends Component {
   render() {
     return (
-      <div className={styles.main}>
-        <div className={styles.main__container}>
-          <h1>About us</h1>
-          <p className={styles.main__info}>
+      <div className={cx('main')}>
+        <div className={cx('main__container')}>
+          <h1 data-test="about-heading">About us</h1>
+          <p>
             At Cultured Kid Gallery, we celebrate creativity, openness, tolerance, and generosity.
             We aim to be inclusive places — both onsite and online — where diverse cultural,
             artistic, social, and political positions are welcome. We’re committed to sharing the
             most thought-provoking modern and contemporary art, and hope you will join us in
             exploring the art, ideas, and issues of our time.
           </p>
-          <img src={galleryImg} className={styles.main__image} alt="gallery" />
+          <img src={galleryImg} className={cx('main__image')} alt="gallery" />
           <p>
             The Museum of Modern Art connects people from around the world to the art of our time.
             We aspire to be a catalyst for experimentation, learning, and creativity, a gathering
             place for all, and a home for artists and their ideas.
           </p>
-          <img src={galleryImg1} className={styles.main__image} alt="gallery now" />
-          <section className={styles.main__history}>
-            <h2 className={styles.main__heading}>History</h2>
+          <img src={galleryImg1} className={cx('main__image')} alt="gallery now" />
+          <section className={cx('main__history')}>
+            <h2 className={cx('main__heading')}>History</h2>
             <p>
               In the late 1920s, three progressive and influential patrons of the arts, Lillie P.
               Bliss, Mary Quinn Sullivan, and Abby Aldrich Rockefeller, perceived a need to

@@ -1,0 +1,41 @@
+@use '../../../../stylesheets/variables/colors';
+@use '../../../../stylesheets/mixins/mixins';
+
+.small-card {
+  @include mixins.center-content;
+  @include mixins.flex-column;
+  background-color: colors.$white;
+  padding-bottom: 20px;
+  gap: 10px;
+  transition: .3s;
+
+  &:hover {
+    scale: 102%;
+  }
+
+  &__button {
+    @include mixins.button-style-reset;
+    @include mixins.center-content;
+    @include mixins.flex-column;
+    width: 100%;
+    gap: 10px;
+    font-family: 'Optima LT Std', sans-serif;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__name {
+    font-size: 20px;
+  }
+}
