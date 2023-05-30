@@ -1,0 +1,19 @@
+@use '../../../../stylesheets/mixins/mixins';
+
+.pagination {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 30px 0 20px 0;
+  font-family: 'Karla', sans-serif;
+
+  &__button {
+    @include mixins.button-style-reset;
+    font-size: 16px;
+
+    &:hover:not([disabled]) {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}

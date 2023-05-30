@@ -1,5 +1,6 @@
-import { ChangeEvent } from 'react';
+import { UseFormRegister } from 'react-hook-form';
+import { FormValues } from '../types';
 
 export interface FileUploadProps {
-  handleFileUpload: (event: ChangeEvent<HTMLInputElement>) => void;
+  register: UseFormRegister<FormValues>;
 }

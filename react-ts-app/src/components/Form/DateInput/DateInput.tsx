@@ -1,18 +1,26 @@
-import React, { forwardRef } from 'react';
 import classNames from 'classnames/bind';
-import { DateProps } from './types';
 import styles from './date.module.scss';
+import { DateProps } from './types';
+import dateClient from '../../../DateClient/DateClient';
 
 const cx = classNames.bind(styles);
 
-const DateInput = forwardRef<HTMLInputElement, DateProps>((props, ref) => (
-  <input
-    type="date"
-    ref={ref}
-    onChange={props.validateDate}
-    className={cx('date')}
-    data-testid="dateInput"
-  />
-));
+const DateInput = ({ register }: DateProps) => {
+  return (
+    <input
+      type="date"
+      data-test="form-date-input"
+      className={cx('date')}
+      data-testid="dateInput"
+      {...register('visitDate', {
+        required: true,
+        valueAsDate: true,
+        validate: (date) => {
+          return dateClient.formatDateToNumber(date) < Date.now() || `Pick correct date`;
+        },
+      })}
+    />
+  );
+};
 
 export default DateInput;

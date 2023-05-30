@@ -1,4 +1,8 @@
+import { UseFormRegister } from 'react-hook-form';
+import { FormValues } from '../types';
+
 export interface CheckboxProps {
   label: string;
-  name: string;
+  register: UseFormRegister<FormValues>;
+  validate: () => boolean | string;
 }

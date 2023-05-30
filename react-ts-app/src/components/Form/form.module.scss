@@ -1,5 +1,5 @@
-@use './src/stylesheets/variables/colors';
-@use './src/stylesheets/mixins/mixins';
+@use '../../stylesheets/variables/colors';
+@use '../../stylesheets/mixins/mixins';
 
 .form {
   @include mixins.flex-column;
@@ -66,25 +66,6 @@
       align-items: center;
     }
   }
-}
-
-.textarea {
-  width: 100%;
-  max-width: 100%;
-  max-height: 300px;
-  height: 200px;
-  resize: none;
-  border: none;
-  border-radius: 6px;
-  padding: 20px;
-
-  &:focus-visible {
-    outline: none;
-  }
-}
-
-.error {
-  border-bottom: 1px solid red;
 }
 
 .submit-message {

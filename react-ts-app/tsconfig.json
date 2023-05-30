@@ -20,11 +20,21 @@
     "resolveJsonModule": true
   },
   "include": [
-    "./src/**/*",
+    "**/*.js",
+    "**/*.ts",
+    "**/*.tsx",
     "styled.d.ts",
     "vite.config.ts",
     ".eslintrc.cjs",
+    "**/*.tsx"
   ],
+  "exclude": [
+    "node_modules"
+  ],
+  "ts-node": {
+    "esm": true,
+    "transpileOnly": true
+  },
   "references": [
     {
       "path": "./tsconfig.node.json"

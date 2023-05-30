@@ -1,10 +1,20 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { Provider } from 'react-redux';
 import Form from './Form';
-import exampleImage from '../../assets/images/gallery1.jpeg';
+import store from '../../redux/store';
 
 describe('Form', () => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  window.URL.createObjectURL = () => {};
+
   it('have all fields', () => {
-    render(<Form />);
+    render(
+      <Provider store={store}>
+        <Form />
+      </Provider>
+    );
     expect(screen.getByRole('form', { name: '' })).toBeInTheDocument();
     expect(screen.getByRole('list', { name: '' })).toBeInTheDocument();
     expect(screen.getByRole('textbox', { name: /your name/i })).toBeInTheDocument();
@@ -30,58 +40,56 @@ describe('Form', () => {
     ).toBeInTheDocument();
   });
 
-  it('submit with empty fields', () => {
-    render(<Form />);
-    const name = screen.getByRole('textbox', { name: /your name/i });
-    const email = screen.getByRole('textbox', { name: /your email/i });
-    const textbox = screen.getByRole('textbox', { name: /Write a comment/i });
-    const combobox = screen.getByRole('combobox', { name: /Most impressive art work:/i });
-    const date = screen.getByTestId('dateInput');
-    const file = screen.getByTestId('dateInput');
+  it('submit with empty fields', async () => {
+    const user = userEvent.setup();
+    render(
+      <Provider store={store}>
+        <Form />
+      </Provider>
+    );
     const submitButton = screen.getByRole('button', {
       name: /submit/i,
     });
 
-    fireEvent.change(name, { target: { value: 'lola' } });
-    fireEvent.change(email, { target: { value: 'hihi' } });
-    fireEvent.change(textbox, {
-      target: { value: `Cool` },
-    });
-    fireEvent.change(combobox, { target: { value: '' } });
-    fireEvent.change(date, { target: { value: 4678406400000 } });
-    fireEvent.change(file, { target: { value: '' } });
+    await user.click(submitButton);
 
-    submitButton.click();
-    expect(screen.getByText(/Please/i)).toBeInTheDocument();
+    await waitFor(() => expect(screen.queryByTestId('submit-modal')).not.toBeInTheDocument());
   });
 
-  it('submit with full fields', () => {
-    render(<Form />);
+  it('submit with full fields', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Provider store={store}>
+        <Form />
+      </Provider>
+    );
+
     const name = screen.getByRole('textbox', { name: /your name/i });
     const email = screen.getByRole('textbox', { name: /your email/i });
     const textbox = screen.getByRole('textbox', { name: /Write a comment/i });
-    const combobox = screen.getByRole('combobox', { name: /Most impressive art work:/i });
+    const select = screen.getByRole('combobox', { name: /Most impressive art work:/i });
     const date = screen.getByTestId('dateInput');
-    const file = screen.getByTestId('dateInput');
+    const file = screen.getByTestId('fileInput');
     const checkbox = screen.getByRole('checkbox', { name: /Nice lightning/i });
     const radio = screen.getByRole('radio', { name: /yes/i });
 
-    fireEvent.change(name, { target: { value: 'Lola' } });
-    fireEvent.change(email, { target: { value: 'lola@gmail.com' } });
-    fireEvent.change(textbox, {
-      target: { value: `Really nice place, cool events and beautiful artworks!` },
-    });
-    fireEvent.change(combobox, { target: { value: `"Innocence" Ria Arante` } });
-    fireEvent.change(date, { target: { value: 1678406400000 } });
-    fireEvent.change(file, { target: { value: { exampleImage } } });
-    checkbox.click();
-    radio.click();
+    const fakeFile = new File(['hello'], 'hello.png', { type: 'image/png' });
+    await userEvent.upload(file, fakeFile);
+    await userEvent.type(name, 'Lola');
+    await userEvent.type(email, 'lola@gmail.com');
+    await userEvent.type(textbox, 'Really nice place, cool events and beautiful artworks!');
+    await userEvent.selectOptions(select, [`"Innocence" Ria Arante`]);
+    await userEvent.type(date, '2022-12-31');
+    await userEvent.click(checkbox);
+    await userEvent.click(radio);
 
     const submitButton = screen.getByRole('button', {
       name: /submit/i,
     });
 
-    submitButton.click();
-    expect(screen.queryByText(/Please/i)).not.toBeInTheDocument();
+    await user.click(submitButton);
+
+    await screen.findByTestId('submit-modal').then((el) => expect(el).toBeInTheDocument());
   });
 });

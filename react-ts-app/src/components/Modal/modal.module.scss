@@ -1,4 +1,5 @@
-@use './src/stylesheets/variables/colors';
+@use '../../stylesheets/variables/colors';
+@use '../../stylesheets/mixins/mixins';
 
 .modal {
   position: fixed;
@@ -6,17 +7,18 @@
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0;
   background: colors.$transparent-black;
   backdrop-filter: blur(8px);
-  pointer-events: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.5s;
+  transition: 0.2s;
+  opacity: 0;
+  pointer-events: none;
 
   &_open {
     opacity: 1;
+    pointer-events: all;
   }
 
   &__container {
@@ -28,5 +30,21 @@
     width: 60%;
     height: fit-content;
     position: relative;
+  }
+}
+
+.close {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  @include mixins.center-content;
+  @include mixins.button-style-reset;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+
+  &:hover {
+    cursor: pointer;
+    border: 1px solid colors.$black;
   }
 }

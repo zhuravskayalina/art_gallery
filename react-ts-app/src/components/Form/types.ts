@@ -1,40 +1,25 @@
-import { RefObject } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 
-export type FormState = {
-  submit: boolean;
-  cards: CardData[];
-  userNameError: boolean;
-  userEmailError: boolean;
-  feedbackError: boolean;
-  choiceError: boolean;
-  dateError: boolean;
-  uploadError: boolean;
-  checkboxesError: boolean;
-  radioError: boolean;
-};
-
-export interface CardData {
+interface FormData {
   userName: string;
+  userEmail: string;
   feedback: string;
-  favouriteArtwork: string;
   visitDate: string;
-  photo: string;
+  favouriteArtwork: string;
   isAnonymously: boolean;
-  whatLikeAboutGallery: string[];
-  isWantPostcard: boolean;
+  likeCheckboxes: string[];
+  isWantPostcard: string;
 }
 
-export interface CheckboxData {
-  label: string;
-  name: string;
-  ref: RefObject<HTMLInputElement>;
+export interface FormValues extends FormData {
+  photo: FileList | undefined;
 }
 
-export interface RadioButton {
-  name: string;
-  title: string;
-  value: string;
-  ref: RefObject<HTMLInputElement>;
+export interface CardData extends FormData {
+  id: string;
+  photo: string;
 }
 
-export interface FormProps {}
+export interface FormProps {
+  setCards: Dispatch<SetStateAction<CardData[]>>;
+}

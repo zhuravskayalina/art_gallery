@@ -11,6 +11,10 @@ class DateClient {
     }
     return '';
   }
+
+  public formatDateToNumber(date: string): number {
+    return new Date(date).getTime();
+  }
 }
 
 const dateClient = new DateClient();

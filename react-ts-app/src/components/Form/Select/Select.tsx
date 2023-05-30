@@ -1,29 +1,34 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { forwardRef } from 'react';
 import classNames from 'classnames/bind';
-import dataBase from '../../../db/dataBase';
-import { SelectProps } from './types';
+import { UseFormRegister } from 'react-hook-form';
 import styles from './select.module.scss';
+import dataBase from '../../../db/dataBase';
+import { FormValues } from '../types';
 
 const cx = classNames.bind(styles);
 
-const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => (
-  <>
-    <label htmlFor="selectArt">Most impressive art work:</label>
-    <select
-      id="selectArt"
-      onChange={props.validateChosenArtwork}
-      ref={ref}
-      className={cx('select')}
-    >
-      <option className="option" value="" />
-      {dataBase.map(({ name, author, id }) => (
-        <option value={`"${name}" ${author}`} key={id}>
-          {`"${name}" ${author}`}
-        </option>
-      ))}
-    </select>
-  </>
-));
+interface SelectProps {
+  register: UseFormRegister<FormValues>;
+}
+
+const Select = ({ register }: SelectProps) => {
+  return (
+    <>
+      <label htmlFor="selectArt">Most impressive art work:</label>
+      <select
+        id="selectArt"
+        className={cx('select')}
+        {...register('favouriteArtwork', { required: true })}
+      >
+        {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+        <option className="option" value="" />
+        {dataBase.map(({ name, author, id }) => (
+          <option value={name} key={id}>
+            {`"${name}" ${author}`}
+          </option>
+        ))}
+      </select>
+    </>
+  );
+};
 
 export default Select;
