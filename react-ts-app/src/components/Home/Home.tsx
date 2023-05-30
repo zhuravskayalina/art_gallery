@@ -1,23 +1,26 @@
-import React from 'react';
-import SearchBar from '../SearchBar/SearchBar';
+import classNames from 'classnames/bind';
 import Cards from '../Cards/Cards';
 import styles from './home.module.scss';
+import paintings from '../../db/dataBase';
 
-class Home extends React.Component {
-  render() {
-    return (
-      <main className={styles.main}>
-        <section className={styles.mainContainer}>
-          <h1 className={styles.mainHeading}>Featured Paintings</h1>
-          <div className={styles.searchBar}>
-            <p>Looking for something special?</p>
-            <SearchBar />
-          </div>
-          <Cards />
-        </section>
-      </main>
-    );
-  }
-}
+const cx = classNames.bind(styles);
+
+const Home = () => {
+  return (
+    <main className={cx('main')}>
+      <section className={cx('main__container')}>
+        <div className={cx('info')}>
+          Hi everyone! To search through cards according to{' '}
+          <span className={cx('accent')}>TASK 05</span> go to{' '}
+          <span className={cx('accent')}>Exhibitions</span> page!
+        </div>
+        <h1 className={cx('main__heading')} data-test="home-heading">
+          Featured Paintings
+        </h1>
+        <Cards paintings={paintings} />
+      </section>
+    </main>
+  );
+};
 
 export default Home;

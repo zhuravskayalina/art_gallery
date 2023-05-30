@@ -1,0 +1,27 @@
+.label {
+  display: flex;
+
+  &__title {
+    display: block;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.input {
+  margin-left: 20px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  flex-grow: 1;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &_error {
+    border-bottom: 1px solid red;
+  }
+}

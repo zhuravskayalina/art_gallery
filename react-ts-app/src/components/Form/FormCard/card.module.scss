@@ -1,0 +1,69 @@
+@use '../../../stylesheets/variables/colors';
+@use '../../../stylesheets/mixins/mixins';
+
+.card {
+  font-family: Karla, sans-serif;
+  background-color: colors.$offWhiteLighter;
+  border-radius: 20px;
+  padding: 20px;
+  @include mixins.flex-column;
+
+  &__info {
+    @include mixins.flex-column;
+    gap: 5px;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__artwork {
+    color: colors.$blue;
+  }
+
+  &__heading {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  &__visit-date {
+    color: colors.$gray;
+  }
+
+  &__photo {
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  &__feedback {
+    line-height: 140%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.notes {
+  &__heading {
+    font-weight: bold;
+  }
+}
+
+.notes-list {
+  list-style: none;
+  @include mixins.flex-column;
+  gap: 5px;
+  margin-top: 10px;
+
+  &__item {
+    padding: 5px 10px;
+    background-color: colors.$white;
+    border-radius: 8px;
+    color: colors.$gray;
+  }
+}
+
+.postcard {
+  margin-top: 20px;
+  font-size: 14px;
+  color: lightsalmon;
+}
