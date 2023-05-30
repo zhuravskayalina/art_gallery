@@ -1,5 +1,5 @@
 ### Cultured Kid Gallery App
-#### This application was created during the React course at Rolling Scopes School.
+#### This application was created during the React course at [Rolling Scopes School](https://rs.school).
 #### Stack:
 <img src="https://raw.githubusercontent.com/devicons/devicon/develop/icons/vitejs/vitejs-original.svg" width="35" height="35" alt="vite"/><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="35" height="35" /><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="35" height="35" /><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/eslint/eslint-original.svg" alt="eslint" width="35" height="35" /><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass"  width="35" height="35"/>
 
