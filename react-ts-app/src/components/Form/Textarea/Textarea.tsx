@@ -14,6 +14,7 @@ const Textarea = ({ register }: TextareaProps) => {
     <>
       <label htmlFor="textarea">Write a comment:</label>
       <textarea
+        data-test="form-textarea"
         id="textarea"
         className={cx('textarea')}
         {...register('feedback', {

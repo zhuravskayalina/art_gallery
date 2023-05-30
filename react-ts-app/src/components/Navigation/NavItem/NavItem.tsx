@@ -13,6 +13,7 @@ class NavItem extends Component<NavItemProps> {
     return (
       <li>
         <NavLink
+          data-test={`nav-${url || 'home'}`}
           to={`${url}`}
           onClick={() => showCurrentPageName(title)}
           className={({ isActive }) => cx('nav-link', { 'nav-link_active': isActive })}

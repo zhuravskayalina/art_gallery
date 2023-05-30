@@ -26,9 +26,9 @@ const Modal = ({ active, setActive, children, handleCloseCard }: ModalProps) => 
   };
 
   return (
-    <div className={cx('modal', { modal_open: active })} onClick={closeModal}>
+    <div className={cx('modal', { modal_open: active })} onClick={closeModal} data-test="modal">
       <div className={cx('modal__container')} onClick={(e) => e.stopPropagation()}>
-        <button className={cx('close')} onClick={() => setActive(false)}>
+        <button className={cx('close')} onClick={() => setActive(false)} data-test="modal-close">
           <CloseIcon className={cx('close-icon')} />
         </button>
         {children}

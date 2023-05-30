@@ -22,6 +22,7 @@ const SearchBar = ({ handleSearch, searchValue, handleChangeSearch }: SearchBarP
         onChange={handleChangeSearch}
         placeholder="Search"
         onKeyDown={handleSearch}
+        data-test="searchbar"
       />
       <SearchIcon className={cx('search__icon')} />
     </div>

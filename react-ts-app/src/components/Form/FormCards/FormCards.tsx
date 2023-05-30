@@ -11,7 +11,7 @@ const FormCards = ({ cards }: CardsProps) => {
       <h3 className={cx('cards__heading')}>
         {cards.length ? `Feedbacks from our guests:` : 'No feedbacks yet'}
       </h3>
-      <div className={cx('cards')}>
+      <div className={cx('cards')} data-test="feedback-cards">
         {cards.map((card) => (
           <FormCard card={card} key={card.id} />
         ))}

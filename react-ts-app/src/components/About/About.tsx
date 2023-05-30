@@ -11,7 +11,7 @@ class About extends Component {
     return (
       <div className={cx('main')}>
         <div className={cx('main__container')}>
-          <h1>About us</h1>
+          <h1 data-test="about-heading">About us</h1>
           <p>
             At Cultured Kid Gallery, we celebrate creativity, openness, tolerance, and generosity.
             We aim to be inclusive places — both onsite and online — where diverse cultural,

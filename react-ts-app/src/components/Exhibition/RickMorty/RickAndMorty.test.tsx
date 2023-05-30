@@ -10,6 +10,8 @@ describe('RickAndMorty', () => {
         <RickAndMorty />
       </Provider>
     );
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     expect(await screen.findByTestId('rm-cards')).toBeInTheDocument();
   });
 });

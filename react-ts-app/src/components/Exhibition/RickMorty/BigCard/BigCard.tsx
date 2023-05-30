@@ -13,7 +13,7 @@ const BigCard = ({ characterId }: BigCardProps) => {
   const { data: character, isFetching, isSuccess } = useGetCharacterByIdQuery(characterId || 0);
 
   return (
-    <div className={cx('container')}>
+    <div className={cx('container')} data-test="rm-big-card">
       {isFetching && <Loader />}
       {isSuccess && (
         <>

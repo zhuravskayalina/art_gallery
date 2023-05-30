@@ -114,7 +114,12 @@ const Form = () => {
 
   return (
     <>
-      <form name="feedbackForm" onSubmit={handleSubmit(onSubmit)} className={cx('form')}>
+      <form
+        name="feedbackForm"
+        onSubmit={handleSubmit(onSubmit)}
+        className={cx('form')}
+        data-test="feedback-form"
+      >
         <ul className={cx('list')}>
           <li className={cx('list__item')}>
             <Input name="userName" label="Your Name" register={register} type="text" />
@@ -154,7 +159,7 @@ const Form = () => {
           </li>
           <li className={cx('list__item', 'list__item_checkboxes')}>
             <p className={cx('bold')}>What i like about Cultured Kid Gallery:</p>
-            <div className={cx('form__checkboxes')}>
+            <div className={cx('form__checkboxes')} data-test="form-checkboxes">
               {checkboxesOptions.map((label) => (
                 <Checkbox
                   label={label}
@@ -169,7 +174,7 @@ const Form = () => {
           <li className={cx('list__item')}>
             <div className={cx('list__item_radio')}>
               <p>Do you want a postcard from us?</p>
-              <div className={cx('switch-box')}>
+              <div className={cx('switch-box')} data-test="form-switch-box">
                 {postcardRadioOptions.map(({ value, title }) => (
                   <Radio value={value} title={title} key={title} register={register} />
                 ))}
@@ -178,14 +183,14 @@ const Form = () => {
             {errors.isWantPostcard && <ErrorMessage text="Please, choose if you want a postcard" />}
           </li>
         </ul>
-        <div className={cx('form__controls')}>
+        <div className={cx('form__controls')} data-test="form-controls-buttons">
           <Button type="reset" title="reset" />
           <Button type="submit" title="submit" />
         </div>
       </form>
       {submit && (
         <Modal active={isModalActive} setActive={setModalActive}>
-          <p data-testid="submit-modal" className={cx('submit-message')}>
+          <p data-testid="submit-modal" data-test="submit-modal" className={cx('submit-message')}>
             Thank you! Your feedback has been saved.
           </p>
         </Modal>

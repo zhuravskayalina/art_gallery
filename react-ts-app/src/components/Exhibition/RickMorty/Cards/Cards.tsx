@@ -12,7 +12,7 @@ interface CardsProps {
 
 const Cards = ({ characters, openCard }: CardsProps) => {
   return (
-    <section className={cx('characters')} data-testid="rm-cards">
+    <section className={cx('characters')} data-testid="rm-cards" data-test="rm-cards">
       <ul className={cx('list')}>
         {characters.map((character) => (
           <SmallCard character={character} key={character.id} openCard={openCard} />
