@@ -1,0 +1,24 @@
+@use './src/stylesheets/variables/colors';
+@use './src/stylesheets/variables/numbers';
+@use './src/stylesheets/mixins/mixins';
+
+.footer {
+  background-color: colors.$offWhiteLighter;
+  padding: 60px;
+  @include mixins.center-content;
+  margin-top: 100px;
+
+  &__container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__author {
+    @include mixins.link-style-reset;
+
+    &:hover {
+      border-bottom: 1px solid colors.$black;
+    }
+  }
+}

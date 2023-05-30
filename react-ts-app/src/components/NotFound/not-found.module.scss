@@ -1,0 +1,37 @@
+@use './src/stylesheets/mixins/mixins';
+@use './src/stylesheets/variables/colors';
+
+.main {
+  display: grid;
+  padding: 0 50px;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px;
+  font-family: 'Karla', sans-serif;
+  font-size: 25px;
+  background-color: colors.$offWhiteLighter;
+  background-image: url('../../assets/images/lines.svg');
+  flex: 1 1 auto;
+  align-items: center;
+
+  &__heading {
+    font-size: 55px;
+    font-weight: bold;
+  }
+}
+
+.text {
+  @include mixins.flex-column;
+  gap: 10px;
+
+  &__details {
+    margin-top: 20px;
+  }
+}
+
+.image {
+  background-image: url('../../assets/images/404.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 500px;
+}

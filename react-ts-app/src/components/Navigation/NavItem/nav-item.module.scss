@@ -1,0 +1,20 @@
+@use './src/stylesheets/mixins/mixins';
+@use './src/stylesheets/variables/colors';
+
+.nav-item {
+}
+
+.nav-link {
+  @include mixins.link-style-reset;
+  font-size: 15px;
+  line-height: 200%;
+  text-transform: uppercase;
+
+  &:hover {
+    border-bottom: 1px solid colors.$black;
+  }
+
+  &-active {
+    border-bottom: 1px solid colors.$black;
+  }
+}

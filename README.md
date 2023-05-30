@@ -1,2 +1,1 @@
-# zhuravskayalina-JSFE2022Q3
-Private repository for @zhuravskayalina
+Private repository for Module1 task 'React Components'
