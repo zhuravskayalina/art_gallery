@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { nanoid } from '@reduxjs/toolkit';
 import classNames from 'classnames/bind';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './form.module.scss';
 import Input from './Input/Input';
 import Select from './Select/Select';
@@ -10,11 +12,14 @@ import DateInput from './DateInput/DateInput';
 import Switcher from './Switcher/Switcher';
 import FileUpload from './FileUpload/FileUpload';
 import ErrorMessage from './ErrorMessage/ErrorMessage';
-import { CardData, FormProps, FormValues } from './types';
+import { CardData, FormValues } from './types';
 import dateClient from '../../DateClient/DateClient';
 import Modal from '../Modal/Modal';
 import Button from './Button/Button';
 import Textarea from './Textarea/Textarea';
+import { RootState } from '../../redux/store';
+import { resetForm, setFormData } from '../../redux/form/formSlice';
+import { setCards } from '../../redux/form/formCardsSlice';
 
 const cx = classNames.bind(styles);
 
@@ -36,9 +41,12 @@ const postcardRadioOptions = [
   },
 ];
 
-const Form = ({ setCards }: FormProps) => {
+const Form = () => {
+  const formData = useSelector((state: RootState) => state.form);
+  const dispatch = useDispatch();
+
   const [submit, setSubmit] = useState(false);
-  const [feedbackId, setFeedbackId] = useState(0);
+  const [isModalActive, setModalActive] = useState(false);
 
   const {
     register,
@@ -47,11 +55,16 @@ const Form = ({ setCards }: FormProps) => {
     getValues,
     reset,
   } = useForm<FormValues>({
-    mode: 'onSubmit',
-    reValidateMode: 'onSubmit',
+    defaultValues: formData,
   });
 
-  const handleImageUpload = async (image: FileList) => {
+  useEffect(() => {
+    return () => {
+      dispatch(setFormData(getValues()));
+    };
+  }, []);
+
+  const handleImageUpload = (image: FileList) => {
     if (image[0]) {
       return URL.createObjectURL(image[0]);
     }
@@ -68,27 +81,31 @@ const Form = ({ setCards }: FormProps) => {
     isAnonymously,
     isWantPostcard,
   }) => {
-    const image = await handleImageUpload(photo);
     const newCard: CardData = {
-      id: feedbackId,
+      id: nanoid(),
       userName,
       userEmail,
       feedback,
+      photo: '',
       visitDate: dateClient.formatDate(dateClient.formatDateToNumber(visitDate)),
-      photo: image,
       isAnonymously,
       favouriteArtwork,
       likeCheckboxes: getValues('likeCheckboxes'),
       isWantPostcard,
     };
 
+    if (photo) {
+      newCard.photo = handleImageUpload(photo);
+    }
+    dispatch(setCards(newCard));
     setSubmit(true);
-    setCards((oldCards) => [...oldCards, newCard]);
+    setModalActive(true);
+    dispatch(resetForm());
     reset();
     setTimeout(() => {
       setSubmit(false);
+      setModalActive(false);
     }, 1500);
-    setFeedbackId((prevId) => prevId + 1);
   };
 
   const atLeastOneCheckbox = () => {
@@ -97,7 +114,12 @@ const Form = ({ setCards }: FormProps) => {
 
   return (
     <>
-      <form name="feedbackForm" onSubmit={handleSubmit(onSubmit)} className={cx('form')}>
+      <form
+        name="feedbackForm"
+        onSubmit={handleSubmit(onSubmit)}
+        className={cx('form')}
+        data-test="feedback-form"
+      >
         <ul className={cx('list')}>
           <li className={cx('list__item')}>
             <Input name="userName" label="Your Name" register={register} type="text" />
@@ -137,7 +159,7 @@ const Form = ({ setCards }: FormProps) => {
           </li>
           <li className={cx('list__item', 'list__item_checkboxes')}>
             <p className={cx('bold')}>What i like about Cultured Kid Gallery:</p>
-            <div className={cx('form__checkboxes')}>
+            <div className={cx('form__checkboxes')} data-test="form-checkboxes">
               {checkboxesOptions.map((label) => (
                 <Checkbox
                   label={label}
@@ -152,7 +174,7 @@ const Form = ({ setCards }: FormProps) => {
           <li className={cx('list__item')}>
             <div className={cx('list__item_radio')}>
               <p>Do you want a postcard from us?</p>
-              <div className={cx('switch-box')}>
+              <div className={cx('switch-box')} data-test="form-switch-box">
                 {postcardRadioOptions.map(({ value, title }) => (
                   <Radio value={value} title={title} key={title} register={register} />
                 ))}
@@ -161,14 +183,14 @@ const Form = ({ setCards }: FormProps) => {
             {errors.isWantPostcard && <ErrorMessage text="Please, choose if you want a postcard" />}
           </li>
         </ul>
-        <div className={cx('form__controls')}>
+        <div className={cx('form__controls')} data-test="form-controls-buttons">
           <Button type="reset" title="reset" />
           <Button type="submit" title="submit" />
         </div>
       </form>
       {submit && (
-        <Modal>
-          <p data-testid="submit-modal" className={cx('submit-message')}>
+        <Modal active={isModalActive} setActive={setModalActive}>
+          <p data-testid="submit-modal" data-test="submit-modal" className={cx('submit-message')}>
             Thank you! Your feedback has been saved.
           </p>
         </Modal>

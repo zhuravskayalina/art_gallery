@@ -1,26 +1,24 @@
-import { Component } from 'react';
+import classNames from 'classnames/bind';
 import styles from './navigation.module.scss';
 import NavItem from './NavItem/NavItem';
 import { NavigationProps } from './types';
 
-class Navigation extends Component<NavigationProps> {
-  render() {
-    const { items, showCurrentPageName } = this.props;
-    return (
-      <nav>
-        <ul className={styles.navigationList}>
-          {items.map((item) => (
-            <NavItem
-              title={item.title}
-              url={item.url}
-              key={item.title}
-              showCurrentPageName={showCurrentPageName}
-            />
-          ))}
-        </ul>
-      </nav>
-    );
-  }
-}
+const cx = classNames.bind(styles);
+const Navigation = ({ items, showCurrentPageName }: NavigationProps) => {
+  return (
+    <nav>
+      <ul className={cx('navigation-list')}>
+        {items.map((item) => (
+          <NavItem
+            title={item.title}
+            url={item.url}
+            key={item.title}
+            showCurrentPageName={showCurrentPageName}
+          />
+        ))}
+      </ul>
+    </nav>
+  );
+};
 
 export default Navigation;

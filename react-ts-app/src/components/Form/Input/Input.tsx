@@ -12,6 +12,7 @@ const Input = ({ label, name, register, type }: InputProps) => (
     <span className={cx('label__title')}>{label}</span>:
     <input
       type={type}
+      data-test={`form-input-${name}`}
       className={cx('input')}
       {...register(name, {
         required: true,

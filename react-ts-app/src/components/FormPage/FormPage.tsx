@@ -1,14 +1,14 @@
-import { useState } from 'react';
 import classNames from 'classnames/bind';
+import { useSelector } from 'react-redux';
 import styles from './form-page.module.scss';
 import Form from '../Form/Form';
-import { CardData } from '../Form/types';
 import FormCards from '../Form/FormCards/FormCards';
+import { RootState } from '../../redux/store';
 
 const cx = classNames.bind(styles);
 
 const FormPage = () => {
-  const [cards, setCards] = useState<CardData[]>([]);
+  const cards = useSelector((state: RootState) => state.formCards.cards);
 
   return (
     <main className={cx('main')}>
@@ -16,7 +16,7 @@ const FormPage = () => {
         <h2 className={cx('main__heading')}>
           Tell us about your experience at Cultured Kid Gallery:
         </h2>
-        <Form setCards={setCards} />
+        <Form />
         {cards && <FormCards cards={cards} />}
       </div>
     </main>

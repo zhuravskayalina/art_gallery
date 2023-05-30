@@ -1,43 +1,32 @@
-import { useEffect, useRef, useState } from 'react';
+import { ChangeEvent, KeyboardEvent } from 'react';
 import classNames from 'classnames/bind';
 import styles from './search-bar.module.scss';
 import { ReactComponent as SearchIcon } from '../../assets/icons/search.svg';
-import localStorageClient from '../../LocalStorageClient/LocalStorageClient';
 
 const cx = classNames.bind(styles);
 
-function SearchBar() {
-  const [inputValue, setInputValue] = useState(localStorageClient.getSearchValue() || '');
-  const inputRef = useRef<string>();
+interface SearchBarProps {
+  searchValue: string;
+  handleSearch: (e: KeyboardEvent) => void;
+  handleChangeSearch: (event: ChangeEvent<HTMLInputElement>) => void;
+}
 
-  useEffect(() => {
-    inputRef.current = inputValue;
-  }, [inputValue]);
-
-  useEffect(() => {
-    return () => {
-      localStorageClient.setSearchValue(inputRef.current || '');
-    };
-  }, []);
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-    inputRef.current = event.target.value;
-  };
-
+const SearchBar = ({ handleSearch, searchValue, handleChangeSearch }: SearchBarProps) => {
   return (
     <div className={cx('search')}>
       <input
         data-testid="search-input"
         type="search"
         className={cx('search__input')}
-        value={inputValue}
-        onChange={handleChange}
+        value={searchValue}
+        onChange={handleChangeSearch}
         placeholder="Search"
+        onKeyDown={handleSearch}
+        data-test="searchbar"
       />
       <SearchIcon className={cx('search__icon')} />
     </div>
   );
-}
+};
 
 export default SearchBar;
