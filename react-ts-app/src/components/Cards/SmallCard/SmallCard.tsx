@@ -1,6 +1,5 @@
 import classNames from 'classnames/bind';
 import styles from './small-card.module.scss';
-import Like from '../../Like/Like';
 import { SmallCardProps } from './types';
 
 const cx = classNames.bind(styles);
@@ -15,7 +14,6 @@ function SmallCard({ name, author, info, image }: SmallCardProps) {
           <p className={cx('small-card__author')}>{author}</p>
           <p className={cx('small-card__details')}>{info}</p>
         </div>
-        <Like />
       </div>
     </div>
   );

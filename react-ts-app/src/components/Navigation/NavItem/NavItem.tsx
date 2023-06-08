@@ -8,14 +8,13 @@ const cx = classNames.bind(styles);
 
 class NavItem extends Component<NavItemProps> {
   render() {
-    const { title, url, showCurrentPageName } = this.props;
+    const { title, url } = this.props;
 
     return (
       <li>
         <NavLink
           data-test={`nav-${url || 'home'}`}
           to={`${url}`}
-          onClick={() => showCurrentPageName(title)}
           className={({ isActive }) => cx('nav-link', { 'nav-link_active': isActive })}
         >
           {title}

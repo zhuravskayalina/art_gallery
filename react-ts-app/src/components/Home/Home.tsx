@@ -9,11 +9,6 @@ const Home = () => {
   return (
     <main className={cx('main')}>
       <section className={cx('main__container')}>
-        <div className={cx('info')}>
-          Hi everyone! To search through cards according to{' '}
-          <span className={cx('accent')}>TASK 05</span> go to{' '}
-          <span className={cx('accent')}>Exhibitions</span> page!
-        </div>
         <h1 className={cx('main__heading')} data-test="home-heading">
           Featured Paintings
         </h1>

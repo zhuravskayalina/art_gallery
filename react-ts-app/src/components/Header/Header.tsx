@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import Navigation from '../Navigation/Navigation';
@@ -28,11 +27,6 @@ const navItems: NavigationItem[] = [
 ];
 
 function Header() {
-  const [pageName, setPageName] = useState('home');
-
-  const showCurrentPageName = (name: string) => {
-    setPageName(name);
-  };
   return (
     <header className={cx('header')} data-test="header">
       <div className={cx('header__container')}>
@@ -40,8 +34,7 @@ function Header() {
           <Logo />
           <span>cultured kid.</span>
         </Link>
-        <p>{`It's "${pageName}" page`}</p>
-        <Navigation items={navItems} showCurrentPageName={showCurrentPageName} />
+        <Navigation items={navItems} />
       </div>
     </header>
   );

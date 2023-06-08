@@ -4,7 +4,7 @@ import NavItem from './NavItem/NavItem';
 import { NavigationProps } from './types';
 
 const cx = classNames.bind(styles);
-const Navigation = ({ items, showCurrentPageName }: NavigationProps) => {
+const Navigation = ({ items }: NavigationProps) => {
   return (
     <nav>
       <ul className={cx('navigation-list')}>
@@ -13,7 +13,6 @@ const Navigation = ({ items, showCurrentPageName }: NavigationProps) => {
             title={item.title}
             url={item.url}
             key={item.title}
-            showCurrentPageName={showCurrentPageName}
           />
         ))}
       </ul>
