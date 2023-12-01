@@ -15,7 +15,7 @@ class Footer extends Component {
           <Link
             to="https://github.com/zhuravskayalina"
             className={styles.footer__author}
-            aria-label="Go to the authors github"
+            aria-label="Anhelina Zhurauskaya"
           >
             Anhelina Zhurauskaya
           </Link>
