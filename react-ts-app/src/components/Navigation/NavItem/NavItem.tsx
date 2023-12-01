@@ -16,6 +16,7 @@ class NavItem extends Component<NavItemProps> {
           data-test={`nav-${url || 'home'}`}
           to={`${url}`}
           className={({ isActive }) => cx('nav-link', { 'nav-link_active': isActive })}
+          aria-label={`Go to the ${title}`}
         >
           {title}
         </NavLink>

@@ -12,7 +12,11 @@ class Footer extends Component {
       <footer className={cx('footer')} data-test="footer">
         <div className={cx('footer__container')}>
           <Logo className={cx('footer__logo')} />
-          <Link to="https://github.com/zhuravskayalina" className={styles.footer__author}>
+          <Link
+            to="https://github.com/zhuravskayalina"
+            className={styles.footer__author}
+            aria-label="Go to the authors github"
+          >
             Anhelina Zhurauskaya
           </Link>
         </div>

@@ -9,11 +9,7 @@ const Navigation = ({ items }: NavigationProps) => {
     <nav>
       <ul className={cx('navigation-list')}>
         {items.map((item) => (
-          <NavItem
-            title={item.title}
-            url={item.url}
-            key={item.title}
-          />
+          <NavItem title={item.title} url={item.url} key={item.title} />
         ))}
       </ul>
     </nav>

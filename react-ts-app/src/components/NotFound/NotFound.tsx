@@ -13,7 +13,7 @@ class NotFound extends Component {
           <h2 className={cx('main__heading')}>Oops..</h2>
           <h3>Page not found</h3>
           <p className={cx('text__details')}>Page you are looking for does not exist. </p>
-          <Link to="/" />
+          <Link to="/" aria-label="Go to the Home page" />
         </div>
         <div className={cx('image')} />
       </div>

@@ -30,7 +30,7 @@ function Header() {
   return (
     <header className={cx('header')} data-test="header">
       <div className={cx('header__container')}>
-        <Link to="/" className={cx('header__logo')}>
+        <Link to="/" className={cx('header__logo')} aria-label="Go to the Home page">
           <Logo />
           <span>cultured kid.</span>
         </Link>

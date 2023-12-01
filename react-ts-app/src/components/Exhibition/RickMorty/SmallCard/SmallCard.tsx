@@ -12,7 +12,11 @@ interface SmallCardProps {
 const SmallCard = ({ character: { name, image, id }, openCard }: SmallCardProps) => {
   return (
     <li className={cx('small-card')}>
-      <button className={cx('small-card__button')} onClick={() => openCard(id)}>
+      <button
+        className={cx('small-card__button')}
+        onClick={() => openCard(id)}
+        aria-label="Open card"
+      >
         <img src={image} alt="character" className={cx('small-card__image')} />
         <p className={cx('small-card__name')}>{name}</p>
       </button>
